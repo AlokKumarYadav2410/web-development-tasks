@@ -23,7 +23,7 @@ This repository serves as a comprehensive portfolio of my web development tasks 
 
 - ✅ Master HTML5 semantic structure and accessibility
 - ✅ Create responsive and visually appealing CSS designs
-- � Continue learning through Sheryians Cohort 2.0 program
+- � Continue learning through Sheryians Cohort 2.0
 
 ## 📁 Repository Structure
 
@@ -41,23 +41,9 @@ Tasks/
 
 ### 📝 Task 01: Personal Resume Website
 **Status:** ✅ Completed  
-**Technologies:** HTML5, CSS3  
-**Focus Areas:** Text styling, custom fonts, color schemes, layout design
+**Description:** A personal resume website built with HTML5 and CSS3, featuring custom typography and clean design.
 
-**Key Features:**
-- Responsive personal resume layout
-- Custom font implementation (`FallingSkyCondensed`)
-- Professional color scheme and typography
-- Structured sections: About, Education, Skills, Projects
-- Clean and modern design aesthetic
-
-**Live Preview:** [View Task 01](./Task01/index.html)
-
-**What I Learned:**
-- HTML semantic elements and structure
-- CSS custom properties and font-face implementation
-- Box model and layout techniques
-- Color theory and professional design principles
+**🔗 [View Task Details & Code](./Task01/)**
 
 ## 🛠️ Technologies & Tools
 
@@ -124,7 +110,7 @@ Each task folder contains:
 
 ## 🎓 Inspiration & Resources
 
-- **Course:** Sheryians Cohort 2.0 - Web Development Program
+- **Course:** Sheryians Cohort 2.0
 - **Documentation:** MDN Web Docs, W3Schools
 - **Community:** Dev.to, Stack Overflow, GitHub Community
 - **Design Inspiration:** Dribbble, Behance, Awwwards
