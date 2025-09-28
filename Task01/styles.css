@@ -1,0 +1,144 @@
+@font-face {
+    font-family: professional;
+    src: url('fonts/FallingSkyCondensed-9qm2.otf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: professional;
+}
+
+.container {
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 100%;
+}
+
+.header {
+    text-align: center;
+    background-color: rgb(8, 27, 61);
+    padding: 20px;
+    border-bottom: 2px solid rgb(2, 13, 32);
+    color: white;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.header h3 {
+    font-size: 1.2em;
+    color: rgb(221, 228, 240);
+}
+
+.content {
+    width: 80vw;
+    margin: auto;
+    padding: 20px;
+}
+
+.content-section {
+    background-color: white;
+    color: black;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 50px;
+}
+
+#education {
+    background-color: rgba(24, 146, 227, 0.689);
+    color: white;   
+}
+
+
+#education h2,
+#skills h2,
+#projects h2,
+#contact h2,
+#about h2 {
+    color: black;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+#education p {
+    font-size: 1.2em;
+}
+
+.edu {
+    font-weight: bold;
+    color: rgba(24, 146, 227, 0.997);
+}
+
+.myPara {
+    background: white;
+    color: black;
+    padding: 10px;
+    width: 70%;
+    margin: auto;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 1.2em;
+}
+
+#skills {
+    background-color: rgba(251, 247, 20, 0.588);
+    color: white;
+}
+
+#skills p {
+    font-weight: bold;
+    font-size: 1.4em;
+}
+
+#projects {
+    background-color: rgba(247, 20, 20, 0.33);
+    color: white;
+}
+
+.project-title {
+    color: rgba(247, 20, 20, 0.816);
+    font-weight: bold;
+    font-size: 1.1em;
+    font-style: italic;
+}
+
+.project-name {
+    font-style: italic;
+}
+
+#contact {
+
+    background-color: rgba(20, 247, 138, 0.33);
+    color: white;
+}
+
+#contact p {
+    font-size: 1.2em;
+}
+
+a {
+    color: rgb(5, 150, 70);
+    text-decoration: none;
+    font-weight: bold;
+
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.footer {
+    text-align: center;
+    background-color: rgb(8, 27, 61);
+    padding: 20px;
+    color: white;
+    margin-top: 20px;
+    font-size: 1.2em;
+}
