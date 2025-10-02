@@ -1,0 +1,497 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, hsla(208, 67%, 81%, 1), hsla(37, 65%, 85%, 1));
+    filter: drop-shadow(0px 15px 30px rgba(0, 0, 0, 0.2));
+
+}
+
+#main {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 0px 100;
+    background: linear-gradient(45deg, hsla(208, 67%, 81%, 1), hsla(37, 65%, 85%, 1));
+    filter: drop-shadow(0px 15px 30px rgba(0, 0, 0, 0.2));
+    overflow: hidden;
+}
+
+/* Navigation */
+#nav {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 80px;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 700;
+    color: #333;
+}
+
+.logo span {
+    color: #fff;
+}
+
+.nav-links ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 18px;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-links li a:hover {
+    padding: 8px 10px;
+    border: 1px solid #333;
+    border-radius: 25px;
+    background: #333;
+    color: #fff;
+    /* transition: 0.3s; */
+}
+
+.app-btn {
+    padding: 8px 20px;
+    border: 1px solid #333;
+    border-radius: 25px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.app-btn:hover {
+    background: #333;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+#play_store_logo {
+    height: 20px;
+}
+
+/* Shirt & labels */
+#tshirt-container {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    margin-top: 20px;
+}
+
+.shirt {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 450px;
+    filter: drop-shadow(0px 15px 30px rgba(0, 0, 0, 0.2));
+    z-index: 1;
+}
+
+/* Labels around shirt */
+.text-top {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+    gap: 8px;
+    /* background: rgba(255,255,255,0.8); */
+    padding: 8px 12px;
+    border-radius: 12px;
+    z-index: 2;
+}
+
+.text-top.left {
+    top: 10%;
+    left: 30%;
+}
+
+.text-top.right {
+    /* width: 300px; */
+    top: 20%;
+    right: 28%;
+}
+
+.right p {
+    width: 200px;
+}
+
+.right>img {
+    width: 40px;
+    height: 60px;
+
+}
+
+.left p {
+    width: 200px;
+}
+
+.left>img {
+    width: 40px;
+    height: 60px;
+    z-index: 20;
+
+}
+
+#leafLeft1 {
+    transform: rotate(20deg);
+    position: absolute;
+    left: -12%;
+}
+
+#leafLeft2 {
+    transform: rotate(-20deg);
+    position: absolute;
+    left: 85%;
+}
+
+#leafRight1 {
+    transform: rotate(20deg);
+    position: absolute;
+    left: -12%;
+}
+
+#leafRight2 {
+    transform: rotate(-20deg);
+    position: absolute;
+    right: 1%;
+}
+
+/* Main Text content */
+.text-content {
+    position: absolute;
+    top: 65%;
+    left: 5%;
+    transform: translateY(-50%);
+    z-index: 3;
+}
+
+.rating {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.rating img {
+    width: 30px;
+}
+
+.hero-text {
+
+    font-size: 70px;
+    font-weight: 500;
+    color: #fff;
+    line-height: 1;
+    /* max-width: 600px; */
+}
+
+/* Right “card” */
+#bottom-right {
+    position: absolute;
+    bottom: 15%;
+    right: 5%;
+    background: rgba(255, 255, 255, 0.285);
+    border-radius: 20px;
+    padding: 24px 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.377);
+    width: 220px;
+    text-align: center;
+    z-index: 2;
+}
+
+#bottom-right img {
+    width: 180px;
+    opacity: 0.9;
+    margin-bottom: 8px;
+}
+
+#bottom-right h2 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 8px;
+}
+
+#bottom-right p {
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+}
+
+/* Footer */
+#footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: #1D2A2E;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 80px;
+    z-index: 5;
+}
+
+#footer-img {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#footer-img img {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+#footer span {
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+}
+
+#footer-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    color: #000;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+#arrow {
+    width: 16px;
+}
+
+
+/* ------------------- Responsive Design ------------------- */
+
+/* Tablets and small laptops */
+@media (max-width: 1024px) {
+    .text-content {
+        position: absolute;
+        /* width: 30%; */
+    }
+
+    .hero-text {
+        font-size: 42px;
+        max-width: 90%;
+    }
+
+    .shirt {
+        width: 350px;
+    }
+
+    .text-top.left,
+    .text-top.right {
+        font-size: 13px;
+    }
+
+    .nav-links ul {
+        gap: 20px;
+    }
+
+    #bottom-right {
+        width: 180px;
+        padding: 16px 12px;
+    }
+
+    #bottom-right img {
+        width: 120px;
+    }
+}
+
+/* Tablets and large phones */
+@media (max-width: 768px) {
+    #nav {
+        flex-direction: column;
+        height: auto;
+        gap: 10px;
+        padding: 20px;
+    }
+
+    .nav-links ul {
+        flex-wrap: wrap;
+    }
+
+    .app-btn {
+        margin-top: 10px;
+        font-size: 12px;
+        padding: 6px 16px;
+    }
+
+    .text-content {
+        top: 65%;
+        left: 5%;
+        width: 30%;
+        transform: translateY(-50%);
+    }
+
+    .hero-text {
+        font-size: 32px;
+    }
+
+    .rating img {
+        width: 24px;
+    }
+
+    .shirt {
+        width: 300px;
+    }
+
+    .text-top.left {
+        top: 12%;
+        left: 15%;
+    }
+
+    .text-top.right {
+        top: 18%;
+        right: 10%;
+    }
+
+    .text-top p {
+        width: 150px;
+    }
+
+    #bottom-right {
+        right: 5%;
+        bottom: 20%;
+        width: 160px;
+    }
+
+    #bottom-right img {
+        width: 100px;
+    }
+
+    #footer {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    #footer-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    #footer span {
+        font-size: 20px;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+    .logo {
+        font-size: 24px;
+    }
+
+    .shirt {
+        width: 220px;
+        height: 300px;
+    }
+
+    .text-top.left {
+        top: 10%;
+        left: 10%;
+    }
+
+    .text-top.right {
+        top: 20%;
+        right: 5%;
+    }
+
+    .text-top p {
+        font-size: 12px;
+        width: 130px;
+    }
+
+    .left>img,
+    .right>img {
+        width: 30px;
+        height: 45px;
+    }
+
+    .text-content {
+        top: 62%;
+    }
+
+    .hero-text {
+        font-size: 26px;
+        line-height: 1.3;
+        max-width: 100%;
+    }
+
+    .rating img {
+        width: 15px;
+    }
+
+    #bottom-right {
+        width: 140px;
+        padding: 14px 10px;
+        bottom: 25%;
+    }
+
+    #bottom-right img {
+        width: 80px;
+    }
+
+    #bottom-right h2 {
+        font-size: 24px;
+    }
+
+    #bottom-right p {
+        font-size: 12px;
+    }
+
+    #footer span {
+        font-size: 18px;
+    }
+
+    #footer-btn {
+        font-size: 12px;
+        padding: 10px 18px;
+    }
+
+    .nav-links ul {
+        font-size: 14px;
+    }
+
+    .nav-links li a {
+        font-size: 14px;
+    }
+}
