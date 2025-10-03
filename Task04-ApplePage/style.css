@@ -1,0 +1,329 @@
+@font-face {
+    font-family: appleRegular;
+    src: url(./fonts/sf-pro-display_regular.woff2);
+}
+
+@font-face {
+    font-family: boldApple;
+    src: url(./fonts/sf-pro-display_bold.woff2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: appleRegular;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+#main {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: white;
+}
+
+#nav {
+    width: 100%;
+    height: 50px;
+    background-color: #1d1d1fec;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    /* font-weight: 100; */
+}
+
+#nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 5px;
+    font-family: boldApple;
+    flex-wrap: wrap;
+    /* color: white; */
+}
+
+#nav ul li {
+    padding: 10px 15px;
+    /* color: white; */
+}
+
+#brand{
+    position: absolute;
+    left: 1%;
+    top: 3%;
+    color: rgba(255, 255, 255, 0.337);
+    font-family: boldApple;
+    font-size: 20px;
+}
+
+#nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    /* font-weight: 600; */
+}
+
+#nav ul li:hover {
+    background-color: #3A3A3C;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+#nav ul li i {
+    font-size: 16px;
+}
+
+#heading {
+    text-align: center;
+    margin-top: 50px;
+    height: 80vh;
+    width: 100%;
+    background-image: url(./images/landingImage.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#heading h1 {
+    font-size: 50px;
+    /* font-weight: 100; */
+    font-family: boldApple;
+}
+
+#heading h2 {
+    font-size: 30px;
+    font-weight: 100;
+    font-family: appleRegular;
+    margin-top: 10px;
+}
+
+#btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+#btn button {
+    /* border: none; */
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    /* font-weight: 400; */
+    cursor: pointer;
+}
+
+#learn-more {
+    background-color: #0077ED;
+    /* border: 1px solid white; */
+    color: white;
+    font-family: appleRegular;
+    /* font-weight: 100; */
+    border: none;
+}
+
+#buy {
+    background-color: transparent;
+    color: #0077ED;
+    border: 1px solid #0077ED;
+    font-family: appleRegular;
+}
+
+#learn-more:hover {
+    background-color: #0868c8;
+    transition: all 0.3s ease-in-out;
+}
+
+#buy:hover {
+    background-color: #0077ED;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+#section2,
+#section3 {
+    margin-top: 20px;
+    text-align: center;
+    height: 85vh;
+    width: 100%;
+    background-image: url(./images/mobileHand.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#section2 h1,
+#section3 h1 {
+    padding-top: 50px;
+    font-size: 50px;
+    /* font-weight: 100; */
+    font-family: boldApple;
+    color: black;
+}
+
+#section2 h2,
+#section3 h2 {
+    font-size: 30px;
+    font-weight: 100;
+    font-family: appleRegular;
+    /* margin-top: 10px; */
+    color: black;
+}
+
+#section3 {
+    background-image: url(./images/mobiles.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.sections {
+    margin-top: 5px;
+    text-align: center;
+    height: 81vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.leftCard,
+.rightCard {
+    background-image: url(./images/watch.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    width: 100vw;
+    /* border-radius: 20px; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    color: black;
+
+}
+
+.leftCard img,
+#section5 .rightCard img,
+#section6 .rightCard img {
+    margin-top: 50px;
+    width: 20vw;
+    /* font-weight: 100; */
+    font-family: boldApple;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.small-heading {
+    font-size: 22px;
+    font-weight: 100;
+    font-family: appleRegular;
+    color: black;
+}
+
+.large-heading {
+    padding-top: 50px;
+    font-family: appleRegular;
+    font-size: 40px;
+    /* font-weight: 100; */
+    color: black;
+}
+
+.rightCard {
+    background-image: url(./images/pods.jpg);
+    background-size: cover;
+    background-position: center;
+
+}
+
+#section5 .leftCard {
+    background-image: url(./images/macbook.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#section5 .rightCard img,
+#section6 .leftCard img {
+    width: 150px;
+}
+
+#section5 .rightCard {
+    background-image: url(./images/ipad_promo.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#section6 .rightCard img {
+    width: 100px;
+}
+
+#section6 .leftCard {
+    background-image: url(./images/mobileSlide.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#section6 .rightCard {
+    background-image: url(./images/promo_apple_card.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+@media screen and (max-width: 768px) {
+
+    #heading {
+        height: 60vh;
+    }
+
+    #heading h1 {
+        font-size: 30px;
+    }
+
+    #nav{
+        height: auto;
+    }
+    #nav ul {
+        flex-wrap: wrap;
+        /* color: white; */
+    }
+
+    .sections {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: stretch;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        height: 85vh;
+    }
+
+    .sections h2 {
+        font-size: 20px;
+    }
+
+}
+
+@media screen and (min-width: 1200px) {
+    /* .leftCard,
+    .rightCard {
+        width: 45vw;
+    } */
+
+    #nav{
+        height: 60px;
+    }
+
+    #nav ul li a {
+        font-size: 16px;
+    }
+    
+}
