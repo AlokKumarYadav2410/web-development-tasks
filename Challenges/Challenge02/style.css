@@ -1,0 +1,277 @@
+@font-face {
+    font-family: dotFont;
+    src: url("./fonts/Ndot-55-DoenNkNm.ttf");
+}
+
+@font-face {
+    font-family: mainFont;
+    src: url(./fonts/korataki-rg-3cf0d889-B6eTgmP5.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+body {
+    background-color: black;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+.navbar {
+    display: flex;
+    /* justify-content: eve; */
+    align-items: center;
+    /* position: fixed; */
+    gap: 2vw;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    background: black;
+    padding: 15px 20px;
+}
+
+.logo {
+    position: absolute;
+    font-size: 3.5vw;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    font-family: dotFont;
+    top: 4.5vh;
+    left: 3.8vw;
+}
+
+img {
+    width: 20vw;
+    /* width: 20vw; */
+}
+
+.search-bar input {
+    padding: 10px;
+    background: transparent;
+    border: none;
+    color: white;
+    width: 18vw;
+    border-radius: 4px;
+    position: absolute;
+    font-size: 1.4vw;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    left: 32vw;
+    top: 4.5vh;
+
+}
+
+.search-bar input::placeholder {
+    color: white;
+    opacity: 0.7;
+    font-size: 1.2vw;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    transition: opacity 0.3s ease;
+}
+
+.search-bar input:focus {
+    outline: none;
+    /* border: 1px solid white; */
+}
+
+.search-bar img {
+    width: 20vw;
+    position: absolute;
+    left: 30vw;
+    top: 4vh;
+}
+
+.menu {
+    position: absolute;
+    right: 2vw;
+    top: 6vh;
+}
+
+.menu a {
+    font-family: mainFont;
+    color: white;
+    text-decoration: none;
+    margin-left: 6vw;
+    font-size: 1vw;
+    font-weight: lighter;
+    /* letter-spacing: 2px; */
+}
+
+.menu-icon {
+    width: 10vw;
+    position: absolute;
+    top: 1vh;
+    transition: all 0.3s ease;
+}
+
+.menu-icon:hover {
+    cursor: pointer;
+    scale: 1.1;
+}
+
+.menu a:hover {
+    /* text-decoration: underline; */
+    cursor: pointer;
+    scale: 1.5;
+}
+
+.menu-img1 {
+    right: 23vw;
+    top: -2vh;
+
+}
+
+.menu-img1:hover {
+    cursor: pointer;
+    scale: 1.1;
+}
+
+.menu-img2 {
+    right: 11.5vw;
+    top: -2vh;
+}
+
+.menu-img3 {
+    right: -1.2vw;
+    top: -2vh;
+}
+
+.main-content {
+    /* position: absolute; */
+    text-align: center;
+    padding: 15px 20px;
+    width: 100%;
+}
+
+.text-content {
+    position: absolute;
+    /* height: 100vh; */
+    width: 50vw;
+    top: 60vh;
+
+}
+
+.product-name {
+    /* position: absolute;/ */
+    /* bottom: 40%; */
+    color: rgb(162, 162, 162);
+    font-family: mainFont;
+    font-size: 40px;
+    font-weight: 300;
+    letter-spacing: 3px;
+}
+
+.tagline {
+    /* position: absolute; */
+    /* bottom: 30%; */
+    color: rgb(162, 162, 162);
+    font-family: mainFont;
+    font-size: 40px;
+    margin: 20px 0;
+}
+
+.product-details {
+    font-family: dotFont;
+    font-size: 30px;
+    padding-top: 20px;
+}
+
+.phone-images {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    /* margin: 0px 0; */
+    /* position: relative; */
+    width: 20px;
+}
+
+.phone {
+    /* width: 20px; */
+    /* height: 20vh; */
+    object-fit: cover;
+    position: absolute;
+}
+
+.phone.black {
+    transform: rotate(-35deg);
+    /* left: 20%; */
+    right: 20vw;
+    top: 20vh;
+}
+
+.phone.white {
+    transform: rotate(-35deg);
+    right: 15vw;
+    top: 25vh;
+}
+
+.phone img {
+    width: 15vw;
+}
+
+.lines {
+    height: 2px;
+    width: 10vw;
+    background: white;
+    /* margin: 0px 0; */
+    position: relative;
+    rotate: -144.95deg;
+    box-shadow: 0px 0px 0px white;
+    top: 1.15vw;
+    left: 17.5vw;
+}
+
+.line2 {
+    rotate: 0deg;
+    width: 15vw;
+    top: 3.9vw;
+    left: 26.55vw;
+}
+.line3{
+    /* rotate: 144.95deg; */
+    width: 10vw;
+    top: 6.6vw;
+    left: 40.5vw;
+}
+
+.line4{
+    width: 50vw;
+    top: 9.35vw;
+    left: 49.6vw;
+}
+
+.line5{
+    /* color: red; */
+    width: 50vw;
+    top: 30vw;
+    left: 0vw;
+    /* height: 3px; */
+}
+
+.line6{
+    width: 10vw;
+    top: 27.4vw;
+    left: 49.3vw;
+    rotate: 150deg;
+}
+.line7{
+    width: 41vw;
+    top: 24.75vw;
+    left: 58.6vw;
+    rotate: 0deg;
+    z-index: -1;
+}
+
+
+

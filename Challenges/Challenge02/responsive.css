@@ -1,0 +1,198 @@
+/* ------------------------------
+   ✅ Responsive (Tablets & Mobile)
+------------------------------- */
+@media screen and (max-width: 768px) {
+  body {
+    overflow: auto;
+  }
+
+  .logo {
+    font-size: 8px;
+    top: 3vh;
+    left: 9vw;
+  }
+
+  .search-bar img{
+    width: 25vw;
+    top: 20px;
+    left: 35vw;
+  }
+
+  .search-bar input {
+    width: 70vw;
+    font-size: 10px;
+    left: 35vw;
+    top: 10px;
+  }
+
+  .text-content {
+    width: 90vw;
+    top: 10vh;
+    /* left: 5vw; */
+  }
+
+  .product-name {
+    font-size: 4vw;
+  }
+
+  .tagline {
+    font-size: 4vw;
+    margin-top: 8px;
+  }
+
+  .product-details {
+    font-size: 4.2vw;
+    padding-top: 5px;
+  }
+
+  .phone.black {
+    top: 38vh;
+    right: 40vw;
+    transform: rotate(-20deg);
+  }
+
+  .phone.white {
+    top: 40vh;
+    right: 30vw;
+    transform: rotate(-20deg);
+  }
+
+  .phone img {
+    width: 30vw;
+  }
+
+  .menu a {
+    display: none;
+    font-size: 3vw;
+    margin-left: 4vw;
+  }
+
+  .menu-icon {
+    width: 12vw;
+    top: 3vh;
+  }
+
+  .menu-img1, .menu-img2, .menu-img3 {
+    width: 12vw;
+    top: 2vh;
+  }
+
+  .lines,
+  .line2,
+  .line3,
+  .line4,
+  .line5,
+  .line6,
+  .line7 {
+    display: none; /* Hide lines on smaller screens to avoid overlap */
+  }
+
+  /* Base animation setup */
+.product-name,
+.tagline,
+.product-details {
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.product-name {
+    animation-delay: 1.4s;
+}
+
+.tagline {
+    animation-delay: 1.6s;
+}
+
+.product-details {
+    animation-delay: 1.8s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.phone.black,
+.phone.white {
+    opacity: 0;
+    animation: phoneIn 0.8s cubic-bezier(0.25, 1.5, 0.5, 1) forwards;
+}
+
+/* Staggered delay */
+.phone.black {
+    animation-delay: 2.1s;
+}
+
+.phone.white {
+    animation-delay: 2.6s;
+}
+
+/* Animation keyframes */
+@keyframes phoneIn {
+    from {
+        opacity: 0;
+        transform: translate(100px, 100px) rotate(0deg); /* bottom right se aata hua feel */
+    }
+    to {
+        opacity: 1;
+        transform: translate(0, 0) rotate(-35deg); /* final position, rotation same */
+    }
+}
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+  body {
+    overflow: auto;
+  }
+
+
+
+  .text-content {
+    width: 50vw;
+    top: 55vh;
+    left: 5vw;
+  }
+
+  .product-name {
+    font-size: 20px;
+  }
+
+  .tagline {
+    font-size: 20px;
+  }
+
+  .product-details {
+    font-size: 18px;
+    padding-top: 10px;
+  }
+
+  .phone.black {
+    top: 18vh;
+    right: 15vw;
+    transform: rotate(-20deg);
+  }
+
+  .phone.white {
+    top: 25vh;
+    right: 10vw;
+    transform: rotate(-20deg);
+  }
+
+  .phone img {
+    width: 18vw;
+  }
+
+  .menu a {
+    /* display: none; */
+    font-size: 12px;
+    margin-left: 5vw;
+  }
+
+  .menu-icon {
+    width: 12vw;
+    /* top: 1vh; */
+  }
+}
