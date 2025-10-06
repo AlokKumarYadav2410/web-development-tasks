@@ -1,0 +1,177 @@
+@font-face {
+    font-family: 'CustomFont';
+    src: url(./korataki-rg-3cf0d889.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    width: 100%;
+    font-family: 'CustomFont';
+    /* background-color: #121212;
+    color: #f5f5f5; */
+    height: 100vh;
+    background-color: #d9d9d9bc;
+    color: #222;
+}
+
+#main {
+    width: 100%;
+}
+
+#nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    gap: 50px;
+}
+
+.heading {
+    font-size: 3em;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    background: linear-gradient(90deg, #1f1e1e, #909191);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all ease-in-out 0.5s;
+    cursor: pointer;
+}
+
+.heading:hover {
+    background: linear-gradient(90deg, #1f1e1e, #525252);
+    /* Pink to orange gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: scale(1.05);
+}
+
+.heading::selection {
+    background-color: #1f1e1e;
+    color: #525252;
+}
+
+.explore-btn {
+    display: block;
+    /* margin: 0 auto 40px auto; */
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 30px;
+    background-color: #1f1e1e;
+    color: white;
+    cursor: pointer;
+    background: linear-gradient(90deg, #1f1e1e, #888989);
+    transition: all 0.3s ease;
+    font-family: customFont;
+}
+
+.explore-btn:hover {
+    background-color: #019ca3;
+    background: linear-gradient(90deg, #1f1e1e, #525252);
+    color: white;
+}
+
+/* .icons{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
+} */
+
+i{
+    width: 40px;
+    height: 40px;
+    /* filter: invert(1); */
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Card Styling */
+.cards {
+    width: 350px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    background-color: #1e1e1e;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.375);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cards:hover {
+    box-shadow: 0 10px 30px rgb(1, 16, 16)
+}
+
+/* Images */
+.cards img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.cards:hover .left-rotate {
+    transform: scale(1.2) rotate(8deg);
+}
+
+.cards:hover .right-rotate {
+    transform: scale(1.2) rotate(-8deg);
+}
+
+/* Top Overlay */
+.top {
+    position: absolute;
+    top: -60px;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent);
+    transition: top 0.5s ease;
+    z-index: 2;
+    font-weight: bold;
+    /* font-size: 20px; */
+}
+
+.cards:hover .top {
+    top: 0;
+}
+
+/* Bottom Overlay */
+.bottom {
+    position: absolute;
+    bottom: -60px;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    background: linear-gradient(to top, rgb(0, 0, 0), transparent);
+    transition: bottom 0.5s ease;
+}
+
+.cards:hover .bottom {
+    bottom: 0;
+}
+
+.cards h1 {
+    font-size: 1em;
+    color: #ffffff;
+    font-weight: 400;
+}
