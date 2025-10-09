@@ -1,0 +1,280 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+    height: 100%;
+    width: 100%;
+}
+
+nav {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 0 20px;
+    gap: 30px;
+}
+
+#nav-logo h1 {
+    font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, white, yellow, #da030a, white);
+    background-size: 600% 600%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    animation: gradientFlow 6s ease infinite;
+}
+
+#nav-link ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+#nav-link ul li {
+    list-style: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#nav-link ul li:nth-child(1):hover,
+#nav-link ul li:nth-child(5):hover {
+    color: red;
+    text-shadow: 1px 1px 4px rgba(255, 0, 0, 0.384);
+    transform: scale(1.1);
+}
+
+#nav-link ul li:nth-child(2):hover {
+    color: rgb(0, 200, 255);
+    text-shadow: 2px 2px 4px #000000;
+    transform: scale(1.1);
+}
+
+#nav-link ul li:nth-child(3):hover,
+#nav-link ul li:nth-child(6):hover {
+    color: rgb(0, 255, 0);
+    text-shadow: 2px 2px 4px #000000;
+    transform: scale(1.1);
+}
+
+#nav-link ul li:nth-child(4):hover {
+    color: rgb(255, 238, 0);
+    text-shadow: 2px 2px 4px #000000;
+    transform: scale(1.1);
+}
+
+section {
+    height: 90vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "ironman ironman_captain iron spidy "
+        "ironman ironman_captain iron spidy"
+        "ironman dr_strange dr_strange spidy"
+        "ironman dr_strange dr_strange spidy";
+    gap: 5px;
+    padding: 10px;
+    background: #000000b8;
+}
+
+.ironman {
+    grid-area: ironman;
+    background-color: #f4f4f4;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    position: relative;
+}
+
+.ironman_captain {
+    grid-area: ironman_captain;
+    background-color: #f4f4f4;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+
+.spidy {
+    grid-area: spidy;
+    background-color: #f4f4f4;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+
+.calaveras {
+    grid-area: iron;
+    background-color: #f4f4f4;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+
+.dr_strange {
+    grid-area: dr_strange;
+    background-color: #f4f4f4;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+
+.hero-img {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.hero-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+
+}
+
+.top-info {
+    position: absolute;
+    top: -10%;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.693);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    z-index: 2;
+    transition: all 0.3s ease-in;
+}
+
+.bottom-info {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2));
+    color: white;
+    text-align: center;
+    /* line-height: 40px; */
+    /* align-items: center; */
+    font-weight: bold;
+    font-size: 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    z-index: 2;
+    transition: all 0.8s ease-in-out;
+}
+
+.hero-img:hover img {
+    filter: brightness(0.8);
+    transform: scale(1.1);
+}
+
+.hero-img:hover .top-info {
+    top: 100%;
+    cursor: pointer;
+    transform: scale(1.02);
+}
+
+.hero-img:hover .bottom-info {
+    bottom: 0;
+    cursor: pointer;
+    transform: scale(1.02);
+}
+
+.captain-info {
+    /* position: relative; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.captain-info h1 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.captain-info p {
+    font-size: 16px;
+    padding: 0 10px;
+}
+
+
+@keyframes gradientFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 50% 100%;
+    }
+
+    100% {
+        background-position: 100% 0%;
+    }
+}
+
+@media (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 20px;
+        gap: 10px;
+    }
+
+    #nav-logo h1 {
+        text-align: center;
+    }
+
+    #nav-link ul {
+        display: none;
+    }
+
+    section {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "ironman dr_strange"
+            "iron spidy"
+            "ironman_captain ironman_captain";
+    }
+
+    .ironman {
+        grid-area: ironman;
+    }
+
+    .ironman_captain {
+        grid-area: ironman_captain;
+    }
+
+    .spidy {
+        grid-area: spidy;
+    }
+
+}
