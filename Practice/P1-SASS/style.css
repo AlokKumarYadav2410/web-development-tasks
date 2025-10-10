@@ -15,9 +15,9 @@ main {
   height: 100%;
   width: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  flex-direction: column;
   gap: 5px;
 }
 main .navbar {
@@ -60,9 +60,9 @@ main .section1 section .bottom {
   border-radius: 0 0 20px 20px;
   padding: 10px 15px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 main .section1 section .bottom h1 {
   font-size: 28px;
@@ -121,6 +121,12 @@ main .section1 section:nth-child(5) {
   main .section1 section .bottom {
     height: 50px;
     border-radius: 0 0 10px 10px;
+  }
+  main .section1 section .bottom h1 {
+    font-size: 18px;
+  }
+  main .section1 section .bottom p {
+    font-size: 14px;
   }
   main .section1 section:hover {
     transform: scale(1.1);

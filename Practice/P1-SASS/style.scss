@@ -12,13 +12,17 @@ body {
     width: 100%;
 }
 
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 main {
     height: 100%;
     width: 100%;
-    display: flex;
+    @include flexCenter;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
     gap: 5px;
         // background: linear-gradient(to right,yellow,#ff5e00, rgb(0, 251, 255));
 
@@ -37,9 +41,7 @@ main {
     .section1 {
         height: 1090vh;
         width: 100vw;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flexCenter;
         background: linear-gradient(to right,yellow,#ff5e00, rgb(0, 251, 255));
         overflow: hidden;
         gap: 10px;
@@ -65,10 +67,8 @@ main {
                 border-radius: 0 0 20px 20px;
                 padding: 10px 15px;
 
-                display: flex;
+                @include flexCenter;
                 flex-direction: column;
-                justify-content: center;
-                align-items: center;
 
                 h1 {
                     font-size: 28px;
@@ -147,6 +147,13 @@ main {
                 .bottom {
                     height: 50px;
                     border-radius: 0 0 10px 10px;
+
+                    h1 {
+                        font-size: 18px;
+                    }
+                    p {
+                        font-size: 14px;
+                    }
                 }
             }
 
