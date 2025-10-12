@@ -233,8 +233,8 @@ body {
 
 #down-arrow {
     position: absolute;
-    top: 10vw;
-    left: 15vw;
+    top: 20%;
+    left: 15%;
     transform: rotateZ(-30deg);
 }
 
@@ -564,7 +564,6 @@ body {
     justify-content: end;
     align-items: end;
     margin: 0 auto;
-    /* background: linear-gradient(135deg, #8b00ff 0%, #5500cc 100%); */
     /* clip-path: polygon(36% 0, 63% 11%, 100% 11.5%, 100% 100%, 60% 100%, 60% 88%, 0 88%, 0% 43%, 0 0); */
     clip-path: path("M 0,20 A 20,20 0,0,1 20,0 L 90,0 L 150,35 L 240,35 A 20,20 0,0,1 285,65 L 285,365 A 20,20 0,0,1 265,385 L 80,360 L 120,360 A 20,20 0,0,0 120,280 L 0,280 L 0,20 Z"
         );
