@@ -29,6 +29,8 @@ This repository serves as a comprehensive portfolio of my web development tasks 
 
 ```
 Tasks/
+├── Challenges/          # Additional coding challenges
+├── Practice/            # Practice exercises and experiments
 ├── Task01/              # Personal Resume Website
 ├── Task02/              # Aesthetic Journeys - Visual Storytelling  
 ├── Task03/              # Fit Life - Fitness Website
@@ -36,10 +38,42 @@ Tasks/
 ├── Task05-TheGarage/    # Luxury Cars Showcase
 ├── Task06/              # Gridverse - Superhero Grid Layout
 ├── Task07/              # Multi-Page Website Structure
-├── Challenges/          # Additional coding challenges
-├── Practice/            # Practice exercises and experiments
 └── ...                  # More tasks will be added as assigned
 ```
+## 🏗️ Completed Challenges
+
+### 📝 Challenge 01: Clean Pro Landing Page
+**Status:** ✅ Completed  
+**Description:** A clean and modern landing page design with a focus on user experience and conversion optimization.
+
+**🔗 [Live Preview](https://challenge-01-three.vercel.app/) • [📂 Challenge Details & Code](./Challenges/Challenge01/)**
+
+---
+
+### 📝 Challenge 02: Nothing Landing Page
+**Status:** ✅ Completed  
+**Description:** A minimalist landing page inspired by the Nothing brand, emphasizing simplicity and elegance.
+
+**🔗 [Live Preview](https://web-development-tasks-qpze.vercel.app/) • [📂 Challenge Details & Code](./Challenges/Challenge02/)**
+
+---
+
+### 📝 Challenge 03: Freakish Mind
+**Status:** ✅ Completed
+**Description:** A NFT-themed landing page with vibrant colors and modern design elements with responsive layouts.
+
+**🔗 [Live Preview](https://web-development-project-page.vercel.app/Challenges/Challenge03/index.html) • [📂 Challenge Details & Code](./Challenges/Challenge03/)**
+
+---
+
+## 🏗️ Completed Practice
+### 📝 Practice 01: Kung Fu Panda
+**Status:** ✅ Completed
+**Description:** A fun and interactive landing page inspired by the Kung Fu Panda movie, featuring animations and a playful design.
+
+**🔗 [Live Preview](https://web-development-project-page.vercel.app/Practice/P1-SASS/index.html) • [📂 Practice Details & Code](./Practice/P1-SASS/)**
+
+---
 
 ## 🏗️ Completed Tasks
 
