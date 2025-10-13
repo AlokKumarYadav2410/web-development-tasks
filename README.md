@@ -29,21 +29,68 @@ This repository serves as a comprehensive portfolio of my web development tasks 
 
 ```
 Tasks/
-├── Task01/           # Resume Website - HTML & CSS Fundamentals
-│   ├── index.html    # Main HTML structure
-│   ├── styles.css    # Custom styling
-│   ├── fonts/        # Custom fonts
-│   └── images/       # Assets and logos
-└── ...               # More tasks will be added as assigned
+├── Task01/              # Personal Resume Website
+├── Task02/              # Aesthetic Journeys - Visual Storytelling  
+├── Task03/              # Fit Life - Fitness Website
+├── Task04-ApplePage/    # Apple Website Clone
+├── Task05-TheGarage/    # Luxury Cars Showcase
+├── Task06/              # Gridverse - Superhero Grid Layout
+├── Task07/              # Multi-Page Website Structure
+├── Challenges/          # Additional coding challenges
+├── Practice/            # Practice exercises and experiments
+└── ...                  # More tasks will be added as assigned
 ```
 
 ## 🏗️ Completed Tasks
 
-### 📝 Task 01: Personal Resume Website
+### 📝 Task 01: Dummy Personal Resume Website
 **Status:** ✅ Completed  
-**Description:** A personal resume website built with HTML5 and CSS3, featuring custom typography and clean design.
+**Description:** A professional resume website built with HTML5 and CSS3, featuring custom typography and clean design.
 
-**🔗 [View Task Details & Code](./Task01/)**
+**🔗 [Live Preview](https://web-development-project-page.vercel.app/Task01/index.html) • [📂 Task Details & Code](./Task01/)**
+
+---
+
+### 🌲 Task 02: Aesthetic Journeys - Visual Storytelling
+**Status:** ✅ Completed  
+**Description:** A captivating visual storytelling experience using background images and poetic text overlays with custom animations.
+
+**🔗 [Live Preview](https://web-development-project-page.vercel.app/Task02/index.html) • [📂 Task Details & Code](./Task02/)**
+
+---
+
+### 💪 Task 03: Fit Life - Fitness Website
+**Status:** ✅ Completed  
+**Description:** A modern fitness website with dark theme design, featuring navigation and fitness-focused content layout.
+
+**🔗 [Live Preview](https://web-development-project-page.vercel.app/Task03/index.html) • [📂 View Code](./Task03/)**
+
+---
+
+### 🍎 Task 04: Apple Website Clone
+**Status:** ✅ Completed  
+**Description:** A pixel-perfect recreation of Apple's website design with modern layout, navigation, and brand aesthetics.
+
+**🔗 [Live Preview](https://web-development-tasks.vercel.app/) • [📂 View Code](./Task04-ApplePage/)**
+
+---
+
+### 🚗 Task 05: The Garage - Luxury Cars Showcase
+**Status:** ✅ Completed  
+**Description:** An elegant luxury car showcase website with card-based layout and premium automotive branding.
+
+**🔗 [Live Preview](https://web-development-project-page.vercel.app/Task05-TheGarage/index.html) • [📂 View Code](./Task05-TheGarage/)**
+
+---
+
+### 🦸 Task 06: Gridverse - Superhero Grid Layout
+**Status:** ✅ Completed  
+**Description:** A superhero-themed website featuring CSS Grid layout techniques and modern hero character presentations.
+
+**🔗 [Live Preview](https://web-development-project-page.vercel.app/Task06/index.html) • [📂 View Code](./Task06/)**
+
+---
+
 
 ## 🛠️ Technologies & Tools
 
@@ -125,7 +172,7 @@ Each task folder contains:
 
 ---
 
-*Last Updated: September 2025*  
-*Total Tasks Completed: 1/∞*
+*Last Updated: October 2025*  
+*Total Tasks Completed: 7/∞*
 
 </div>
