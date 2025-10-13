@@ -15,6 +15,27 @@
 
 ---
 
+## 🌟 Featured Projects
+
+*Showcasing my best work - updated as I create more advanced projects*
+
+<div align="center">
+
+### 🎯 **Top Picks**
+
+| Project | Description | Technologies | Live Demo |
+|---------|-------------|--------------|-----------|
+| **🔥 Freakish Mind - NFT Landing** | Advanced NFT-themed landing page with full responsiveness, hover effects, and clip-path animations | HTML5, CSS3, Responsive, Clip-path, Hover Effects | [🔗 View Live](https://web-development-project-page.vercel.app/Challenges/Challenge03/index.html) |
+| **🍎 Apple Website Clone** | Pixel-perfect recreation of Apple's website with modern layout and navigation | HTML5, CSS3, Responsive Design, Brand Recreation | [🔗 View Live](https://web-development-tasks.vercel.app/) |
+| **🎨 Nothing Landing Page** | Minimalist landing page inspired by Nothing brand with modern UI/UX design | HTML5, CSS3, Responsive Design, Modern UI/UX | [🔗 View Live](https://web-development-tasks-qpze.vercel.app/) |
+| **🥋 Kung Fu Panda Interactive** | Fun and interactive landing page with SCSS, animations, and responsive design | HTML5, SCSS, Responsive, Animations, Interactive | [🔗 View Live](https://web-development-project-page.vercel.app/Practice/P1-SASS/index.html) |
+
+*This section gets updated with each new milestone project! 🚀*
+
+</div>
+
+---
+
 ## 👨‍💻 About This Repository
 
 This repository serves as a comprehensive portfolio of my web development tasks and projects completed during my journey to become a full-stack developer. Each task represents a milestone in my learning process, showcasing the evolution of my skills from basic HTML/CSS to advanced web technologies.
@@ -23,12 +44,16 @@ This repository serves as a comprehensive portfolio of my web development tasks 
 
 - ✅ Master HTML5 semantic structure and accessibility
 - ✅ Create responsive and visually appealing CSS designs
-- � Continue learning through Sheryians Cohort 2.0
+- ✅ Implement advanced CSS techniques (clip-path, hover effects, animations)
+- ✅ Work with CSS preprocessors (SCSS/SASS)
+- ✅ Build fully responsive websites for all devices
+- ✅ Apply modern UI/UX design principles
+- 📚 Continue learning through Sheryians Cohort 2.0 program
 
 ## 📁 Repository Structure
 
 ```
-Tasks/
+web-development-tasks/
 ├── Challenges/          # Additional coding challenges
 ├── Practice/            # Practice exercises and experiments
 ├── Task01/              # Personal Resume Website
@@ -133,7 +158,8 @@ Tasks/
 | Frontend | Styling | Tools | Version Control |
 |----------|---------|-------|-----------------|
 | ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white) | ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white) | ![VS Code](https://img.shields.io/badge/VS%20Code-007ACC?style=flat&logo=visualstudiocode&logoColor=white) | ![Git](https://img.shields.io/badge/Git-F05032?style=flat&logo=git&logoColor=white) |
-| ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black) | ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=flat&logo=tailwindcss&logoColor=white) | ![Chrome DevTools](https://img.shields.io/badge/Chrome%20DevTools-4285F4?style=flat&logo=googlechrome&logoColor=white) | ![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white) |
+| ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black) | ![SCSS](https://img.shields.io/badge/SCSS-CC6699?style=flat&logo=sass&logoColor=white) | ![Chrome DevTools](https://img.shields.io/badge/Chrome%20DevTools-4285F4?style=flat&logo=googlechrome&logoColor=white) | ![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white) |
+| | ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=flat&logo=tailwindcss&logoColor=white) | ![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat&logo=vercel&logoColor=white) | |
 
 </div>
 
@@ -143,10 +169,18 @@ Tasks/
 Current Progress: Completing tasks assigned by Sheryians Cohort 2.0
 
 ✅ HTML Fundamentals
-✅ CSS Basics & Styling
+✅ CSS Basics & Styling  
 ✅ Layout Techniques
-� Continuing with mentor-guided learning
+✅ Responsive Design
+✅ Modern UI/UX Design
+📚 Continuing with mentor-guided learning
 ```
+
+### 🎯 **Project Evolution Strategy**
+- **🏆 Challenges**: Creative problem-solving and real-world scenarios  
+- **📝 Tasks & Practice**: Foundation building with structured assignments
+- **🌟 Featured Projects**: Best work showcased for portfolio and growth tracking
+- **🔄 Continuous Updates**: Featured section evolves with skill advancement
 
 ## 🌟 Key Achievements
 
@@ -196,6 +230,57 @@ Each task folder contains:
 - **Community:** Dev.to, Stack Overflow, GitHub Community
 - **Design Inspiration:** Dribbble, Behance, Awwwards
 
+## 📜 License & Usage Policy
+
+<div align="center">
+
+![License](https://img.shields.io/badge/License-Custom%20Learning%20License-red?style=for-the-badge)
+![Copyright](https://img.shields.io/badge/Copyright-AlokKumarYadav2410-blue?style=for-the-badge)
+
+</div>
+
+### ✅ **What You CAN Do:**
+- 📚 **Learn & Get Inspired** - Study the code structure and techniques
+- 🎯 **Use for Reference** - Understand implementation approaches
+- 🛠️ **Fork for Learning** - Create your own version with modifications
+- 💡 **Apply Concepts** - Use the ideas in your own original projects
+- 🎓 **Educational Use** - Use for learning and educational purposes
+
+### ❌ **What You CANNOT Do:**
+- 🚫 **Direct Copy-Paste** - Don't copy entire projects as-is
+- 🚫 **Claim as Your Own** - Don't remove credits or claim authorship
+- 🚫 **Commercial Use** - Don't use for commercial purposes without permission
+- 🚫 **Redistribute** - Don't redistribute the exact code without attribution
+- 🚫 **README Theft** - Don't copy my README structure/content without credits
+
+### 📋 **Fair Usage Guidelines:**
+```
+✨ If you get inspired by my work:
+   → Give proper attribution: "Inspired by @AlokKumarYadav2410"
+   → Make it your own with significant modifications
+   → Link back to the original repository
+   → Be creative and add your unique touch!
+
+⚠️ Remember: Learning from code ✅ | Copying code ❌
+```
+
+### 🤝 **Attribution Template:**
+```markdown
+Original inspiration: [Project Name] by Alok Kumar Yadav
+Repository: https://github.com/AlokKumarYadav2410/web-development-tasks
+Modified and enhanced by: [Your Name]
+```
+
+### 📞 **Contact for Permissions:**
+- **Twitter**: [@AlokDevJourney](https://x.com/AlokDevJourney)
+- **LinkedIn**: [ALOK KUMAR YADAV 
+](https://www.linkedin.com/in/alok-kumar-yadav-a85a93322/)
+- **GitHub**: [@AlokKumarYadav2410](https://github.com/AlokKumarYadav2410)
+
+---
+
+*This repository is protected under a Custom Learning License. Respect the creator's work while learning and growing! 🌱*
+
 ---
 
 <div align="center">
@@ -207,6 +292,7 @@ Each task folder contains:
 ---
 
 *Last Updated: October 2025*  
-*Total Tasks Completed: 7/∞*
+*Total Challenge Completed: 3/∞* <br />
+*Total Tasks Completed: 6/∞*
 
 </div>
