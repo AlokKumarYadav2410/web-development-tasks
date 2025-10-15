@@ -98,6 +98,12 @@ web-development-tasks/
 
 **🔗 [Live Preview](https://web-development-project-page.vercel.app/Practice/P1-SASS/index.html) • [📂 Practice Details & Code](./Practice/P1-SASS/)**
 
+### 📝 Practice 02: Nexora Consulting
+**Status:** ✅ Completed
+**Description:** A professional landing page for Nexora Consulting, showcasing services and client testimonials with a modern design.
+
+**🔗 [Live Preview](https://web-development-project-page.vercel.app/Practice/P2-SASS/index.html) • [📂 Practice Details & Code](./Practice/P2-SASS/)**
+
 ---
 
 ## 🏗️ Completed Tasks
@@ -198,7 +204,7 @@ Current Progress: Completing tasks assigned by Sheryians Cohort 2.0
 
 2. **Navigate to any task folder:**
    ```bash
-   cd Tasks/Task01
+   cd web-development-tasks/Task01
    ```
 
 3. **Open in browser:**
