@@ -1,0 +1,468 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: clamp(14px, 2vw, 16px);
+}
+
+h1 {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+}
+
+p {
+  font-size: clamp(0.875rem, 2vw, 1rem);
+}
+
+main {
+  height: 100%;
+  width: 100%;
+}
+main nav {
+  width: 100%;
+  height: 10vh;
+  padding: 1rem;
+  background: #cacaca;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+main nav h1 {
+  color: rgb(0, 136, 255);
+  font-weight: 700;
+}
+main nav .nav-links,
+main nav .btns {
+  display: none;
+}
+main .btn {
+  padding: 10px 20px;
+  border-radius: 50px;
+  border: none;
+  font-size: 0.7rem;
+}
+main .signup {
+  background-color: transparent;
+  color: rgb(0, 136, 255);
+  border: 1px solid rgb(0, 136, 255);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+main .signup:hover {
+  background-color: rgb(0, 136, 255);
+  color: #fff;
+}
+main .started {
+  background-color: rgb(0, 136, 255);
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+main .started:hover {
+  background-color: transparent;
+  color: rgb(0, 136, 255);
+  border: 1px solid rgb(0, 136, 255);
+}
+main section {
+  min-height: 70vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  padding: 1.5rem;
+  background-color: rgba(190, 190, 190, 0.147);
+}
+main section .text-content {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 20px;
+  align-items: start;
+}
+main section .text {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  text-align: justify;
+  font-size: 0.8rem;
+  font-weight: 300;
+  gap: 20px;
+}
+main section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+main .amount-section {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 20px;
+  align-items: center;
+  padding: 2rem;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+main .amount-section .amount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 10px;
+}
+main .amount-section h1 {
+  color: #000;
+  font-weight: 400;
+}
+main .amount-section p {
+  color: rgba(0, 0, 0, 0.259);
+  font-weight: 600;
+}
+main .about {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 10px;
+  align-items: center;
+  padding: 1.5rem;
+}
+main .about .about-content {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+}
+main .about .about-content .about-first {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;
+}
+main .about .about-content .about-first button {
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 0.7rem;
+  background-color: transparent;
+  border: 2px solid gray;
+  color: black;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+main .about .about-content .about-first button:hover {
+  background-color: transparent;
+  color: rgb(0, 136, 255);
+  border: 1px solid rgb(0, 136, 255);
+}
+main .about .about-content .about-first h3 {
+  font-weight: 600;
+  color: #000;
+}
+main .about .about-content div {
+  font-weight: 300;
+  text-align: justify;
+  color: rgba(0, 0, 0, 0.616);
+}
+main .about .about-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+main .about .about-img img {
+  width: 80%;
+  height: auto;
+  border-radius: 10px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+main .expertise {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 0px;
+  align-items: center;
+  padding: 1.5rem;
+}
+main .expertise .expertise-first {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+main .expertise .expertise-first button {
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 0.7rem;
+  background-color: transparent;
+  border: 2px solid gray;
+  color: black;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+main .expertise .expertise-first button:hover {
+  background-color: transparent;
+  color: rgb(0, 136, 255);
+  border: 1px solid rgb(0, 136, 255);
+}
+main .expertise .expertise-first h3 {
+  font-weight: 600;
+  color: #000;
+}
+main .expertise .para {
+  font-weight: 300;
+  text-align: justify;
+  color: rgba(0, 0, 0, 0.616);
+}
+main .main-images {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 10px;
+  align-items: center;
+  padding: 1.5rem;
+}
+main .main-images img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+main .main-images .images {
+  position: relative;
+  overflow: hidden;
+}
+main .main-images .images .bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  text-align: center;
+  padding: 0rem 1rem;
+  bottom: -100%;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  border: 2px solid #1a1a1a;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.6s ease-in-out;
+}
+main .main-images .images:hover .bottom {
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  main nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 1rem 2rem;
+  }
+  main nav .nav-links,
+  main nav .btns {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  main nav .btns {
+    display: none;
+  }
+  main nav .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+  main nav .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+  }
+  main section .text-content {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto;
+    gap: 10px;
+    align-items: start;
+  }
+  main section .text-content h1 {
+    font-weight: 400;
+    font-size: 2rem;
+  }
+  main .amount-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+    align-items: center;
+  }
+  main .about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+    align-items: center;
+  }
+  main .about .about-content {
+    align-items: start;
+    text-align: justify;
+  }
+  main .about .about-content .about-first {
+    flex-direction: row;
+    align-items: center;
+  }
+  main .about .about-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  main .about .about-img img {
+    width: 60%;
+  }
+  main .expertise {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+    align-items: center;
+  }
+  main .expertise .expertise-first {
+    align-items: start;
+    text-align: justify;
+  }
+  main .expertise .para {
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    text-align: justify;
+  }
+  main .main-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+    align-items: center;
+  }
+}
+@media (min-width: 1200px) {
+  main nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 1rem 2rem;
+  }
+  main nav .nav-links,
+  main nav .btns {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  main nav .btns {
+    display: flex;
+  }
+  main nav .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+  main nav .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+  }
+  main section .text-content {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto;
+    gap: 10px;
+    align-items: start;
+  }
+  main section .text-content p {
+    font-size: 1.2rem;
+  }
+  main .amount-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+    align-items: center;
+  }
+  main .about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+    align-items: center;
+  }
+  main .about .about-content {
+    align-items: start;
+    text-align: justify;
+  }
+  main .about .about-content .about-first {
+    flex-direction: row;
+    align-items: center;
+  }
+  main .about .about-content h3 {
+    font-size: 1.7rem;
+  }
+  main .about .about-content p {
+    font-size: 1.2rem;
+  }
+  main .expertise {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+    align-items: center;
+  }
+  main .expertise .expertise-first {
+    align-items: start;
+    text-align: justify;
+  }
+  main .expertise .expertise-first h3 {
+    font-size: 1.8rem;
+  }
+  main .expertise .para {
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    text-align: justify;
+    font-size: 1.2rem;
+  }
+  main .main-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+    align-items: center;
+  }
+}/*# sourceMappingURL=styles.css.map */
