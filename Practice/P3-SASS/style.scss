@@ -1,0 +1,374 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+@mixin displayFlex($flexCol: row, $justify: center, $align: center, $gap: 2rem) {
+    display: flex;
+    flex-direction: $flexCol;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap
+}
+
+@mixin displayGrid($columns: 1fr 1fr, $rows: auto, $gap: 0, $align: center) {
+    display: grid;
+    grid-template-columns: $columns;
+    grid-template-rows: $rows;
+    gap: $gap;
+    align-items: $align;
+}
+
+@mixin secondHeading($color: white) {
+    font-size: 2.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: $color;
+    line-height: 3rem;
+
+}
+
+@mixin paragraphText($color: rgb(119, 118, 118)) {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: $color;
+    line-height: 1.8rem;
+}
+
+@mixin upperText() {
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 900;
+    letter-spacing: 0.1rem;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(15, 15, 15);
+}
+
+main {
+    margin: 0 auto;
+    padding: 1rem;
+    width: 100%;
+    max-width: 2000px;
+
+    img {
+        width: 100%;
+        border-radius: 0.5rem;
+
+    }
+
+    .hero {
+        @include displayFlex(column, center, center, 0.8rem);
+
+        .section-right {
+            .btn-left-down {
+                @include displayFlex(row, start, center, 1rem);
+                color: white;
+                margin-top: 1rem;
+                cursor: pointer;
+                transition: 0.3s ease-in-out;
+
+                i {
+                    font-size: 1rem;
+                    border-radius: 50%;
+                    background-color: #2e2d2d;
+                    padding: 0.4rem;
+                    border: 1px solid rgb(124, 124, 124);
+                }
+            }
+        }
+    }
+
+    .section-right {
+        @include displayFlex(column, start, start, 2rem);
+        transition: 0.3s ease-in-out;
+        border-radius: 0.8rem;
+        color: white;
+        background-color: rgb(33, 33, 33);
+        padding: 1.5rem;
+
+        .upper-text {
+            @include upperText();
+            color: #b3b3b3;
+        }
+
+        h2 {
+            @include secondHeading();
+            padding: 1rem 0;
+        }
+
+        p {
+            @include paragraphText();
+        }
+    }
+
+    .stats {
+        // margin: 2rem 0;
+        width: 100%;
+        @include displayGrid(1fr 1fr, auto, 0, center);
+        gap: 2rem;
+        padding: 2rem;
+
+        p {
+            &:first-child {
+                @include upperText();
+                color: #b3b3b3;
+                font-weight: 400;
+            }
+
+            &:last-child {
+                font-size: 3rem;
+                font-weight: 400;
+                color: white;
+            }
+        }
+
+        .stats-content {
+            @include displayFlex(column, center, center, 0rem);
+        }
+    }
+
+    .section-1,
+    .section-2 {
+        @include displayFlex(column, center, center, 0.8rem);
+        // gap: 2rem;
+        margin: 1rem 0;
+    }
+
+    .band {
+        @include displayFlex(column, center, center, 1rem);
+
+        h2 {
+            @include secondHeading();
+        }
+
+        div {
+            display: none;
+        }
+
+        margin: 1rem;
+    }
+
+    .team-section {
+        @include displayGrid(1fr, auto, 1rem, center);
+        flex-wrap: wrap;
+        flex-grow: 2;
+        position: relative;
+        overflow: hidden;
+
+
+        .top {
+            @include displayFlex(row, end, center, 1rem);
+            position: absolute;
+            padding: 0.5rem 1rem;
+            top: 2rem;
+            width: 100%;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease-in-out;
+
+            // background: linear-gradient(90deg, rgba(2, 0, 36, 0.214) 0%, rgba(9, 9, 121, 0.241) 35%, rgba(0,212,255,1) 100%);
+            i {
+                font-size: 1rem;
+                color: white;
+                border-radius: 50%;
+                background-color: #2e2d2d;
+                padding: 0.5rem;
+                border: 1px solid rgb(124, 124, 124);
+                cursor: pointer;
+                transition: 0.3s ease-in-out;
+            }
+        }
+
+        .bottom {
+            @include displayFlex(row, space-between, center, 0.5rem);
+            position: absolute;
+            padding: 1rem;
+            background: linear-gradient(90deg, rgba(133, 115, 107, 0.805) 0%, rgba(159, 159, 159, 0.225) 35%, rgba(177, 144, 144, 0.696) 100%);
+            border-radius: 0.5rem;
+            color: rgb(0, 0, 0);
+            bottom: 2rem;
+            // margin: 0 2rem;
+
+            width: 90%;
+            // padding: 1rem;
+            transition: all 0.3s ease-in-out;
+
+            p {
+                font-size: 1rem;
+                font-weight: bold;
+                text-transform: uppercase;
+                color: white;
+
+            }
+        }
+
+        .member1,
+        .member2,
+        .member3 {
+            position: relative;
+            @include displayFlex(column, center, center, 0.5rem);
+
+        }
+
+    }
+
+    .team-section:hover .top {
+        // background-color: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+        top: 0;
+        color: black;
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+    }
+
+    .section-right {
+        width: 100%;
+
+        .btn-left-down {
+            @include displayFlex(row, start, center, 0.5rem);
+
+            i {
+                background-color: rgb(22, 22, 22);
+                font-size: 1.5rem;
+                color: rgb(124, 124, 124);
+                border: 1px solid black;
+                transition: 0.3s ease-in-out;
+                border-radius: 50%;
+                border: 1px solid rgb(124, 124, 124);
+            }
+        }
+    }
+
+    .yellow-card {
+        @include displayFlex(column, center, center, 1.5rem);
+        padding: 1.5rem;
+        background-color: rgb(204, 181, 89);
+        color: black;
+        border-radius: 0.8rem;
+        .upper-text {
+            color: black;
+        }
+
+        h2 {
+            @include secondHeading(black);
+        }
+
+        div {
+            width: 100%;
+
+            button {
+                background-color: black;
+                width: 100%;
+                color: white;
+                border: none;
+                padding: 0.8rem 1.5rem;
+                border-radius: 0.5rem;
+                cursor: pointer;
+                transition: 0.3s ease-in-out;
+
+                &:hover {
+                    background-color: rgb(33, 33, 33);
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+
+@media (min-width: 768px) {
+    main{
+        .hero {
+            @include displayFlex(row, center, center, 1rem);
+            // margin: 2rem 0;
+
+            .section-right {
+                // width: 45%;
+
+                h2 {
+                    font-size: 3rem;
+                    line-height: 3.5rem;
+                }
+            }
+        }
+
+        .stats {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            padding: 2rem 0;
+        }
+
+        .section-1,
+        .section-2 {
+            @include displayFlex(row, space-between, center, 1rem);
+            // margin: 2rem 0;
+
+            div {
+                width: 45%;
+            }
+        }
+
+        .band {
+            grid-template-columns: 1fr 1fr;
+            div {
+                display: block;
+                width: 80%;
+            }
+        }
+
+        .team-section {
+            // @include displayGrid(1fr 1fr 1fr, auto, 1rem, center);
+            // grid-template-columns: repeat(3, 1fr);
+            @include displayFlex(row, center, center, 2rem);
+            // flex-wrap: nowrap;
+            width: 30%;
+            // flex-grow: 2;
+            gap: 2rem;
+
+            .member1,
+            .member2,
+            .member3 {
+                width: 100%;
+            }
+
+            .member4, .member5 {
+                // grid-column: 1fr;
+            }
+        }
+
+        .section-right {
+            width: 60%;
+
+            h2 {
+                font-size: 3rem;
+                line-height: 3.5rem;
+            }
+
+            .btn-left-down {
+                i {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+
+        .yellow-card {
+            width: 100%;
+
+            h2 {
+                font-size: 3rem;
+                line-height: 3.5rem;
+            }
+
+            div button{
+                width: 15%;
+            }
+        }
+    }
+}

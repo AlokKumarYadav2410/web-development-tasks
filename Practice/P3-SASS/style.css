@@ -1,0 +1,341 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(15, 15, 15);
+}
+
+main {
+  margin: 0 auto;
+  padding: 1rem;
+  width: 100%;
+  max-width: 2000px;
+}
+main img {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+main .hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+}
+main .hero .section-right .btn-left-down {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+  color: white;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+main .hero .section-right .btn-left-down i {
+  font-size: 1rem;
+  border-radius: 50%;
+  background-color: #2e2d2d;
+  padding: 0.4rem;
+  border: 1px solid rgb(124, 124, 124);
+}
+main .section-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 2rem;
+  transition: 0.3s ease-in-out;
+  border-radius: 0.8rem;
+  color: white;
+  background-color: rgb(33, 33, 33);
+  padding: 1.5rem;
+}
+main .section-right .upper-text {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 900;
+  letter-spacing: 0.1rem;
+  color: #b3b3b3;
+}
+main .section-right h2 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: white;
+  line-height: 3rem;
+  padding: 1rem 0;
+}
+main .section-right p {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: rgb(119, 118, 118);
+  line-height: 1.8rem;
+}
+main .stats {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 0;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+main .stats p:first-child {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 900;
+  letter-spacing: 0.1rem;
+  color: #b3b3b3;
+  font-weight: 400;
+}
+main .stats p:last-child {
+  font-size: 3rem;
+  font-weight: 400;
+  color: white;
+}
+main .stats .stats-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0rem;
+}
+main .section-1,
+main .section-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 1rem 0;
+}
+main .band {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem;
+}
+main .band h2 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: white;
+  line-height: 3rem;
+}
+main .band div {
+  display: none;
+}
+main .team-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-grow: 2;
+  position: relative;
+  overflow: hidden;
+}
+main .team-section .top {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  gap: 1rem;
+  position: absolute;
+  padding: 0.5rem 1rem;
+  top: 2rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease-in-out;
+}
+main .team-section .top i {
+  font-size: 1rem;
+  color: white;
+  border-radius: 50%;
+  background-color: #2e2d2d;
+  padding: 0.5rem;
+  border: 1px solid rgb(124, 124, 124);
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+main .team-section .bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  position: absolute;
+  padding: 1rem;
+  background: linear-gradient(90deg, rgba(133, 115, 107, 0.805) 0%, rgba(159, 159, 159, 0.225) 35%, rgba(177, 144, 144, 0.696) 100%);
+  border-radius: 0.5rem;
+  color: rgb(0, 0, 0);
+  bottom: 2rem;
+  width: 90%;
+  transition: all 0.3s ease-in-out;
+}
+main .team-section .bottom p {
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+}
+main .team-section .member1,
+main .team-section .member2,
+main .team-section .member3 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+main .team-section:hover .top {
+  top: 0;
+  color: black;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+main .section-right {
+  width: 100%;
+}
+main .section-right .btn-left-down {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 0.5rem;
+}
+main .section-right .btn-left-down i {
+  background-color: rgb(22, 22, 22);
+  font-size: 1.5rem;
+  color: rgb(124, 124, 124);
+  border: 1px solid black;
+  transition: 0.3s ease-in-out;
+  border-radius: 50%;
+  border: 1px solid rgb(124, 124, 124);
+}
+main .yellow-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background-color: rgb(204, 181, 89);
+  color: black;
+  border-radius: 0.8rem;
+}
+main .yellow-card .upper-text {
+  color: black;
+}
+main .yellow-card h2 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: black;
+  line-height: 3rem;
+}
+main .yellow-card div {
+  width: 100%;
+}
+main .yellow-card div button {
+  background-color: black;
+  width: 100%;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+main .yellow-card div button:hover {
+  background-color: rgb(33, 33, 33);
+  color: white;
+}
+
+@media (min-width: 768px) {
+  main .hero {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  main .hero .section-right h2 {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+  main .stats {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    padding: 2rem 0;
+  }
+  main .section-1,
+  main .section-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+  main .section-1 div,
+  main .section-2 div {
+    width: 45%;
+  }
+  main .band {
+    grid-template-columns: 1fr 1fr;
+  }
+  main .band div {
+    display: block;
+    width: 80%;
+  }
+  main .team-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    width: 30%;
+    gap: 2rem;
+  }
+  main .team-section .member1,
+  main .team-section .member2,
+  main .team-section .member3 {
+    width: 100%;
+  }
+  main .section-right {
+    width: 60%;
+  }
+  main .section-right h2 {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+  main .section-right .btn-left-down i {
+    font-size: 1.5rem;
+  }
+  main .yellow-card {
+    width: 100%;
+  }
+  main .yellow-card h2 {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+  main .yellow-card div button {
+    width: 15%;
+  }
+}/*# sourceMappingURL=style.css.map */
