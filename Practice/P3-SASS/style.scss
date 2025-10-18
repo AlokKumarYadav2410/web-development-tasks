@@ -1,3 +1,9 @@
+@font-face {
+  font-family: satoshi;
+  src: url(satoshi.woff2) format("woff2"),
+       url(satoshi.woff) format("woff");
+}
+
 // Variables
 $white: #fff;
 $gray: #272727;
@@ -7,407 +13,578 @@ $yellow: #ccb559;
 $black: #000;
 
 @mixin displayFlex($gap: 1rem) {
-    display: flex;
-    flex-direction: column;
-    gap: $gap;
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+@mixin btn-arrow {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+
+  i {
+    background: #2e2d2d;
+    padding: 0.4rem;
+    border-radius: 50%;
+    font-size: 1rem;
+    border: 1px solid gray;
+  }
+
+  span {
+    color: white;
+  }
+
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html,
 body {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 body {
-    background: $gray;
+  background: $black;
 }
 
 html {
-    font-family: system-ui, sans-serif;
-    color: $white;
-    font-size: clamp(14px, 1vw, 18px);
+  font-family: satoshi;
+  color: $white;
+  font-size: clamp(14px, 1vw, 18px);
 }
 
 section {
-    max-width: 2000px;
+  max-width: 2000px;
 }
 
 main {
-    width: 100%;
+  width: 100%;
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  nav {
+    width: 100%;
+    padding: 1rem 2rem;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
 
-    section.view1,
-    section.view3 {
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      img {
+        width: 2rem;
+        height: auto;
+      }
+
+      span {
+        font-size: 1.5rem;
+        font-weight: bold;
+        letter-spacing: 0.1rem;
+        cursor: pointer;
+      }
+    }
+
+    .navbar-menu {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+
+      .navbar-menu-item-link {
+        text-decoration: none;
+        display: none;
+        color: $white;
+        font-size: 1rem;
+        font-weight: 500;
+        background-color: $card-bg;
+        padding: 0.7rem 1rem;
+        border-radius: 0.5rem;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          color: $yellow;
+          background-color: darken($card-bg, 2%);
+        }
+      }
+
+      .nav-icon {
+        display: flex;
+        font-size: 2rem;
+        cursor: pointer;
+
+        &:hover {
+          color: $yellow;
+        }
+      }
+    }
+  }
+
+  section.view1,
+  section.view3 {
+    width: 100%;
+    @include displayFlex(1rem);
+    padding: 1rem;
+
+    .top {
+      width: 100%;
+
+      img {
         width: 100%;
+        border-radius: 0.7rem;
+      }
+    }
+
+    .bottom {
+      background-color: $card-bg;
+      @include displayFlex(3rem);
+      padding: 1.5rem;
+      border-radius: 0.7rem;
+
+      .tag {
+        text-transform: uppercase;
+      }
+
+      .text {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        h2 {
+          font-weight: 200;
+          font-size: 2.5rem;
+          text-transform: uppercase;
+        }
+
+        p {
+          font-weight: 400;
+          font-size: 1.2rem;
+          line-height: 1.5;
+          opacity: 0.6;
+          color: #ccc;
+        }
+
+        .btn-arrow {
+          background: transparent;
+          width: fit-content;
+          border: none;
+          outline: none;
+          @include btn-arrow();
+
+          i {
+            color: $white;
+          }
+
+        }
+      }
+    }
+  }
+
+  section.view2 {
+    width: 100%;
+    @include displayFlex(2.5rem);
+    padding: 1rem;
+
+    .top,
+    .bottom {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-around;
+
+      .element {
+        @include displayFlex(0.2rem);
+        text-align: center;
+
+        .tag {
+          opacity: 0.6;
+        }
+
+        h3 {
+          font-size: 3rem;
+          font-weight: 200;
+        }
+      }
+    }
+  }
+
+  .team-header {
+    display: flex;
+    width: 100%;
+    padding: 1rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+    .btn-arrow {
+      @include btn-arrow();
+      justify-content: center;
+
+      i {
+        color: $white;
+      }
+
+      span {
+        color: $white;
+      }
+    }
+  }
+
+  section.view5 {
+    @include displayFlex(2rem);
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.7rem;
+
+    .card {
+      width: 100%;
+      background-image: url(./assets/image3.webp);
+      aspect-ratio: 1 / 1;
+      background-size: cover;
+      background-position: center;
+      border-radius: 0.7rem;
+
+      @include displayFlex(0rem);
+      justify-content: space-between;
+      padding: 2rem;
+
+      .icon,
+      .bottom {
+        width: 100%;
+        background-color: rgba(187, 187, 187, 0.375);
+        backdrop-filter: blur(5px);
+        border: 1px solid white;
+        border-radius: 0.7rem;
+        padding: 0.5rem;
+
+      }
+
+      .top {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 1rem;
+
+        .icon {
+          width: fit-content;
+          border-radius: 50%;
+        }
+      }
+
+      .bottom {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 1rem;
+        gap: 0.5rem;
+
+        p {
+          text-transform: uppercase;
+          font-weight: 200;
+          text-shadow: 0px 0px 2px black;
+        }
+      }
+
+
+    }
+
+    .card-2 {
+      background-image: url(./assets/image4.webp);
+    }
+
+    .card-3 {
+      background-image: url(./assets/image5.webp);
+    }
+  }
+
+  section.view6 {
+    @include displayFlex(2rem);
+    // display: flex;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.7rem;
+
+    .card-4 {
+      width: 100%;
+      background-image: url(./assets/image6.webp);
+      aspect-ratio: 2 / 1;
+      background-size: cover;
+      background-position: center;
+      border-radius: 0.7rem;
+    }
+
+    .card-5 {
+      // background-color: #cb5959;
+      @include displayFlex(3rem);
+      padding: 1.5rem;
+      border-radius: 0.7rem;
+      background-color: $card-bg;
+
+      .text-content {
         @include displayFlex(1rem);
-        padding: 1rem;
 
-        .top {
-            width: 100%;
-
-            img {
-                width: 100%;
-                border-radius: 0.7rem;
-            }
+        .tag {
+          text-transform: uppercase;
+          font-weight: bold;
         }
 
-        .bottom {
-            background-color: #141414;
-            @include displayFlex(3rem);
-            padding: 1.5rem;
-            border-radius: 0.7rem;
-
-            .tag {
-                text-transform: uppercase;
-            }
-
-            .text {
-                display: flex;
-                flex-direction: column;
-                gap: 0.5rem;
-
-                h2 {
-                    font-weight: 200;
-                    font-size: 2.5rem;
-                    text-transform: uppercase;
-                }
-
-                p {
-                    font-weight: 200;
-                    font-size: 1.5rem;
-                    line-height: 1.5;
-                    opacity: 0.6;
-                    color: #ccc;
-                }
-
-                button {
-                    width: fit-content;
-                    border: none;
-                    outline: none;
-                    padding: 0.7rem 1rem;
-                }
-            }
+        h2 {
+          font-size: 2.5rem;
+          font-weight: 400;
+          text-transform: uppercase;
         }
+      }
+
+      .btn-arrow {
+        @include btn-arrow();
+      }
     }
+  }
 
-    section.view2 {
-        width: 100%;
-        @include displayFlex(2.5rem);
-        padding: 1rem;
+  section.yellow-card {
+    width: 100%;
+    padding: 1rem;
 
-        .top,
-        .bottom {
-            display: flex;
-            flex-direction: row;
-            width: 100%;
-            justify-content: space-around;
+    .content {
+      background-color: $yellow;
+      color: $black;
+      padding: 1.5rem;
+      border-radius: 0.7rem;
 
-            .element {
-                @include displayFlex(0.2rem);
-                text-align: center;
+      @include displayFlex(1rem);
 
-                .tag {
-                    opacity: 0.6;
-                }
+      .text-content {
+        @include displayFlex(0.5rem);
 
-                h3 {
-                    font-size: 3rem;
-                    font-weight: 200;
-                }
-            }
+        .tag {
+          text-transform: uppercase;
+          font-weight: bold;
         }
-    }
+      }
 
-    section.view5 {
-        @include displayFlex(2rem);
-        gap: 2rem;
-        width: 100%;
-        padding: 1rem;
+      .text-bottom {
+        @include displayFlex(0.7rem);
+
+        h2 {
+          font-size: 2.5rem;
+          font-weight: 400;
+          text-transform: uppercase;
+        }
+      }
+
+      .btn {
+        background: #000;
         border-radius: 0.7rem;
+        display: flex;
+        justify-content: center;
+        padding: 0.7rem 1.5rem;
 
-        .card {
-            width: 100%;
-            background-image: url(./assets/image3.webp);
-            aspect-ratio: 1 / 1;
-            background-size: cover;
-            background-position: center;
-            border-radius: 0.7rem;
+        .btn-arrow {
+          display: flex;
+          align-items: end;
+          gap: 0.7rem;
 
+          i {
+            font-size: 1.5rem;
+            color: $white;
+          }
 
-            @include displayFlex(0rem);
-            justify-content: space-between;
-            padding: 1rem;
-
-            .icon,
-            .bottom {
-                width: 100%;
-                background-color: rgba(187, 187, 187, 0.375);
-                backdrop-filter: blur(5px);
-                border: 1px solid white;
-                border-radius: 0.7rem;
-                padding: 0.5rem;
-
-            }
-
-            .top {
-                display: flex;
-                justify-content: flex-end;
-                align-items: center;
-                gap: 1rem;
-
-                .icon {
-                    width: fit-content;
-                    border-radius: 50%;
-                }
-            }
-
-            .bottom {
-                display: flex;
-                justify-content: space-between;
-                padding: 1.5rem 1rem;
-
-                p {
-                    text-transform: uppercase;
-                    font-weight: bold;
-                }
-            }
-
-
+          span {
+            color: $white;
+            font-size: 1.5rem;
+          }
         }
-
-        .card-2 {
-            background-image: url(./assets/image4.webp);
-        }
-
-        .card-3 {
-            background-image: url(./assets/image5.webp);
-        }
+      }
     }
-
-    section.view6 {
-        @include displayFlex(2rem);
-        // display: flex;
-        width: 100%;
-        padding: 1rem;
-        border-radius: 0.7rem;
-
-        .card-4 {
-            width: 100%;
-            background-image: url(./assets/image6.webp);
-            aspect-ratio: 2 / 1;
-            background-size: cover;
-            background-position: center;
-            border-radius: 0.7rem;
-        }
-
-        .card-5 {
-            // background-color: #cb5959;
-            @include displayFlex(3rem);
-            padding: 1.5rem;
-            border-radius: 0.7rem;
-            background-color: black;
-
-            .btn-arrow {
-                // @include flex(row, flex-start, center, 0.5rem);
-                display: flex;
-                align-items: center;
-                gap: 0.7rem;
-
-                i {
-                    background: #2e2d2d;
-                    padding: 0.4rem;
-                    border-radius: 50%;
-                    font-size: 1rem;
-                    border: 1px solid gray;
-                }
-
-                span {
-                    color: white;
-                }
-            }
-        }
-    }
-
-    section.yellow-card {
-        width: 100%;
-        padding: 1rem;
-
-        .content {
-            background-color: $yellow;
-            color: $black;
-            padding: 1.5rem;
-            border-radius: 0.7rem;
-
-            @include displayFlex(1rem);
-
-            .text-content {
-                @include displayFlex(0.5rem);
-
-                .tag {
-                    text-transform: uppercase;
-                    font-weight: bold;
-                }
-
-
-            }
-
-            .text-bottom {
-                @include displayFlex(0.7rem);
-
-                h2 {
-                    font-size: 2.5rem;
-                    font-weight: 400;
-                    text-transform: uppercase;
-                }
-            }
-
-            .btn {
-                background: #000;
-                border-radius: 0.7rem;
-                display: flex;
-                justify-content: center;
-                padding: 0.7rem 1.5rem;
-
-                .btn-arrow {
-                    display: flex;
-                    align-items: end;
-                    gap: 0.7rem;
-
-                    i {
-                        font-size: 1.5rem;
-                        color: $white;
-                    }
-
-                    span {
-                        color: $white;
-                        font-size: 1.5rem;
-                    }
-                }
-            }
-        }
-    }
+  }
 }
 
 @media (min-width: 768px) {
 
-    main {
-        section.view1 {
-            flex-direction: row;
-            padding: 0.5rem 1rem;
-            gap: 0.7rem;
+  main {
 
-            .top,
-            .bottom {
-                width: 50%;
-            }
+    nav {
+      .navbar-menu {
+        .navbar-menu-item-link {
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: $white;
+          font-size: 1rem;
+          font-weight: 500;
 
-            .bottom {
-                justify-content: space-between;
-                padding: 3rem;
-
-                .text {
-                    gap: 1.5rem;
-
-                    h2 {
-                        font-size: 3rem;
-                    }
-
-                    p {
-                        width: 80%;
-                        font-size: 1rem;
-                    }
-                }
-            }
+          &:hover {
+            color: $yellow;
+          }
         }
-
-        section.view2 {
-            flex-direction: row;
-            padding: 0.5rem 1rem;
-        }
-
-        section.view3 {
-            flex-direction: row-reverse;
-            padding: 0.5rem 1rem;
-
-            .top,
-            .bottom {
-                width: 50%;
-            }
-
-            .bottom {
-                justify-content: space-between;
-                padding: 3rem;
-
-                .text {
-                    gap: 1.5rem;
-
-                    h2 {
-                        font-size: 3rem;
-                    }
-                    .paragraphs {
-                        display: flex;
-                        gap: 2rem;
-                        p {
-                            font-size: 1rem;
-                        }
-                    }
-                }
-            }
-        }
-
-        section.view4 {
-            flex-direction: row;
-            padding: 0.5rem 1rem;
-
-        }
-
-        section.view5 {
-            flex-direction: row;
-            padding: 0.5rem 1rem;
-        }
-
-        section.view6 {
-            flex-direction: row;
-            padding: 0.5rem 1rem;
-            gap: 1rem;
-
-            .card-4,
-            .card-5 {
-                width: 50%;
-            }
-
-            .card-5 {
-                @include displayFlex(4rem);
-                padding: 3rem;
-                justify-content: space-between;
-            }
-        }
-
-        section.yellow-card {
-            padding: 1rem 1rem;
-
-            .content {
-                .text-content {
-                    align-items: flex-start;
-                }
-
-                .text-bottom {
-                    flex-direction: row;
-                    flex-wrap: wrap;
-                    justify-content: space-between;
-                    align-items: center;
-                }
-            }
-        }
+      }
     }
 
+    section.view1 {
+      flex-direction: row;
+      padding: 0.5rem 1rem;
+      gap: 0.7rem;
+
+      .top,
+      .bottom {
+        width: 50%;
+      }
+
+      .bottom {
+        justify-content: space-between;
+        padding: 3rem;
+
+        .text {
+          gap: 1.5rem;
+
+          h2 {
+            font-size: 2rem;
+          }
+
+          p {
+            width: 90%;
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+
+    section.view2 {
+      flex-direction: row;
+      padding: 1.5rem 1rem;
+    }
+
+    section.view3 {
+      flex-direction: row-reverse;
+      padding: 0.5rem 1rem;
+
+      .top,
+      .bottom {
+        width: 50%;
+      }
+
+      .bottom {
+        justify-content: space-between;
+        padding: 3rem;
+
+        .text {
+          gap: 1.5rem;
+
+          h2 {
+            font-size: 2rem;
+          }
+
+          .paragraphs {
+            // display: flex;
+            gap: 2rem;
+
+            p {
+              font-size: 1rem;
+              text-align: justify;
+            }
+          }
+        }
+      }
+    }
+
+    section.view4 {
+      flex-direction: row;
+      padding: 0.5rem 1rem;
+
+    }
+
+    section.view5 {
+      flex-direction: row;
+      padding: 0.5rem 1rem;
+    }
+
+    section.view6 {
+      flex-direction: row;
+      padding: 0.5rem 1rem;
+      gap: 0.5rem;
+
+      .card-4,
+      .card-5 {
+        width: 50%;
+      }
+
+      .card-5 {
+        @include displayFlex(4rem);
+        padding: 3rem;
+        justify-content: space-between;
+      }
+    }
+
+    section.yellow-card {
+      padding: 0.5rem 1rem;
+
+      .content {
+        .text-content {
+          align-items: flex-start;
+        }
+
+        .text-bottom {
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          align-items: center;
+        }
+      }
+    }
+  }
+
+}
+
+
+@media (min-width: 1024px) {
+  main {
+
+    section.view1,
+    section.view2,
+    section.view3 {
+      .bottom {
+        .text {
+          h2 {
+            font-size: 3rem;
+          }
+
+          p {
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+
+    section.view3 {
+      .bottom {
+        .text {
+          .paragraphs {
+            display: flex;
+            gap: 2rem;
+
+            p {
+              font-size: 1.2rem;
+              text-align: start;
+            }
+          }
+        }
+      }
+    }
+  }
 }
