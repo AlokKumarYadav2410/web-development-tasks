@@ -2,346 +2,359 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 html,
 body {
-  height: 100%;
   width: 100%;
-  background-color: rgb(15, 15, 15);
+  height: 100%;
+}
+
+body {
+  background: #272727;
+}
+
+html {
+  font-family: system-ui, sans-serif;
+  color: #fff;
+  font-size: clamp(14px, 1vw, 18px);
+}
+
+section {
+  max-width: 2000px;
 }
 
 main {
-  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main section.view1,
+main section.view3 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   padding: 1rem;
+}
+main section.view1 .top,
+main section.view3 .top {
   width: 100%;
-  max-width: 2000px;
 }
-main img {
+main section.view1 .top img,
+main section.view3 .top img {
   width: 100%;
-  border-radius: 0.5rem;
+  border-radius: 0.7rem;
 }
-main .nav-left {
-  color: white;
-  text-align: center;
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-main .hero {
+main section.view1 .bottom,
+main section.view3 .bottom {
+  background-color: #141414;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 0.8rem;
-}
-main .hero .section-right .btn-left-down {
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-  align-items: center;
-  gap: 1rem;
-  color: white;
-  margin-top: 1rem;
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
-}
-main .hero .section-right .btn-left-down i {
-  font-size: 1rem;
-  border-radius: 50%;
-  background-color: #2e2d2d;
-  padding: 0.4rem;
-  border: 1px solid rgb(124, 124, 124);
-}
-main .section-right {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: start;
-  gap: 2rem;
-  transition: 0.3s ease-in-out;
-  border-radius: 0.8rem;
-  color: white;
-  background-color: rgb(33, 33, 33);
+  gap: 3rem;
   padding: 1.5rem;
+  border-radius: 0.7rem;
 }
-main .section-right .upper-text {
+main section.view1 .bottom .tag,
+main section.view3 .bottom .tag {
   text-transform: uppercase;
-  font-size: 0.9rem;
-  font-weight: 900;
-  letter-spacing: 0.1rem;
-  color: #b3b3b3;
 }
-main .section-right h2 {
+main section.view1 .bottom .text,
+main section.view3 .bottom .text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+main section.view1 .bottom .text h2,
+main section.view3 .bottom .text h2 {
+  font-weight: 200;
   font-size: 2.5rem;
-  font-weight: 400;
   text-transform: uppercase;
-  color: white;
-  line-height: 3rem;
-  padding: 1rem 0;
 }
-main .section-right p {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: rgb(119, 118, 118);
-  line-height: 1.8rem;
-}
-main .stats {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
-  gap: 0;
-  align-items: center;
-  gap: 2rem;
-  padding: 2rem;
-}
-main .stats p:first-child {
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  font-weight: 900;
-  letter-spacing: 0.1rem;
-  color: #b3b3b3;
-  font-weight: 400;
-}
-main .stats p:last-child {
-  font-size: 3rem;
-  font-weight: 400;
-  color: white;
-}
-main .stats .stats-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 0rem;
-}
-main .section-1,
-main .section-2 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 0.8rem;
-  margin: 1rem 0;
-}
-main .band {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  margin: 1rem;
-}
-main .band h2 {
-  font-size: 2.5rem;
-  font-weight: 400;
-  text-transform: uppercase;
-  color: white;
-  line-height: 3rem;
-}
-main .band div {
-  display: none;
-}
-main .team-section {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  gap: 1rem;
-  align-items: center;
-  flex-wrap: wrap;
-  flex-grow: 2;
-  position: relative;
-  overflow: hidden;
-}
-main .team-section .top {
-  display: flex;
-  flex-direction: row;
-  justify-content: end;
-  align-items: center;
-  gap: 1rem;
-  position: absolute;
-  padding: 0.5rem 1rem;
-  top: 2rem;
-  width: 100%;
-  border-radius: 0.5rem;
-  transition: all 0.3s ease-in-out;
-}
-main .team-section .top i {
-  font-size: 1rem;
-  color: white;
-  border-radius: 50%;
-  background-color: #2e2d2d;
-  padding: 0.5rem;
-  border: 1px solid rgb(124, 124, 124);
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
-}
-main .team-section .bottom {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.5rem;
-  position: absolute;
-  padding: 1rem;
-  background: linear-gradient(90deg, rgba(133, 115, 107, 0.805) 0%, rgba(159, 159, 159, 0.225) 35%, rgba(177, 144, 144, 0.696) 100%);
-  border-radius: 0.5rem;
-  color: rgb(0, 0, 0);
-  bottom: 2rem;
-  width: 90%;
-  transition: all 0.3s ease-in-out;
-}
-main .team-section .bottom p {
-  font-size: 1rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: white;
-}
-main .team-section .member1,
-main .team-section .member2,
-main .team-section .member3 {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-}
-main .team-section:hover .top {
-  top: 0;
-  color: black;
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
-}
-main .section-right {
-  width: 100%;
-}
-main .section-right .btn-left-down {
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-  align-items: center;
-  gap: 0.5rem;
-}
-main .section-right .btn-left-down i {
-  background-color: rgb(22, 22, 22);
+main section.view1 .bottom .text p,
+main section.view3 .bottom .text p {
+  font-weight: 200;
   font-size: 1.5rem;
-  color: rgb(124, 124, 124);
-  border: 1px solid black;
-  transition: 0.3s ease-in-out;
-  border-radius: 50%;
-  border: 1px solid rgb(124, 124, 124);
+  line-height: 1.5;
+  opacity: 0.6;
+  color: #ccc;
 }
-main .yellow-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1.5rem;
-  padding: 1.5rem;
-  background-color: rgb(204, 181, 89);
-  color: black;
-  border-radius: 0.8rem;
-}
-main .yellow-card .upper-text {
-  color: black;
-}
-main .yellow-card h2 {
-  font-size: 2.5rem;
-  font-weight: 400;
-  text-transform: uppercase;
-  color: black;
-  line-height: 3rem;
-}
-main .yellow-card div {
-  width: 100%;
-}
-main .yellow-card div button {
-  background-color: black;
-  width: 100%;
-  color: white;
+main section.view1 .bottom .text button,
+main section.view3 .bottom .text button {
+  width: -moz-fit-content;
+  width: fit-content;
   border: none;
-  padding: 0.8rem 1.5rem;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
+  outline: none;
+  padding: 0.7rem 1rem;
 }
-main .yellow-card div button:hover {
-  background-color: rgb(33, 33, 33);
+main section.view2 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding: 1rem;
+}
+main section.view2 .top,
+main section.view2 .bottom {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+}
+main section.view2 .top .element,
+main section.view2 .bottom .element {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  text-align: center;
+}
+main section.view2 .top .element .tag,
+main section.view2 .bottom .element .tag {
+  opacity: 0.6;
+}
+main section.view2 .top .element h3,
+main section.view2 .bottom .element h3 {
+  font-size: 3rem;
+  font-weight: 200;
+}
+main section.view5 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  gap: 2rem;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.7rem;
+}
+main section.view5 .card {
+  width: 100%;
+  background-image: url(./assets/image3.webp);
+  aspect-ratio: 1/1;
+  background-size: cover;
+  background-position: center;
+  border-radius: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0rem;
+  justify-content: space-between;
+  padding: 1rem;
+}
+main section.view5 .card .icon,
+main section.view5 .card .bottom {
+  width: 100%;
+  background-color: rgba(187, 187, 187, 0.375);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  border: 1px solid white;
+  border-radius: 0.7rem;
+  padding: 0.5rem;
+}
+main section.view5 .card .top {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+main section.view5 .card .top .icon {
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 50%;
+}
+main section.view5 .card .bottom {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 1rem;
+}
+main section.view5 .card .bottom p {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+main section.view5 .card-2 {
+  background-image: url(./assets/image4.webp);
+}
+main section.view5 .card-3 {
+  background-image: url(./assets/image5.webp);
+}
+main section.view6 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.7rem;
+}
+main section.view6 .card-4 {
+  width: 100%;
+  background-image: url(./assets/image6.webp);
+  aspect-ratio: 2/1;
+  background-size: cover;
+  background-position: center;
+  border-radius: 0.7rem;
+}
+main section.view6 .card-5 {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 1.5rem;
+  border-radius: 0.7rem;
+  background-color: black;
+}
+main section.view6 .card-5 .btn-arrow {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+main section.view6 .card-5 .btn-arrow i {
+  background: #2e2d2d;
+  padding: 0.4rem;
+  border-radius: 50%;
+  font-size: 1rem;
+  border: 1px solid gray;
+}
+main section.view6 .card-5 .btn-arrow span {
   color: white;
+}
+main section.yellow-card {
+  width: 100%;
+  padding: 1rem;
+}
+main section.yellow-card .content {
+  background-color: #ccb559;
+  color: #000;
+  padding: 1.5rem;
+  border-radius: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+main section.yellow-card .content .text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+main section.yellow-card .content .text-content .tag {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+main section.yellow-card .content .text-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+main section.yellow-card .content .text-bottom h2 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+main section.yellow-card .content .btn {
+  background: #000;
+  border-radius: 0.7rem;
+  display: flex;
+  justify-content: center;
+  padding: 0.7rem 1.5rem;
+}
+main section.yellow-card .content .btn .btn-arrow {
+  display: flex;
+  align-items: end;
+  gap: 0.7rem;
+}
+main section.yellow-card .content .btn .btn-arrow i {
+  font-size: 1.5rem;
+  color: #fff;
+}
+main section.yellow-card .content .btn .btn-arrow span {
+  color: #fff;
+  font-size: 1.5rem;
 }
 
 @media (min-width: 768px) {
-  main .hero {
-    display: flex;
+  main section.view1 {
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
+    padding: 0.5rem 1rem;
+    gap: 0.7rem;
   }
-  main .hero .section-right h2 {
+  main section.view1 .top,
+  main section.view1 .bottom {
+    width: 50%;
+  }
+  main section.view1 .bottom {
+    justify-content: space-between;
+    padding: 3rem;
+  }
+  main section.view1 .bottom .text {
+    gap: 1.5rem;
+  }
+  main section.view1 .bottom .text h2 {
     font-size: 3rem;
-    line-height: 3.5rem;
   }
-  main .stats {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-    padding: 2rem 0;
+  main section.view1 .bottom .text p {
+    width: 80%;
+    font-size: 1rem;
   }
-  main .section-1,
-  main .section-2 {
-    display: flex;
+  main section.view2 {
     flex-direction: row;
+    padding: 0.5rem 1rem;
+  }
+  main section.view3 {
+    flex-direction: row-reverse;
+    padding: 0.5rem 1rem;
+  }
+  main section.view3 .top,
+  main section.view3 .bottom {
+    width: 50%;
+  }
+  main section.view3 .bottom {
+    justify-content: space-between;
+    padding: 3rem;
+  }
+  main section.view3 .bottom .text {
+    gap: 1.5rem;
+  }
+  main section.view3 .bottom .text h2 {
+    font-size: 3rem;
+  }
+  main section.view3 .bottom .text .paragraphs {
+    display: flex;
+    gap: 2rem;
+  }
+  main section.view3 .bottom .text .paragraphs p {
+    font-size: 1rem;
+  }
+  main section.view4 {
+    flex-direction: row;
+    padding: 0.5rem 1rem;
+  }
+  main section.view5 {
+    flex-direction: row;
+    padding: 0.5rem 1rem;
+  }
+  main section.view6 {
+    flex-direction: row;
+    padding: 0.5rem 1rem;
+    gap: 1rem;
+  }
+  main section.view6 .card-4,
+  main section.view6 .card-5 {
+    width: 50%;
+  }
+  main section.view6 .card-5 {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    padding: 3rem;
+    justify-content: space-between;
+  }
+  main section.yellow-card {
+    padding: 1rem 1rem;
+  }
+  main section.yellow-card .content .text-content {
+    align-items: flex-start;
+  }
+  main section.yellow-card .content .text-bottom {
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    gap: 1rem;
-  }
-  main .section-1 div,
-  main .section-2 div {
-    width: 45%;
-  }
-  main .band {
-    grid-template-columns: 1fr 1fr;
-  }
-  main .band div {
-    display: block;
-    width: 80%;
-  }
-  main .team-section {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    width: 30%;
-    gap: 2rem;
-  }
-  main .team-section .member1,
-  main .team-section .member2,
-  main .team-section .member3 {
-    width: 100%;
-  }
-  main .section-right {
-    width: 60%;
-  }
-  main .section-right h2 {
-    font-size: 3rem;
-    line-height: 3.5rem;
-  }
-  main .section-right .btn-left-down i {
-    font-size: 1.5rem;
-  }
-  main .yellow-card {
-    width: 100%;
-  }
-  main .yellow-card h2 {
-    font-size: 3rem;
-    line-height: 3.5rem;
-  }
-  main .yellow-card div button {
-    width: 15%;
   }
 }/*# sourceMappingURL=style.css.map */

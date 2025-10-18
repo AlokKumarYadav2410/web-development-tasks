@@ -1,380 +1,413 @@
+// Variables
+$white: #fff;
+$gray: #272727;
+$bg: #0f0f0f;
+$card-bg: #212121;
+$yellow: #ccb559;
+$black: #000;
+
+@mixin displayFlex($gap: 1rem) {
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-@mixin displayFlex($flexCol: row, $justify: center, $align: center, $gap: 2rem) {
-    display: flex;
-    flex-direction: $flexCol;
-    justify-content: $justify;
-    align-items: $align;
-    gap: $gap
-}
-
-@mixin displayGrid($columns: 1fr 1fr, $rows: auto, $gap: 0, $align: center) {
-    display: grid;
-    grid-template-columns: $columns;
-    grid-template-rows: $rows;
-    gap: $gap;
-    align-items: $align;
-}
-
-@mixin secondHeading($color: white) {
-    font-size: 2.5rem;
-    font-weight: 400;
-    text-transform: uppercase;
-    color: $color;
-    line-height: 3rem;
-
-}
-
-@mixin paragraphText($color: rgb(119, 118, 118)) {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: $color;
-    line-height: 1.8rem;
-}
-
-@mixin upperText() {
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    font-weight: 900;
-    letter-spacing: 0.1rem;
 }
 
 html,
 body {
-    height: 100%;
     width: 100%;
-    background-color: rgb(15, 15, 15);
+    height: 100%;
+}
+
+body {
+    background: $gray;
+}
+
+html {
+    font-family: system-ui, sans-serif;
+    color: $white;
+    font-size: clamp(14px, 1vw, 18px);
+}
+
+section {
+    max-width: 2000px;
 }
 
 main {
-    margin: 0 auto;
-    padding: 1rem;
     width: 100%;
-    max-width: 2000px;
 
-    img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    section.view1,
+    section.view3 {
         width: 100%;
-        border-radius: 0.5rem;
+        @include displayFlex(1rem);
+        padding: 1rem;
 
-    }
+        .top {
+            width: 100%;
 
-    .nav-left{
-        color: white;
-        text-align: center;
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-    }
-    .hero {
-        @include displayFlex(column, center, center, 0.8rem);
+            img {
+                width: 100%;
+                border-radius: 0.7rem;
+            }
+        }
 
-        .section-right {
-            .btn-left-down {
-                @include displayFlex(row, start, center, 1rem);
-                color: white;
-                margin-top: 1rem;
-                cursor: pointer;
-                transition: 0.3s ease-in-out;
+        .bottom {
+            background-color: #141414;
+            @include displayFlex(3rem);
+            padding: 1.5rem;
+            border-radius: 0.7rem;
 
-                i {
-                    font-size: 1rem;
-                    border-radius: 50%;
-                    background-color: #2e2d2d;
-                    padding: 0.4rem;
-                    border: 1px solid rgb(124, 124, 124);
+            .tag {
+                text-transform: uppercase;
+            }
+
+            .text {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+
+                h2 {
+                    font-weight: 200;
+                    font-size: 2.5rem;
+                    text-transform: uppercase;
+                }
+
+                p {
+                    font-weight: 200;
+                    font-size: 1.5rem;
+                    line-height: 1.5;
+                    opacity: 0.6;
+                    color: #ccc;
+                }
+
+                button {
+                    width: fit-content;
+                    border: none;
+                    outline: none;
+                    padding: 0.7rem 1rem;
                 }
             }
         }
     }
 
-    .section-right {
-        @include displayFlex(column, start, start, 2rem);
-        transition: 0.3s ease-in-out;
-        border-radius: 0.8rem;
-        color: white;
-        background-color: rgb(33, 33, 33);
-        padding: 1.5rem;
-
-        .upper-text {
-            @include upperText();
-            color: #b3b3b3;
-        }
-
-        h2 {
-            @include secondHeading();
-            padding: 1rem 0;
-        }
-
-        p {
-            @include paragraphText();
-        }
-    }
-
-    .stats {
-        // margin: 2rem 0;
+    section.view2 {
         width: 100%;
-        @include displayGrid(1fr 1fr, auto, 0, center);
-        gap: 2rem;
-        padding: 2rem;
+        @include displayFlex(2.5rem);
+        padding: 1rem;
 
-        p {
-            &:first-child {
-                @include upperText();
-                color: #b3b3b3;
-                font-weight: 400;
-            }
-
-            &:last-child {
-                font-size: 3rem;
-                font-weight: 400;
-                color: white;
-            }
-        }
-
-        .stats-content {
-            @include displayFlex(column, center, center, 0rem);
-        }
-    }
-
-    .section-1,
-    .section-2 {
-        @include displayFlex(column, center, center, 0.8rem);
-        // gap: 2rem;
-        margin: 1rem 0;
-    }
-
-    .band {
-        @include displayFlex(column, center, center, 1rem);
-
-        h2 {
-            @include secondHeading();
-        }
-
-        div {
-            display: none;
-        }
-
-        margin: 1rem;
-    }
-
-    .team-section {
-        @include displayGrid(1fr, auto, 1rem, center);
-        flex-wrap: wrap;
-        flex-grow: 2;
-        position: relative;
-        overflow: hidden;
-
-
-        .top {
-            @include displayFlex(row, end, center, 1rem);
-            position: absolute;
-            padding: 0.5rem 1rem;
-            top: 2rem;
-            width: 100%;
-            border-radius: 0.5rem;
-            transition: all 0.3s ease-in-out;
-
-            // background: linear-gradient(90deg, rgba(2, 0, 36, 0.214) 0%, rgba(9, 9, 121, 0.241) 35%, rgba(0,212,255,1) 100%);
-            i {
-                font-size: 1rem;
-                color: white;
-                border-radius: 50%;
-                background-color: #2e2d2d;
-                padding: 0.5rem;
-                border: 1px solid rgb(124, 124, 124);
-                cursor: pointer;
-                transition: 0.3s ease-in-out;
-            }
-        }
-
+        .top,
         .bottom {
-            @include displayFlex(row, space-between, center, 0.5rem);
-            position: absolute;
-            padding: 1rem;
-            background: linear-gradient(90deg, rgba(133, 115, 107, 0.805) 0%, rgba(159, 159, 159, 0.225) 35%, rgba(177, 144, 144, 0.696) 100%);
-            border-radius: 0.5rem;
-            color: rgb(0, 0, 0);
-            bottom: 2rem;
-            // margin: 0 2rem;
-
-            width: 90%;
-            // padding: 1rem;
-            transition: all 0.3s ease-in-out;
-
-            p {
-                font-size: 1rem;
-                font-weight: bold;
-                text-transform: uppercase;
-                color: white;
-
-            }
-        }
-
-        .member1,
-        .member2,
-        .member3 {
-            position: relative;
-            @include displayFlex(column, center, center, 0.5rem);
-
-        }
-
-    }
-
-    .team-section:hover .top {
-        // background-color: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
-        top: 0;
-        color: black;
-        transition: all 0.3s ease-in-out;
-        cursor: pointer;
-    }
-
-    .section-right {
-        width: 100%;
-
-        .btn-left-down {
-            @include displayFlex(row, start, center, 0.5rem);
-
-            i {
-                background-color: rgb(22, 22, 22);
-                font-size: 1.5rem;
-                color: rgb(124, 124, 124);
-                border: 1px solid black;
-                transition: 0.3s ease-in-out;
-                border-radius: 50%;
-                border: 1px solid rgb(124, 124, 124);
-            }
-        }
-    }
-
-    .yellow-card {
-        @include displayFlex(column, center, center, 1.5rem);
-        padding: 1.5rem;
-        background-color: rgb(204, 181, 89);
-        color: black;
-        border-radius: 0.8rem;
-        .upper-text {
-            color: black;
-        }
-
-        h2 {
-            @include secondHeading(black);
-        }
-
-        div {
+            display: flex;
+            flex-direction: row;
             width: 100%;
+            justify-content: space-around;
 
-            button {
-                background-color: black;
+            .element {
+                @include displayFlex(0.2rem);
+                text-align: center;
+
+                .tag {
+                    opacity: 0.6;
+                }
+
+                h3 {
+                    font-size: 3rem;
+                    font-weight: 200;
+                }
+            }
+        }
+    }
+
+    section.view5 {
+        @include displayFlex(2rem);
+        gap: 2rem;
+        width: 100%;
+        padding: 1rem;
+        border-radius: 0.7rem;
+
+        .card {
+            width: 100%;
+            background-image: url(./assets/image3.webp);
+            aspect-ratio: 1 / 1;
+            background-size: cover;
+            background-position: center;
+            border-radius: 0.7rem;
+
+
+            @include displayFlex(0rem);
+            justify-content: space-between;
+            padding: 1rem;
+
+            .icon,
+            .bottom {
                 width: 100%;
-                color: white;
-                border: none;
-                padding: 0.8rem 1.5rem;
-                border-radius: 0.5rem;
-                cursor: pointer;
-                transition: 0.3s ease-in-out;
+                background-color: rgba(187, 187, 187, 0.375);
+                backdrop-filter: blur(5px);
+                border: 1px solid white;
+                border-radius: 0.7rem;
+                padding: 0.5rem;
 
-                &:hover {
-                    background-color: rgb(33, 33, 33);
+            }
+
+            .top {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                gap: 1rem;
+
+                .icon {
+                    width: fit-content;
+                    border-radius: 50%;
+                }
+            }
+
+            .bottom {
+                display: flex;
+                justify-content: space-between;
+                padding: 1.5rem 1rem;
+
+                p {
+                    text-transform: uppercase;
+                    font-weight: bold;
+                }
+            }
+
+
+        }
+
+        .card-2 {
+            background-image: url(./assets/image4.webp);
+        }
+
+        .card-3 {
+            background-image: url(./assets/image5.webp);
+        }
+    }
+
+    section.view6 {
+        @include displayFlex(2rem);
+        // display: flex;
+        width: 100%;
+        padding: 1rem;
+        border-radius: 0.7rem;
+
+        .card-4 {
+            width: 100%;
+            background-image: url(./assets/image6.webp);
+            aspect-ratio: 2 / 1;
+            background-size: cover;
+            background-position: center;
+            border-radius: 0.7rem;
+        }
+
+        .card-5 {
+            // background-color: #cb5959;
+            @include displayFlex(3rem);
+            padding: 1.5rem;
+            border-radius: 0.7rem;
+            background-color: black;
+
+            .btn-arrow {
+                // @include flex(row, flex-start, center, 0.5rem);
+                display: flex;
+                align-items: center;
+                gap: 0.7rem;
+
+                i {
+                    background: #2e2d2d;
+                    padding: 0.4rem;
+                    border-radius: 50%;
+                    font-size: 1rem;
+                    border: 1px solid gray;
+                }
+
+                span {
                     color: white;
                 }
             }
         }
     }
-}
+
+    section.yellow-card {
+        width: 100%;
+        padding: 1rem;
+
+        .content {
+            background-color: $yellow;
+            color: $black;
+            padding: 1.5rem;
+            border-radius: 0.7rem;
+
+            @include displayFlex(1rem);
+
+            .text-content {
+                @include displayFlex(0.5rem);
+
+                .tag {
+                    text-transform: uppercase;
+                    font-weight: bold;
+                }
 
 
-@media (min-width: 768px) {
-    main{
-        .hero {
-            @include displayFlex(row, center, center, 1rem);
-            // margin: 2rem 0;
+            }
 
-            .section-right {
-                // width: 45%;
+            .text-bottom {
+                @include displayFlex(0.7rem);
 
                 h2 {
-                    font-size: 3rem;
-                    line-height: 3.5rem;
+                    font-size: 2.5rem;
+                    font-weight: 400;
+                    text-transform: uppercase;
                 }
             }
-        }
 
-        .stats {
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
-            padding: 2rem 0;
-        }
+            .btn {
+                background: #000;
+                border-radius: 0.7rem;
+                display: flex;
+                justify-content: center;
+                padding: 0.7rem 1.5rem;
 
-        .section-1,
-        .section-2 {
-            @include displayFlex(row, space-between, center, 1rem);
-            // margin: 2rem 0;
+                .btn-arrow {
+                    display: flex;
+                    align-items: end;
+                    gap: 0.7rem;
 
-            div {
-                width: 45%;
-            }
-        }
+                    i {
+                        font-size: 1.5rem;
+                        color: $white;
+                    }
 
-        .band {
-            grid-template-columns: 1fr 1fr;
-            div {
-                display: block;
-                width: 80%;
-            }
-        }
-
-        .team-section {
-            // @include displayGrid(1fr 1fr 1fr, auto, 1rem, center);
-            // grid-template-columns: repeat(3, 1fr);
-            @include displayFlex(row, center, center, 2rem);
-            // flex-wrap: nowrap;
-            width: 30%;
-            // flex-grow: 2;
-            gap: 2rem;
-
-            .member1,
-            .member2,
-            .member3 {
-                width: 100%;
-            }
-
-            .member4, .member5 {
-                // grid-column: 1fr;
-            }
-        }
-
-        .section-right {
-            width: 60%;
-
-            h2 {
-                font-size: 3rem;
-                line-height: 3.5rem;
-            }
-
-            .btn-left-down {
-                i {
-                    font-size: 1.5rem;
+                    span {
+                        color: $white;
+                        font-size: 1.5rem;
+                    }
                 }
-            }
-        }
-
-        .yellow-card {
-            width: 100%;
-
-            h2 {
-                font-size: 3rem;
-                line-height: 3.5rem;
-            }
-
-            div button{
-                width: 15%;
             }
         }
     }
+}
+
+@media (min-width: 768px) {
+
+    main {
+        section.view1 {
+            flex-direction: row;
+            padding: 0.5rem 1rem;
+            gap: 0.7rem;
+
+            .top,
+            .bottom {
+                width: 50%;
+            }
+
+            .bottom {
+                justify-content: space-between;
+                padding: 3rem;
+
+                .text {
+                    gap: 1.5rem;
+
+                    h2 {
+                        font-size: 3rem;
+                    }
+
+                    p {
+                        width: 80%;
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+
+        section.view2 {
+            flex-direction: row;
+            padding: 0.5rem 1rem;
+        }
+
+        section.view3 {
+            flex-direction: row-reverse;
+            padding: 0.5rem 1rem;
+
+            .top,
+            .bottom {
+                width: 50%;
+            }
+
+            .bottom {
+                justify-content: space-between;
+                padding: 3rem;
+
+                .text {
+                    gap: 1.5rem;
+
+                    h2 {
+                        font-size: 3rem;
+                    }
+                    .paragraphs {
+                        display: flex;
+                        gap: 2rem;
+                        p {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        section.view4 {
+            flex-direction: row;
+            padding: 0.5rem 1rem;
+
+        }
+
+        section.view5 {
+            flex-direction: row;
+            padding: 0.5rem 1rem;
+        }
+
+        section.view6 {
+            flex-direction: row;
+            padding: 0.5rem 1rem;
+            gap: 1rem;
+
+            .card-4,
+            .card-5 {
+                width: 50%;
+            }
+
+            .card-5 {
+                @include displayFlex(4rem);
+                padding: 3rem;
+                justify-content: space-between;
+            }
+        }
+
+        section.yellow-card {
+            padding: 1rem 1rem;
+
+            .content {
+                .text-content {
+                    align-items: flex-start;
+                }
+
+                .text-bottom {
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+            }
+        }
+    }
+
 }
