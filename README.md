@@ -62,7 +62,6 @@ web-development-tasks/
 ├── Task04-ApplePage/    # Apple Website Clone
 ├── Task05-TheGarage/    # Luxury Cars Showcase
 ├── Task06/              # Gridverse - Superhero Grid Layout
-├── Task07/              # Multi-Page Website Structure
 └── ...                  # More tasks will be added as assigned
 ```
 ## 🏗️ Completed Challenges
@@ -103,6 +102,12 @@ web-development-tasks/
 **Description:** A professional landing page for Nexora Consulting, showcasing services and client testimonials with a modern design.
 
 **🔗 [Live Preview](https://web-development-project-page.vercel.app/Practice/P2-SASS/index.html) • [📂 Practice Details & Code](./Practice/P2-SASS/)**
+
+### 📝 Practice 03: ALVY FASHION
+**Status:** ✅ Completed
+**Description:** A professional landing page for ALVY FASHION, showcasing the latest fashion trends and collections with a modern design.
+
+**🔗 [Live Preview](https://web-development-project-page.vercel.app/Practice/P3-SASS/index.html) • [📂 Practice Details & Code](./Practice/P3-SASS/)**
 
 ---
 
