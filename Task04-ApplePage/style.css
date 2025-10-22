@@ -362,8 +362,6 @@ body {
         margin-top: 0px;
         text-align: center;
         height: 100vh;
-        width: fit-content;
-
         background-image: url(./images/3mobile.jpg);
         background-size: cover;
         background-position: center;
