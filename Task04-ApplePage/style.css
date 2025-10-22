@@ -19,6 +19,8 @@ html,
 body {
     width: 100%;
     height: 100%;
+    /* background-color: black; */
+
 }
 
 #main {
@@ -33,7 +35,7 @@ body {
     height: 50px;
     background-color: #1d1d1fec;
     color: white;
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 100;
     /* font-weight: 100; */
@@ -56,7 +58,7 @@ body {
     /* color: white; */
 }
 
-#brand{
+#brand {
     position: absolute;
     left: 1%;
     top: 3%;
@@ -83,10 +85,19 @@ body {
     font-size: 16px;
 }
 
+.nav-burger {
+    display: none;
+}
+
+.nav-three {
+    display: flex;
+}
+
 #heading {
+    position: relative;
     text-align: center;
-    margin-top: 50px;
-    height: 80vh;
+    padding-top: 100px;
+    height: 100vh;
     width: 100%;
     background-image: url(./images/landingImage.jpg);
     background-size: cover;
@@ -279,21 +290,58 @@ body {
 }
 
 @media screen and (max-width: 768px) {
+    /* 
+    html,
+    body {
+        overflow-x: hidden;
+        background: white;
+    } */
 
     #heading {
-        height: 60vh;
+        text-align: center;
+        padding: 60px 0px;
+        /* height: 80; */
+        /* width: 100%; */
+        background-image: url(./images/mobileView.jpg);
+        background-size: cover;
+        background-position: center;
     }
 
     #heading h1 {
         font-size: 30px;
     }
 
-    #nav{
+    #nav {
         height: auto;
     }
+
     #nav ul {
-        flex-wrap: wrap;
-        /* color: white; */
+        justify-content: space-between;
+        padding: 5px 5px;
+    }
+
+    #nav ul li a {
+        /* padding: 5px 10px; */
+        /* font-size: 4rem; */
+        color: gray;
+    }
+
+    #nav ul>li>a>i {
+        background-color: transparent;
+        color: white;
+        font-size: 1.2rem;
+    }
+
+    .nav-items {
+        display: none;
+    }
+
+    .nav-burger {
+        display: block;
+    }
+
+    .nav-three li a i {
+        color: rgb(199, 191, 191);
     }
 
     .sections {
@@ -303,11 +351,26 @@ body {
         justify-content: center;
         gap: 10px;
         width: 100%;
-        height: 85vh;
+        height: 80vh;
     }
 
     .sections h2 {
         font-size: 20px;
+    }
+
+    #section2 {
+        margin-top: 0px;
+        text-align: center;
+        height: 100vh;
+        width: fit-content;
+
+        background-image: url(./images/3mobile.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .leftCard img {
+        width: 40vw;
     }
 
 }
@@ -318,12 +381,12 @@ body {
         width: 45vw;
     } */
 
-    #nav{
+    #nav {
         height: 60px;
     }
 
     #nav ul li a {
         font-size: 16px;
     }
-    
+
 }
