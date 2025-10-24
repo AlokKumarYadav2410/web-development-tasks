@@ -57,6 +57,7 @@ This repository serves as a comprehensive portfolio of my web development tasks 
 web-development-tasks/
 ├── Challenges/          # Additional coding challenges
 ├── Practice/            # Practice exercises and experiments
+├── Festival/            # Festive projects
 ├── Task01/              # Personal Resume Website
 ├── Task02/              # Aesthetic Journeys - Visual Storytelling  
 ├── Task03/              # Fit Life - Fitness Website
@@ -65,6 +66,16 @@ web-development-tasks/
 ├── Task06/              # Gridverse - Superhero Grid Layout
 └── ...                  # More tasks will be added as assigned
 ```
+## 🏗️ Festival Projects
+
+### 🪔 Diwali Celebration Project
+**Status:** ✅ Completed  
+**Description:** Diwali Themed landing page with vibrant colors and festive elements with toggle diya feature (Light Up).
+
+**🔗 [Live Preview](https://web-development-project-page.vercel.app/Festival/Diwali/index.html) • [📂 Challenge Details & Code](./Festival/Diwali/)**
+
+---
+
 ## 🏗️ Completed Challenges
 
 ### 📝 Challenge 01: Clean Pro Landing Page
