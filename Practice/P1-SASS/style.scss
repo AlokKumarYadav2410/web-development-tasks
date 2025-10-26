@@ -24,13 +24,13 @@ main {
     @include flexCenter;
     flex-direction: column;
     gap: 5px;
-        // background: linear-gradient(to right,yellow,#ff5e00, rgb(0, 251, 255));
+    // background: linear-gradient(to right,yellow,#ff5e00, rgb(0, 251, 255));
 
 
     .navbar {
         height: 60px;
         width: 100%;
-        background: linear-gradient(to right,yellow,#ff5e00, rgb(0, 251, 255));
+        background: linear-gradient(to right, yellow, #ff5e00, rgb(0, 251, 255));
         z-index: 10;
         text-align: center;
         font-size: 20px;
@@ -42,7 +42,7 @@ main {
         height: 1090vh;
         width: 100vw;
         @include flexCenter;
-        background: linear-gradient(to right,yellow,#ff5e00, rgb(0, 251, 255));
+        background: linear-gradient(to right, yellow, #ff5e00, rgb(0, 251, 255));
         overflow: hidden;
         gap: 10px;
 
@@ -124,6 +124,32 @@ main {
             background-image: url('./assets/panda5.jpeg');
         }
     }
+
+    .back-link {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2px;
+        background: #000;
+    }
+
+    .back-link a {
+        text-decoration: none;
+        padding: 5px 15px;
+        border-radius: 5px;
+        transition: all 0.5s ease-in-out;
+        color: transparent;
+        font-weight: bold;
+        background: linear-gradient(to right, yellow, #ff5e00, rgb(0, 251, 255));
+        -webkit-background-clip: text;
+
+        &:hover {
+            background: linear-gradient(to right, yellow, #ff5e00, rgb(0, 251, 255));
+            color: white;
+            text-decoration: none;
+        }
+    }
 }
 
 // Responsive layout
@@ -151,6 +177,7 @@ main {
                     h1 {
                         font-size: 18px;
                     }
+
                     p {
                         font-size: 14px;
                     }
