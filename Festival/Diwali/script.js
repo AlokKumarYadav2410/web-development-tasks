@@ -12,7 +12,7 @@ function daysUntilDiwali() {
   const diwali = new Date("October 20, 2025");
   const diffTime = diwali - today;
   const days = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-  document.getElementById("daysLeft").textContent = days > 0 ? days : 0;
+  document.getElementById("daysLeft").textContent = days > 0 ? `🎆 Diwali in ${days}  days 🎆` : days < 0 ? "Diwali is over" : "Today is Diwali!";
 }
 daysUntilDiwali();
 

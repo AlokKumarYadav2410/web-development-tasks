@@ -8,6 +8,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: professional;
+    overflow-wrap: break-word;
 }
 
 .container {
@@ -53,7 +54,7 @@ h1 {
 
 #education {
     background-color: rgba(24, 146, 227, 0.689);
-    color: white;   
+    color: white;
 }
 
 
@@ -127,11 +128,29 @@ a {
     color: rgb(5, 150, 70);
     text-decoration: none;
     font-weight: bold;
-
 }
 
 a:hover {
     text-decoration: underline;
+}
+
+.back-link {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.back-link a{
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.back-link a:hover{
+    background-color: rgb(5, 150, 70);
+    color: white;
+    text-decoration: none;
 }
 
 .footer {
