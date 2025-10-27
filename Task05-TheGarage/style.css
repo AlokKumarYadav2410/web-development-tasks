@@ -175,3 +175,20 @@ i{
     color: #ffffff;
     font-weight: 400;
 }
+
+.back-link {
+    margin: 20px;
+    text-align: center;
+}
+
+.back-link a {
+    color: #1f1e1e;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 20px;
+    transition: color 0.3s ease;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+}
