@@ -23,9 +23,11 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px 35px;
+    flex-wrap: wrap;
     /* position: absolute; */
     width: 100%;
     z-index: 1;
+    gap: 1rem;
 }
 
 #nav .nav_links {
@@ -33,6 +35,8 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 250px;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 #nav a {
@@ -40,7 +44,7 @@ body {
 
     text-decoration: none;
     /* color: black; */
-        color: white;
+    color: white;
     font-weight: 500;
     display: inline-block;
     font-size: 18px;
@@ -117,6 +121,7 @@ body {
     opacity: 0.8;
 
 }
+
 #btm_left .description {
     margin-bottom: 20px;
 }
@@ -129,6 +134,8 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 #btm p {
