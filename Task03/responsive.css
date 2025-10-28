@@ -1,0 +1,31 @@
+@media (max-width:1440px) {
+       #main>h1 {
+        font-size: 250px;
+        overflow-wrap: break-word;
+    }
+}
+
+@media (max-width:1024px) {
+    #main>h1 {
+        font-size: 120px;
+        overflow-wrap: break-word;
+    }
+
+    #images>img {
+        height: 100px;
+    }
+
+    #btm_left {
+        width: 200px;
+        font-size: 10px;
+    }
+
+    #btm p {
+        font-size: 18px;
+    }
+
+    #btm{
+        flex-wrap: wrap;
+    }
+}
+
