@@ -22,6 +22,8 @@ html {
 
 #main {
     width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
 }
 
 #nav {
@@ -31,13 +33,13 @@ html {
     align-items: center;
     padding: 10px 20px;
     gap: 50px;
+    margin-bottom: 10px;
 }
 
 .heading {
     font-size: 3em;
     text-align: center;
     font-weight: 700;
-    margin-bottom: 10px;
     letter-spacing: 1px;
     background: linear-gradient(90deg, #1f1e1e, #909191);
     -webkit-background-clip: text;
@@ -191,4 +193,18 @@ i{
 
 .back-link a:hover {
     text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    #nav{
+        justify-content: space-between;
+        gap: 10px;
+    }
+    .heading {
+        font-size: 1.4rem;
+    }
+    .explore-btn {
+        font-size: 0.8rem;
+        padding: 8px 16px;
+    }
 }
