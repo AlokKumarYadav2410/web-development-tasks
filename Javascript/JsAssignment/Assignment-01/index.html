@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 01</title>
+</head>
+
+<body>
+
+    <p>Final Execution Order:</p>
+
+    <p>script.js - runs immediately (blocks HTML parsing)</p>
+
+    <p>script1.js - runs after HTML parsing</p>
+
+    <p>script2.js - runs after script1.js</p>
+
+    <script defer src="script1.js"></script> <!-- Ye pehle chalega (HTML load hone ke baad) -->
+    <script defer src="script2.js"></script> <!-- Ye script1.js ke baad chalega -->
+    <script src="script.js"></script> <!-- Ye sabse pehle chalega, HTML parsing ko rok ke -->
+
+</body>
+
+</html>
