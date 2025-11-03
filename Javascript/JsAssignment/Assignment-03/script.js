@@ -71,8 +71,8 @@ for (let i = 1; i <= 10; i++) {
 // Ques 9
 console.log("Counting how many numbers are greater than 8 between 1 to 15");
 let count = 0;
-for(let i = 1; i <= 15; i++){
-    if(i > 8){
+for (let i = 1; i <= 15; i++) {
+    if (i > 8) {
         count++;
     }
 }
@@ -81,8 +81,16 @@ console.log(`There are ${count} number greater than 8`);
 // Ques 10
 console.log("Checking password status");
 let password = '123';
-let currPass = prompt("Enter your password");
-if(password === currPass){
-    alert("You have access!!")
-} 
-else alert("Recheck your password, you have no access")
+for (let i = 1; i <= 3; i++) {
+    let userInput = prompt("Enter your password");
+    if (userInput === password) {
+        console.log("Login Successful");
+        break;
+    }
+    else {
+        alert(`Incorrect Password, you have ${3 - i} attempts left`);
+        if (i === 3) {
+            alert("Account locked due to 3 unsuccessful attempts");
+        }
+    }
+}
