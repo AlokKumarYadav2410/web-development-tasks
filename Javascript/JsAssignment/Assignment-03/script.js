@@ -59,8 +59,16 @@ else {
 
 // Ques 7
 console.log("Taking age as an input");
-let age = +prompt("Enter your age");
-console.log(age >= 0 ? (age >= 18 ? 'Eligible for vote' : 'Not eligible for vote') : "Enter positive number");
+let age = prompt("Enter your age");
+if (age === "" || age === null) {
+    if (age === "") console.error("Please enter your age don't leave empty space");
+    else if (age === null) console.error("You have pressed cancel");
+}
+else {
+    age = +age;
+    if (isNaN(age)) console.error("Please enter number only");
+    else console.log(age >= 0 ? (age >= 18 ? 'Eligible for vote' : 'Not eligible for vote') : "Enter positive number");
+}
 
 // Ques 8
 console.log("Printing Table of 5");
@@ -83,14 +91,18 @@ console.log("Checking password status");
 let password = '123';
 for (let i = 1; i <= 3; i++) {
     let userInput = prompt("Enter your password");
-    if (userInput === password) {
-        console.log("Login Successful");
+    if (userInput === null) {
+        console.log("You have pressed cancel");
         break;
     }
     else {
-        alert(`Incorrect Password, you have ${3 - i} attempts left`);
-        if (i === 3) {
-            alert("Account locked due to 3 unsuccessful attempts");
+        if (userInput === password) {
+            console.log("Login Successful");
+            break;
+        }
+        else {
+            alert(`Incorrect Password, you have ${3 - i} attempts left`);
+            if (i === 3) alert("Account locked due to 3 unsuccessful attempts");
         }
     }
 }
