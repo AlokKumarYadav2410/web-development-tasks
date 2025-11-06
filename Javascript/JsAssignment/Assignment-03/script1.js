@@ -84,4 +84,31 @@ while(i !== 5){
     num = +prompt("Enter number");
     i++;
 }
-console.log(`Number of positive digits are: ${numberOfPositive}`)
+console.log(`Number of positive digits are: ${numberOfPositive}`);
+
+// Ques 19
+let balance = 1000;
+let withdrawals = 0;
+while (balance > 0 && withdrawals < 3) {
+    let withdrawalAmt = prompt("Kitna withdraw karna hai??");
+    if (withdrawalAmt === null) {
+        console.log("Transaction cancelled by user");
+        break;
+    }
+    if (isNaN(withdrawalAmt) || Number(withdrawalAmt) <= 0) {
+        alert(`Enter only positive value`);
+        continue;
+    }
+    else {
+        withdrawalAmt = Number(withdrawalAmt);
+        if (balance < withdrawalAmt) {
+            alert(`Insufficient balance\nRemaining balance: ₹${balance.toFixed(2)}`);
+            continue;
+        } else {
+            balance -= withdrawalAmt;
+            console.log(`After withdrawing ₹${withdrawalAmt} the balance is ₹${balance.toFixed(2)}`);
+        }
+    }
+    alert(`You have done ${withdrawals + 1} withdrawals out of 3`);
+    withdrawals++;
+}
