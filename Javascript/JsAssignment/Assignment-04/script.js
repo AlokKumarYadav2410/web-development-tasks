@@ -180,9 +180,6 @@ let user = {
     }
 }
 
-console.log(user?.address?.city?.name)
-
-// Ques 10
 // “Freeze” = pura object rock solid, kuch change/add/delete nahi. Object read-only ho jaata hai.
 Object.freeze(user);
 user.name = 'Dev'; // This modification will be ignored due to Object.freeze
@@ -200,3 +197,6 @@ user.newKey = 'newValue'; // This addition will be ignored due to Object.seal
 delete user.address; // This deletion will be ignored due to Object.seal
 console.log(user);
 console.log(`After sealing, modified user.name: ${user.name}`);
+
+// Ques 10
+console.log(user?.address?.city?.name)
