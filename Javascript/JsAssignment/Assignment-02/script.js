@@ -72,8 +72,8 @@ function test() {
     console.log("Function Hoisting Works!");
 }
 
-hello();
-var hello = function() { console.log("Hi") }
+// hello();
+// var hello = function() { console.log("Hi") }
 
 // -----------------------------------------
 /**
@@ -88,3 +88,56 @@ var hello = function() { console.log("Hi") }
  * 2. let and const - They are hoisted but not initialized, leading to a temporal dead zone.
  * 3. Function Expressions and Arrow Functions - The variable declaration is hoisted, but the assignment is not.
  */
+
+let age = +prompt("Enter your age: ");
+if (age >= 18) {
+    console.log("You are an adult.");
+} else {
+    console.log("You are a minor.");
+}
+
+let marks = 90;
+if(marks >= 90){
+    console.log("Grade A");
+} else if(marks >= 75){
+    console.log("Grade B");
+} else if(marks >= 50){
+    console.log("Grade C");
+} else {
+    console.log("Fail");
+}
+
+let city = "Bhopal";
+if(city === "Bhopal"){
+    console.log("MP");
+} else if(city === "Delhi"){
+    console.log("Capital of India");
+} else{
+    console.log("Unknown City");
+}
+
+let score = 40;
+score > 35 ? console.log("Pass") : console.log("Fail");
+
+let temperature = 30;
+temperature > 30 ? console.log("Hot") : console.log("Pleasant");
+
+let dayNum = 3;
+switch(dayNum){
+    case 1: console.log("Monday"); break;
+    case 2: console.log("Tuesday"); break;
+    case 3: console.log("Wednesday"); break;
+    case 4: console.log("Thursday"); break;
+    case 5: console.log("Friday"); break;
+    case 6: console.log("Saturday"); break;
+    case 7: console.log("Sunday"); break;
+    default: console.log("Invalid Day Number");
+}
+
+let country = "India";
+if (age > 18 && country === "India") {
+    console.log("Eligible for vote");
+}
+else{
+    console.log("Not eligible for vote");
+}
