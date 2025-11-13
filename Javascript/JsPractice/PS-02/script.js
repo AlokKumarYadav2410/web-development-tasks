@@ -43,7 +43,7 @@ fileinp2.addEventListener("change", e => {
 });
 remove2.addEventListener("click", () => {
     if (file2) {
-        log2.textContent = `File removed and input reset (value cleared)`;
+        log2.textContent = `✅ File removed and input reset (value cleared)`;
         img2.style.display = "none";
         file2 = null;
 
