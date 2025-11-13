@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Input Demo - Wrong vs Correct</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main>
+        <!-- WRONG SECTION -->
+        <div class="section" id="wrong">
+            <h2>❌ Without Resetting <code>fileinp.value</code></h2>
+            <p>Try selecting the same file after removing - it won't trigger again.</p>
+
+            <input type="file" id="fileinp1" hidden>
+            <button id="upload1">Upload File</button>
+            <button id="remove1">Remove File</button>
+            <div id="log1" class="note">No file selected</div>
+            <div class="img"><img id="img1" style="display:none"></div>
+        </div>
+
+        <!-- CORRECT SECTION -->
+        <div class="section" id="correct">
+            <h2>✅ With Reset (<code>fileinp.value = ""</code>)</h2>
+            <p>Now selecting the same file again works perfectly!</p>
+
+            <input type="file" id="fileinp2" hidden>
+            <button id="upload2">Upload File</button>
+            <button id="remove2">Remove File</button>
+            <div id="log2" class="note">No file selected</div>
+            <div class="img"><img id="img2" style="display:none"></div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
