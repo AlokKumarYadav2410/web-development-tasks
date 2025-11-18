@@ -1,0 +1,196 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+:root {
+    --snake-color: #4caf50;
+    --food-color: #f44336;
+
+    /* Background Colors */
+    --bg-primary-color: #212121;
+    --bg-secondary-color: #363434;
+
+    /* Text Colors */
+    --text-primary-color: #bbbbbb;
+    /* --text-secondary-color: ; */
+
+    /* Spacing Variables */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 2.5rem;
+    --space-3xl: 3rem;
+
+    /* Font size */
+    --font-size-xl: 0.5rem;
+    --font-size-sm: 0.75rem;
+    --font-size-md: 1rem;
+    --font-size-lg: 1.25rem;
+
+    /* Border radius */
+    --border-radius-sm: 5px;
+    --border-radius-md: 10px;
+    --border-radius-lg: 15px;
+}
+
+html {
+    background-color: var(--bg-primary-color);
+
+}
+
+main {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-primary-color);
+    color: var(--text-primary-color);
+}
+
+.btn {
+    padding: var(--space-sm) var(--space-lg);
+    background: var(--text-primary-color);
+    color: var(--bg-secondary-color);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    font-size: var(--font-size-md);
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    /* background: darkgreen; */
+    transform: scale(1.1);
+}
+
+section {
+    padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    height: 100%;
+}
+
+.small-screen {
+    display: none;
+}
+
+.game-title {
+    text-align: center;
+    font-weight: bold;
+    background-image: url("./assets/snake.gif");
+    background-size: cover;
+    /* background-position: center; */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    /* display: inline-block; */
+    /* font-size: 2rem; */
+}
+
+
+.info-section {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.info {
+    font-size: var(--font-size-md);
+    border: 1px solid var(--text-primary-color);
+    border-radius: var(--border-radius-md);
+    padding: var(--space-sm) var(--space-md);
+}
+
+
+.game-board {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(50px, 1fr));
+    border: 1px solid var(--text-primary-color);
+    border-radius: 10px;
+    background: var(--bg-primary-color);
+}
+
+.block {
+    background-color: var(--bg-primary-color);
+    border: 1px solid var(--bg-secondary-color);
+    border-radius: 20%;
+}
+
+.snake {
+    background-color: var(--snake-color);
+}
+
+.food {
+    background: var(--food-color);
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+}
+
+.modal .start-game,
+.modal .restart-game {
+    background: var(--bg-secondary-color);
+    padding: var(--space-lg);
+    border-radius: var(--border-radius-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-lg);
+    min-width: 250px;
+    box-shadow: 0px 0px 20px rgba(156, 155, 155, 0.3);
+}
+
+.modal .restart-game {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .small-screen {
+        display: block;
+    }
+
+    .large-screen {
+        display: none;
+    }
+
+    .info {
+        font-size: var(--font-size-2xl);
+        padding: var(--space-sm) var(--space-md);
+    }
+}
+
+@media (max-width:468px) {
+    .info {
+        font-size: var(--font-size-xl);
+        padding: var(--space-sm);
+    }
+}
