@@ -8,19 +8,26 @@ let score = document.querySelector("#score");
 let timerElement = document.querySelector("#time");
 let finalScoreElement = document.querySelector("#final-score");
 let finalHighScore = document.querySelector("#final-high-score");
+
+// Mobile Controls
+document.querySelector(".up").onclick = () => { if (direction !== "DOWN") direction = "UP"; }
+document.querySelector(".down").onclick = () => { if (direction !== "UP") direction = "DOWN"; }
+document.querySelector(".left").onclick = () => { if (direction !== "RIGHT") direction = "LEFT"; }
+document.querySelector(".right").onclick = () => { if (direction !== "LEFT") direction = "RIGHT"; }
+
 let timer = `00:00`;
 timerElement.innerText = timer;
 let currentScore = 0;
 let highScore = localStorage.getItem("highScore") || 0;
 document.querySelector("#high-score").innerText = highScore;
 
-let width = 50;
-let height = 50;
+let width = 30;
+let height = 30;
 let rows = Math.floor(gameBoard.clientHeight / height);
 let cols = Math.floor(gameBoard.clientWidth / width);
 let intervalId = null;
 let timerIntervalId = null;
-let food = { row: Math.floor(Math.random() * rows), col: Math.floor(Math.random() * cols) };
+let food = randomFood();
 
 const blocks = [];
 let snake = [{ row: 2, col: 2 }, { row: 2, col: 3 }, { row: 2, col: 4 }];
@@ -55,17 +62,18 @@ function renderSnake() {
         head = { row: snake[0].row, col: snake[0].col + 1 }
     }
 
-    if(food.row === head.row && food.col === head.col){
+    if (food.row === head.row && food.col === head.col) {
         currentScore += 10;
         score.innerText = currentScore;
-        if(currentScore > highScore){
+
+        if (currentScore > highScore) {
             highScore = currentScore;
             document.querySelector("#high-score").innerText = highScore;
             localStorage.setItem("highScore", highScore);
         }
         blocks[`${food.row},${food.col}`].classList.remove("food");
-        food = { row: Math.floor(Math.random() * rows), col: Math.floor(Math.random() * cols) };
-        snake.push({...snake[snake.length -1]});
+        food = randomFood();
+        snake.push({ ...snake[snake.length - 1] });
     }
 
     if (head.row < 0 || head.row >= rows || head.col < 0 || head.col >= cols) {
@@ -80,68 +88,73 @@ function renderSnake() {
         return;
     }
     else {
-        snake.forEach(segment => {
-            blocks[`${segment.row},${segment.col}`].classList.remove("snake");
-        });
+        clearSnake();
         snake.unshift(head);
         snake.pop();
     }
 
-    snake.forEach(segment => {
-        blocks[`${segment.row},${segment.col}`].classList.add("snake");
-    });
+    drawSnake();
 }
 
 startButton.addEventListener("click", () => {
     modal.style.display = "none";
-    intervalId = setInterval(() => {renderSnake()}, 300)
-    timerIntervalId = setInterval(() => {
-        let [min, sec] = timerElement.innerText.split(":").map(Number);
-        if(sec > 59){
-            min += 1;
-            sec = 0;
-        } else {
-            sec += 1;
-        }
-        timerElement.innerText = `${min}:${sec.toString().padStart(2, '0')}`;
-    }, 1000)
-})
+    startGameLoop();
+});
 
 restartButton.addEventListener("click", restartGame)
 
 function restartGame() {
     blocks[`${food.row},${food.col}`].classList.remove("food");
-    snake.forEach(segment => {
-         blocks[`${segment.row},${segment.col}`].classList.remove("snake");
-    })
+    clearSnake();
     currentScore = 0;
     score.innerText = currentScore;
     timerElement.innerText = `00:00`;
     modal.style.display = "none";
     direction = "RIGHT"
     snake = [{ row: 2, col: 2 }, { row: 2, col: 3 }, { row: 2, col: 4 }];
-    food = { row: Math.floor(Math.random() * rows), col: Math.floor(Math.random() * cols) };
-    intervalId = setInterval(() => {renderSnake()}, 300)
+    food = randomFood();
+    startGameLoop();
+}
+
+function clearSnake() {
+    snake.forEach(s => blocks[`${s.row},${s.col}`].classList.remove("snake"));
+}
+
+function drawSnake() {
+    snake.forEach(s => blocks[`${s.row},${s.col}`].classList.add("snake"));
+}
+
+function randomFood() {
+    return {
+        row: Math.floor(Math.random() * rows),
+        col: Math.floor(Math.random() * cols)
+    };
+}
+
+
+function startTimer() {
+    timerElement.innerText = "00:00";
     timerIntervalId = setInterval(() => {
-        let [min, sec] = timerElement.innerText.split(":").map(Number);
-        if(sec > 59){
-            min += 1;
-            sec = 0;
-        } else {
-            sec += 1;
-        }
-        timerElement.innerText = `${min}:${sec.toString().padStart(2, '0')}`;
-    }, 1000)
+        let [m, s] = timerElement.innerText.split(":").map(Number);
+        s++;
+        if (s === 60) { m++; s = 0; }
+        timerElement.innerText = `${m}:${s.toString().padStart(2, "0")}`;
+    }, 1000);
+}
+
+function startGameLoop() {
+    intervalId = setInterval(renderSnake, 300);
+    startTimer();
 }
 
 addEventListener("keydown", function (event) {
-    if (event.key === "ArrowUp") {
+    if (event.key === "ArrowUp" && direction !== "DOWN") {
         direction = "UP";
-    } else if (event.key === "ArrowDown") {
+    } else if (event.key === "ArrowDown" && direction !== "UP") {
         direction = "DOWN";
-    } else if (event.key === "ArrowLeft") {
+    } else if (event.key === "ArrowLeft" && direction !== "RIGHT") {
         direction = "LEFT";
-    } else if (event.key === "ArrowRight") {
+    } else if (event.key === "ArrowRight" && direction !== "LEFT") {
         direction = "RIGHT";
     }
 });
