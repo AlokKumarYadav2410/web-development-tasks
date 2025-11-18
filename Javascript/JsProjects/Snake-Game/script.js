@@ -21,6 +21,8 @@ let currentScore = 0;
 let highScore = localStorage.getItem("highScore") || 0;
 document.querySelector("#high-score").innerText = highScore;
 
+let speed = 300;
+
 let width = 30;
 let height = 30;
 let rows = Math.floor(gameBoard.clientHeight / height);
@@ -65,6 +67,23 @@ function renderSnake() {
     if (food.row === head.row && food.col === head.col) {
         currentScore += 10;
         score.innerText = currentScore;
+
+        let newSpeed = 300;
+        if (currentScore > 300) {
+            newSpeed = 100;
+        } else if (currentScore > 200) {
+            newSpeed = 150;
+        } else if (currentScore > 100) {
+            newSpeed = 200;
+        } else if (currentScore > 50) {
+            newSpeed = 250;
+        }
+
+        if (newSpeed !== speed) {
+            speed = newSpeed;
+            clearInterval(intervalId);
+            intervalId = setInterval(renderSnake, speed);
+        }
 
         if (currentScore > highScore) {
             highScore = currentScore;
