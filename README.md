@@ -25,6 +25,7 @@
 
 | Project | Description | Technologies | Live Demo |
 |---------|-------------|--------------|-----------|
+|**🐍 Snake Game** | A classic snake game implemented using JavaScript, HTML, and CSS. | JavaScript, HTML5, CSS3 | [🔗 View Live](https://web-development-project-page.vercel.app/Javascript/JsProjects/Snake-Game/index.html) |
 | **🔥 Freakish Mind - NFT Landing** | Advanced NFT-themed landing page with full responsiveness, hover effects, and clip-path animations | HTML5, CSS3, Responsive, Clip-path, Hover Effects | [🔗 View Live](https://web-development-project-page.vercel.app/Challenges/Challenge03/index.html) |
 | **🪔 Diwali Celebration Project** | Diwali Themed landing page with vibrant colors and festive elements with toggle diya feature (Light Up) | HTML5, SCSS,JS, Responsive, Animations, Interactive | [🔗 View Live](https://web-development-project-page.vercel.app/Festival/Diwali/index.html) |
 | **🍎 Apple Website Clone** | Pixel-perfect recreation of Apple's website with modern layout and navigation | HTML5, CSS3, Responsive Design, Brand Recreation | [🔗 View Live](https://web-development-tasks.vercel.app/) |
@@ -76,6 +77,16 @@ web-development-tasks/
 
 ---
 
+## 🟨 JavaScript Projects
+
+### 🐍 JS Project 01: Snake Game
+**Status:** ✅ Completed <br />
+**Description:** A classic snake game implemented using JavaScript, HTML, and CSS. 
+
+**🔗 [Live Preview](https://web-development-project-page.vercel.app/Javascript/JsProjects/Snake-Game/index.html) • [📂 Code](./Javascript/JsProjects/Snake-Game/)**
+
+---
+
 ## 🏗️ Completed Challenges
 
 ### 📝 Challenge 01: Clean Pro Landing Page
@@ -109,11 +120,15 @@ web-development-tasks/
 
 **🔗 [Live Preview](https://web-development-project-page.vercel.app/Practice/P1-SASS/index.html) • [📂 Practice Details & Code](./Practice/P1-SASS/)**
 
+---
+
 ### 📝 Practice 02: Nexora Consulting
 **Status:** ✅ Completed <br />
 **Description:** A professional landing page for Nexora Consulting, showcasing services and client testimonials with a modern design.
 
 **🔗 [Live Preview](https://web-development-project-page.vercel.app/Practice/P2-SASS/index.html) • [📂 Practice Details & Code](./Practice/P2-SASS/)**
+
+---
 
 ### 📝 Practice 03: ALVY FASHION
 **Status:** ✅ Completed <br />
@@ -123,37 +138,38 @@ web-development-tasks/
 
 ---
 
-
-## 🟨 JavaScript Projects
-
-These are small JavaScript practice projects focused on DOM manipulation, event handling and simple algorithms.
-
-### 📝 Project 01: Counter
+### 📝 Practice 04: Counter
 **Status:** ✅ Completed  
 **Description:** Simple counter app to increment/decrement values.
 
 **🔗 [Live Preview](https://web-development-project-page.vercel.app/Javascript/JsPractice/PS-03/Counter/index.html) • [📂 Code](./Javascript/JsPractice/PS-03/Counter/)**
 
-### 📝 Project 02: IPL Team Randomizer
+---
+
+### 📝 Practice 05: IPL Team Randomizer
 **Status:** ✅ Completed  
 **Description:** Randomly picks players/teams for fun team generation.
 
 **🔗 [Live Preview](https://web-development-project-page.vercel.app/Javascript/JsPractice/PS-03/IPL-Team-Randomizer/index.html) • [📂 Code](./Javascript/JsPractice/PS-03/IPL-Team-Randomizer/)**
 
-### 📝 Project 03: Random Color Generator
+---
+
+### 📝 Practice 06: Random Color Generator
 **Status:** ✅ Completed  
 **Description:** Generates random background/colors for design exploration.
 
 **🔗 [Live Preview](https://web-development-project-page.vercel.app/Javascript/JsPractice/PS-03/RandomColor/index.html) • [📂 Code](./Javascript/JsPractice/PS-03/RandomColor/)**
 
-### 📝 Project 04: Quote Generator
+---
+
+### 📝 Practice 07: Quote Generator
 **Status:** ✅ Completed  
 **Description:** Displays random motivational quotes; great for practicing arrays and DOM updates.
 
 **🔗 [Live Preview](https://web-development-project-page.vercel.app/Javascript/JsPractice/PS-03/QuoteGenerator/index.html) • [📂 Code](./Javascript/JsPractice/PS-03/QuoteGenerator/)**
 
 
-
+---
 ## 🏗️ Completed Tasks
 
 ### 📝 Task 01: Dummy Personal Resume Website
