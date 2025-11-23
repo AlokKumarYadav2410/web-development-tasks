@@ -104,19 +104,19 @@ web-development-tasks/
 
 ## 🏗️ Completed Practice
 ### 📝 Practice 01: Kung Fu Panda
-**Status:** ✅ Completed
+**Status:** ✅ Completed <br />
 **Description:** A fun and interactive landing page inspired by the Kung Fu Panda movie, featuring animations and a playful design.
 
 **🔗 [Live Preview](https://web-development-project-page.vercel.app/Practice/P1-SASS/index.html) • [📂 Practice Details & Code](./Practice/P1-SASS/)**
 
 ### 📝 Practice 02: Nexora Consulting
-**Status:** ✅ Completed
+**Status:** ✅ Completed <br />
 **Description:** A professional landing page for Nexora Consulting, showcasing services and client testimonials with a modern design.
 
 **🔗 [Live Preview](https://web-development-project-page.vercel.app/Practice/P2-SASS/index.html) • [📂 Practice Details & Code](./Practice/P2-SASS/)**
 
 ### 📝 Practice 03: ALVY FASHION
-**Status:** ✅ Completed
+**Status:** ✅ Completed <br />
 **Description:** A professional landing page for ALVY FASHION, showcasing the latest fashion trends and collections with a modern design.
 
 **🔗 [Live Preview](https://web-development-project-page.vercel.app/Practice/P3-SASS/index.html) • [📂 Practice Details & Code](./Practice/P3-SASS/)**
@@ -128,23 +128,23 @@ web-development-tasks/
 
 These are small JavaScript practice projects focused on DOM manipulation, event handling and simple algorithms.
 
-📝 Project 01: Counter
-Status: ✅ Completed  
-Description: Simple counter app to increment/decrement values.
+### 📝 Project 01: Counter
+**Status:** ✅ Completed  
+**Description:** Simple counter app to increment/decrement values.
 
-🔗 [Live Preview](./Javascript/JsPractice/PS-03/Counter/index.html) • [📂 Code](./Javascript/JsPractice/PS-03/Counter/)
+**🔗 [Live Preview](https://web-development-project-page.vercel.app/Javascript/JsPractice/PS-03/Counter/index.html) • [📂 Code](./Javascript/JsPractice/PS-03/Counter/)**
 
-📝 Project 02: IPL Team Randomizer
-Status: ✅ Completed  
-Description: Randomly picks players/teams for fun team generation.
+### 📝 Project 02: IPL Team Randomizer
+**Status:** ✅ Completed  
+**Description:** Randomly picks players/teams for fun team generation.
 
-🔗 [Live Preview](./Javascript/JsPractice/PS-03/IPL-Team-Randomizer/index.html) • [📂 Code](./Javascript/JsPractice/PS-03/IPL-Team-Randomizer/)
+**🔗 [Live Preview](https://web-development-project-page.vercel.app/Javascript/JsPractice/PS-03/IPL-Team-Randomizer/index.html) • [📂 Code](./Javascript/JsPractice/PS-03/IPL-Team-Randomizer/)**
 
-📝 Project 03: Random Color Generator
-Status: ✅ Completed  
-Description: Generates random background/colors for design exploration.
+### 📝 Project 03: Random Color Generator
+**Status:** ✅ Completed  
+**Description:** Generates random background/colors for design exploration.
 
-🔗 [Live Preview](./Javascript/JsPractice/PS-03/RandomColor/index.html) • [📂 Code](./Javascript/JsPractice/PS-03/RandomColor/)
+**🔗 [Live Preview](https://web-development-project-page.vercel.app/Javascript/JsPractice/PS-03/RandomColor/index.html) • [📂 Code](./Javascript/JsPractice/PS-03/RandomColor/)**
 
 ### 📝 Project 04: Quote Generator
 **Status:** ✅ Completed  
