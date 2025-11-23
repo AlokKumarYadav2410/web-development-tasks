@@ -123,6 +123,37 @@ web-development-tasks/
 
 ---
 
+
+## 🟨 JavaScript Projects
+
+These are small JavaScript practice projects focused on DOM manipulation, event handling and simple algorithms.
+
+📝 Project 01: Counter
+Status: ✅ Completed  
+Description: Simple counter app to increment/decrement values.
+
+🔗 [Live Preview](./Javascript/JsPractice/PS-03/Counter/index.html) • [📂 Code](./Javascript/JsPractice/PS-03/Counter/)
+
+📝 Project 02: IPL Team Randomizer
+Status: ✅ Completed  
+Description: Randomly picks players/teams for fun team generation.
+
+🔗 [Live Preview](./Javascript/JsPractice/PS-03/IPL-Team-Randomizer/index.html) • [📂 Code](./Javascript/JsPractice/PS-03/IPL-Team-Randomizer/)
+
+📝 Project 03: Random Color Generator
+Status: ✅ Completed  
+Description: Generates random background/colors for design exploration.
+
+🔗 [Live Preview](./Javascript/JsPractice/PS-03/RandomColor/index.html) • [📂 Code](./Javascript/JsPractice/PS-03/RandomColor/)
+
+### 📝 Project 04: Quote Generator
+**Status:** ✅ Completed  
+**Description:** Displays random motivational quotes; great for practicing arrays and DOM updates.
+
+**🔗 [Live Preview](https://web-development-project-page.vercel.app/Javascript/JsPractice/PS-03/QuoteGenerator/index.html) • [📂 Code](./Javascript/JsPractice/PS-03/QuoteGenerator/)**
+
+
+
 ## 🏗️ Completed Tasks
 
 ### 📝 Task 01: Dummy Personal Resume Website
@@ -314,8 +345,11 @@ Modified and enhanced by: [Your Name]
 
 ---
 
-*Last Updated: October 2025*  
-*Total Challenge Completed: 3/∞* <br />
-*Total Tasks Completed: 6/∞*
+*Last Updated: November 23, 2025*  
+<!-- *Total Challenges Completed: 3/∞*  
+*Total Tasks Completed: 6/∞*  
+*Total Practice Projects Completed: 3/∞*  
+*Total JavaScript Practice Projects (PS-03) Completed: 4/∞*   -->
+*Total Projects Completed: 16/∞*
 
 </div>
