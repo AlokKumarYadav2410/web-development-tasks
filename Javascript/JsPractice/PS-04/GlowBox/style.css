@@ -1,23 +1,27 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-html,body{
+html,
+body {
     height: 100%;
     width: 100%;
 }
 
-body{
+body {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     background-color: black;
+    gap: 20px;
+    anchor-name: --some-anchor;
 }
 
-@property --rotate{
+@property --rotate {
     syntax: '<angle>';
     initial-value: 0deg;
     inherits: false;
@@ -26,46 +30,100 @@ body{
 @keyframes borderAnimate {
     from {
         --rotate: 0deg;
-    } to{
+    }
+
+    to {
         --rotate: 360deg;
     }
 }
 
-.box{
+.box {
     max-width: 300px;
     padding-inline: 10px;
     padding-bottom: 10px;
     display: flex;
     /* justify-content: center;
     align-items: center; */
-    color:whitesmoke;
+    color: whitesmoke;
     flex-direction: column;
-    gap:10px;
-    /* box-shadow: 0px 0px 50px rgb(255, 0, 123); */
-    box-shadow: 0px 0px 00px #0F0;
+    gap: 10px;
     border-radius: 15px;
-    background: 
-    /* linear-gradient(to top left, rgba(255, 255, 255, 0.593), black), */
-    linear-gradient( black) padding-box,
-    conic-gradient(from var(--rotate),black, #0F0, black ) border-box 
-    /* conic-gradient(from var(--rotate),black, rgb(255, 0, 123), black ) border-box  */
-    ;
-    border: 0px solid rgba(255, 255, 255, 0);
+    border: 5px solid rgba(255, 255, 255, 0);
     margin: 10px;
     animation: borderAnimate 2s linear infinite;
-    animation-play-state: paused;
+    /* animation-play-state: paused; */
     transition: all 0.3s linear;
-    text-shadow: 0px 0px 0px #0F0;
-}
-.box:hover{
-    animation-play-state: running;
-    border-width: 5px;
-    box-shadow: 0px 0px 50px #0F0;
-    color: #0F0;
-    text-shadow: 0px 0px 5px #0F0;
-    cursor: pointer;
+    /* text-shadow: 0px 0px 0px #0F0; */
 
 }
-.box img{
+
+.box:hover {
+    animation-play-state: running;
+    border-width: 5px;
+    cursor: pointer;
+    anchor-name: --some-anchor;
+
+}
+
+.box img {
     width: 100%;
+}
+
+.pokemon {
+    background: linear-gradient(black) padding-box,
+        conic-gradient(from var(--rotate), black, rgb(255, 255, 0), black) border-box;
+    text-shadow: 0px 0px 0px rgb(255, 255, 0);
+    
+}
+
+.pokemon:hover {
+    box-shadow: 0px 0px 50px rgb(255, 255, 0);
+    color: rgb(255, 255, 0);
+    text-shadow: 0px 0px 4px rgb(255, 255, 0);
+}
+
+.rias{
+    background: linear-gradient(black) padding-box,
+        conic-gradient(from var(--rotate), black, rgb(255, 0, 123), black) border-box;
+    text-shadow: 0px 0px 0px rgb(255, 0, 123);
+}
+
+.rias:hover {
+    box-shadow: 0px 0px 50px rgb(255, 0, 123);
+    color: rgb(255, 0, 123);
+    text-shadow: 0px 0px 4px rgb(255, 0, 123);
+}
+
+.goku{
+    background: linear-gradient(black) padding-box,
+        conic-gradient(from var(--rotate), black, rgb(255, 111, 0), black) border-box;
+    text-shadow: 0px 0px 0px rgb(255, 111, 0);
+}
+
+.goku:hover {
+    box-shadow: 0px 0px 50px rgb(255, 111, 0);
+    color: rgb(255, 111, 0);
+    text-shadow: 0px 0px 4px rgb(255, 111, 0);
+}
+
+.anchor {
+    background: rgba(245, 245, 245, 0.108);
+    border-radius: 10px;
+    position: absolute;
+    position-anchor: --some-anchor;
+    top: anchor(top);
+    left: anchor(left);
+    bottom: anchor(bottom);
+    right: anchor(right);
+    pointer-events: none;
+    transition: all 0.3s linear;
+    mix-blend-mode: exclusion;
+}
+
+body:has(.box:hover) .box {
+    transform: scale(1.1);
+}
+
+body .box:hover {
+    transform: scale(0.8) !important;
 }
