@@ -3,21 +3,68 @@ let taskData = {};
 let todo = document.getElementById("todo");
 let progress = document.getElementById("progress");
 let done = document.getElementById("done");
+let columns = [todo, progress, done];
 let draggedItem = null;
 
+function addTask(title, desc, column) {
+    const div = document.createElement("div");
+
+    div.classList.add("task");
+    div.setAttribute("draggable", "true");
+    div.innerHTML = `<h2>${title}</h2>
+                     <p>${desc}</p>
+                     <button>Delete</button>
+                    `;
+    column.appendChild(div);
+
+    div.addEventListener("drag", (e) => {
+        draggedItem = div;
+    });
+
+    const deleteBtn = div.querySelector("button");
+    deleteBtn.addEventListener("click", () => {
+        div.remove();
+        updateTaskCount();
+    });
+}
+
+function updateTaskCount() {
+    columns.forEach(col => {
+        const tasks = col.querySelectorAll(".task");
+        const count = col.querySelector(".right");
+
+        taskData[col.id] = Array.from(tasks).map(t => {
+            return {
+                title: t.querySelector("h2").innerText,
+                desc: t.querySelector("p").innerText
+            }
+        });
+
+        localStorage.setItem("tasks", JSON.stringify(taskData));
+
+        count.innerText = tasks.length;
+    });
+}
+
 if (localStorage.getItem("tasks")) {
-    taskData = JSON.parse(localStorage.getItem("tasks"));
-}   
+    const data = JSON.parse(localStorage.getItem("tasks"));
+
+    for (let col in data) {
+        const column = document.querySelector(`#${col}`)
+        data[col].forEach(task => {
+            addTask(task.title, task.desc, column);
+        });
+    }
+    updateTaskCount();
+}
 
 const tasks = document.querySelectorAll(".task");
 
 tasks.forEach(task => {
     task.addEventListener("drag", (e) => {
-        // console.log("dragging", e.target)
         draggedItem = task;
     })
 })
-
 
 function addDragEventsOnColumn(column) {
     column.addEventListener("dragenter", (e) => {
@@ -36,15 +83,10 @@ function addDragEventsOnColumn(column) {
 
     column.addEventListener("drop", (e) => {
         e.preventDefault();
-        console.log(draggedItem, column);
         column.appendChild(draggedItem);
         column.classList.remove("hover-over");
 
-        [todo, progress, done].forEach(col => {
-            const tasks = col.querySelectorAll(".task");
-            const count = col.querySelector(".right");
-            count.innerText = tasks.length;
-        });
+        updateTaskCount();
     })
 }
 
@@ -67,37 +109,22 @@ toggleModalBtn.addEventListener("click", () => {
 });
 
 addTaskBtn.addEventListener("click", () => {
-    console.log("clicked")
     const taskTitleInput = document.querySelector("#task-title-input").value;
     const taskDescInput = document.querySelector("#task-desc-input").value;
 
-    const div = document.createElement("div");
-    div.classList.add("task");
-    div.setAttribute("draggable", "true");
-    div.innerHTML = `<h2>${taskTitleInput}</h2>
-                     <p>${taskDescInput}</p>
-                     <button>Delete</button>
-                    `;
-    todo.appendChild(div);
+    if (!taskTitleInput) {
+        alert("Task title cannot be empty!");
+        return;
+    }
+    if (!taskDescInput) {
+        alert("Task description cannot be empty!");
+        return;
+    }
 
-    [todo, progress, done].forEach(col => {
-        const tasks = col.querySelectorAll(".task");
-        const count = col.querySelector(".right");
-
-        taskData[col.id] = Array.from(tasks).map(t => {
-            return {
-                title: t.querySelector("h2").innerText,
-                desc: t.querySelector("p").innerText
-            }
-        });
-
-        localStorage.setItem("tasks", JSON.stringify(taskData));
-
-        count.innerText = tasks.length;
-    });
-
-    div.addEventListener("drag", (e) => {
-        draggedItem = div;
-    });
+    addTask(taskTitleInput, taskDescInput, todo);
+    updateTaskCount();
     modal.classList.remove("active");
+
+    document.querySelector("#task-title-input").value = "";
+    document.querySelector("#task-desc-input").value = "";
 });
