@@ -52,6 +52,9 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-color);
 }
 
 nav button{
@@ -76,6 +79,7 @@ section .task-column{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    width: 100%;
     gap: var(--padding-xl);
     background: #000;
     flex-grow: 1;
@@ -181,4 +185,14 @@ section .task-column .task button{
     cursor: pointer;
     /* align-self: flex-end; */
     align-self: center;
+}
+
+@media (max-width: 468px) {
+    section{
+        flex-direction: column;
+    }
+    section .task-column{
+        /* width: 100%; */
+        flex-wrap: wrap;
+    }
 }
