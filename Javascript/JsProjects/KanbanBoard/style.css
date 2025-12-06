@@ -1,19 +1,20 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html,body{
+html,
+body {
     height: 100%;
     width: 100%;
 }
 
-html{
+html {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-:root{
+:root {
     --bg-color: rgb(27, 27, 27);
     --bg-btn-color: rgb(50, 50, 50);
     --btn-color: crimson;
@@ -36,18 +37,18 @@ html{
     --border-radius-xxl: 30px
 }
 
-body{
+body {
     background-color: var(--bg-color);
     color: var(--primary-color);
 }
 
-main{
+main {
     height: 100%;
     display: flex;
     flex-direction: column;
 }
 
-nav{
+nav {
     padding: var(--nav-padding);
     display: flex;
     justify-content: space-between;
@@ -57,7 +58,12 @@ nav{
     background-color: var(--bg-color);
 }
 
-nav button{
+nav .left {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+nav button {
     background-color: var(--bg-btn-color);
     color: var(--primary-color);
     border: none;
@@ -67,7 +73,7 @@ nav button{
     cursor: pointer;
 }
 
-section{
+section {
     padding: var(--section-padding);
     display: flex;
     justify-content: space-between;
@@ -75,7 +81,7 @@ section{
     gap: var(--padding-xxl);
 }
 
-section .task-column{
+section .task-column {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -88,19 +94,19 @@ section .task-column{
     transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-section .task-column.hover-over{
+section .task-column.hover-over {
     border: 2px dashed var(--primary-color);
     scale: 1.05;
 }
 
-section .task-column .heading{
+section .task-column .heading {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-section .task-column .task{
+section .task-column .task {
     display: flex;
     flex-direction: column;
     gap: var(--padding-s);
@@ -111,11 +117,11 @@ section .task-column .task{
     cursor: grab;
 }
 
-section .task-column .task:active{
+section .task-column .task:active {
     cursor: grabbing;
 }
 
-section .task-column .task button{
+section .task-column .task button {
     background-color: var(--btn-color);
     color: var(--primary-color);
     border: none;
@@ -126,7 +132,7 @@ section .task-column .task button{
     align-self: flex-end;
 }
 
-.modal{
+.modal {
     position: fixed;
     width: 100vw;
     height: 100vh;
@@ -140,11 +146,11 @@ section .task-column .task button{
     bgbackdrop-filter: blur(5px); */
 }
 
-.modal.active{
+.modal.active {
     display: flex;
 }
 
-.modal .bg{
+.modal .bg {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -155,7 +161,7 @@ section .task-column .task button{
     z-index: 5;
 }
 
-.modal .center{
+.modal .center {
     display: flex;
     flex-direction: column;
     gap: var(--padding-m);
@@ -165,7 +171,8 @@ section .task-column .task button{
     z-index: 10;
 }
 
-.modal .center input, .modal .center textarea{
+.modal .center input,
+.modal .center textarea {
     background-color: var(--bg-btn-color);
     color: var(--primary-color);
     border: none;
@@ -175,7 +182,7 @@ section .task-column .task button{
     /* width: 300px; */
 }
 
-.modal .center button{
+.modal .center button {
     background-color: var(--btn-color);
     color: var(--primary-color);
     border: none;
@@ -188,10 +195,15 @@ section .task-column .task button{
 }
 
 @media (max-width: 468px) {
-    section{
+    nav .left {
+        font-size: 1.5rem;
+    }
+
+    section {
         flex-direction: column;
     }
-    section .task-column{
+
+    section .task-column {
         /* width: 100%; */
         flex-wrap: wrap;
     }
