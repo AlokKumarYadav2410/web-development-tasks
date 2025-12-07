@@ -114,3 +114,47 @@ console.log(car3.describe === car4.describe);
  * This leads to higher memory consumption if we have many instances.
  * By defining methods on the prototype, all instances share the same method, saving memory.
  */
+
+// ------------- | SECTION 6: call Method Practice| ----------------
+function showBrand(){
+    console.log(`Brand: ${this.brand}`);
+}
+
+const obje1 = { brand: "Apple" };
+const obje2 = { brand: "Samsung" };
+
+showBrand.call(obje1); // Brand: Apple
+showBrand.call(obje2); // Brand: Samsung
+
+/**
+ * Here call is solving the problem of context (this) by explicitly setting it to the desired object.
+ * Also, it allows us to reuse the same function with different objects without duplicating code.
+ */
+
+// ------------- | SECTION 7: apply Method Practice| ----------------
+function introduce(city, role) {
+    console.log(`${this.name} - ${city} - ${role}`);
+}
+
+const person1 = { name: "Subastral" };
+introduce.apply(person1, ["New York", "Developer"]); // Subastral - New York - Developer
+
+/**
+ * Similar to call, apply sets the context (this) for the function.
+ * The difference is that apply takes arguments as an array, making it useful when arguments are dynamic or already in an array.
+ */
+
+// ------------- | SECTION 8: bind Method Practice| ----------------
+function greet() {
+    console.log(`Hello, ${this.name}`);
+}
+
+const member = { name: "Subastral" };
+
+const greetUser = greet.bind(member);
+greetUser(); // Hello, Subastral
+
+/**
+ * bind creates a new function with the specified context (this) permanently set.
+ * This is useful when we want to pass a function as a callback but want to ensure it retains its original context.
+ */
