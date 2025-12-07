@@ -1,4 +1,4 @@
-// -------------- | Objects and OOPS Thinking (Foundation) | -----------------
+// -------------- | SECTION 1: Objects and OOPS Thinking (Foundation) | -----------------
 
 const user = {
     name: "Alok",
@@ -36,7 +36,7 @@ const product = {
 
 console.log(`Final Price: ${product.discount(10)}`);
 
-// ---------------- | Classes and Objects | --------------------------------
+// ---------------- | SECTION 2: Classes and Objects | --------------------------------
 class Car{
     constructor(brand, speed){
         this.brand = brand;
@@ -53,7 +53,7 @@ car1.drive();
 const car2 = new Car("BMW", 200);
 car2.drive();
 
-// --------------- | Constructor and this keyword | -----------------------
+// --------------- | SECTION 3: Constructor and this keyword | -----------------------
 class Student{
     constructor(name, rollNumber){
         this.name = name;
@@ -80,6 +80,7 @@ const newObj = {
 newObj.normalFunc(); // refers to newObj
 newObj.arrowFunc(); // refers to global object (window in browsers)
 
+// --------------- | SECTION 4: Constructor Functions and Prototypes | -----------------------
 function Users(name, email){
     this.name = name;
     this.email = email;
@@ -93,8 +94,49 @@ Users.prototype.logout = function(){
 }
 
 let userObj1 = new Users("Subastral", "sub@a.com");
-userObj1.login();
+userObj1.logout();
 let userObj2 = new Users("Subastral", "sub@a.com");
-userObj2.login();
+userObj2.logout();
 
-console.log(userObj1 === userObj2);
+console.log(userObj1.logout === userObj2.logout);
+
+
+// --------------- | SECTION 5: call, apply, bind | -----------------------
+function abcd(){
+    console.log(this.name); // this refers to global object (window in browsers) and name is "" so we see space in this console.
+}
+
+function xyz(...val){
+    console.log(this.name);
+    console.log(val);
+}
+
+let myObj = {
+    name: "My Object Name"
+ }
+
+abcd(); // this refers to global object (window in browsers)
+
+// When we call the function using call or apply method, we can explicitly set the value of this.
+abcd.call(myObj); // this refers to myObj
+abcd.apply(myObj); // this refers to myObj
+
+// The bind() method creates a new function that, when called, has its this keyword set to the provided value.
+let boundFunc = xyz.bind(myObj, 1,2,3,4);
+boundFunc(); // this refers to myObj
+
+
+// Borrow a method from one object and run it for another object using call.
+
+let obj = {
+    name: "Object One",
+    greet: function(){
+        console.log(`Hello from ${this.name}`);
+    }
+}
+
+let obj2 = {
+    name: "Object Two"
+}
+
+obj.greet.call(obj2); // Borrowing greet method from obj and using it for obj2
