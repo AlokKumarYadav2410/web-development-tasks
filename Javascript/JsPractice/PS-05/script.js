@@ -23,6 +23,8 @@ fnc1(function (fnc3) {
     });
 });
 
+// Fetch and Display GitHub Repositories of a User Using Callbacks
+
 function getUserDetails(username, cb) {
     console.log("Fetching user details...")
     let id = Math.floor(Math.random()*10);
