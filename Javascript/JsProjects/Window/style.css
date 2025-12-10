@@ -1,0 +1,243 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #3a3a3a;
+    overflow: hidden;
+    color: #e0e0e0;
+}
+
+main {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: url(./assets/mountain.jpg);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.context-menu {
+    width: 160px;
+    background-color: rgba(36, 35, 35, 0.9);
+    backdrop-filter: blur(10px);
+    color: #dcdcdc;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    padding: 6px;
+    gap: 0.3rem;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    transform: scale(0.95);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s ease;
+}
+
+.context-menu.show {
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.tools {
+    display: flex;
+    align-items: center;
+    padding: 6px 10px;
+    gap: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.2s ease;
+}
+
+.tools:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.tools p {
+    flex: 1;
+}
+
+.sort {
+    display: flex;
+    line-height: 1;
+}
+
+.sort i {
+    margin: -3px;
+}
+
+.start-menu {
+    width: 500px;
+    height: 400px;
+    background-color: rgba(36, 35, 35, 0.85);
+    backdrop-filter: blur(15px);
+    color: #e0e0e0;
+    border-radius: 15px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    position: absolute;
+    bottom: 4rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(50px) scale(0.95);
+    opacity: 0;
+    pointer-events: none;
+    flex-direction: column;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.start-menu.show {
+    transform: translateX(-50%) translateY(0) scale(1);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.start-menu input {
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #e0e0e0;
+    margin-bottom: 15px;
+}
+
+.start-menu .apps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.start-menu .apps .app {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.start-menu .apps .app:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+.task-bar {
+    height: 3.5rem;
+    width: 100%;
+    background-color: rgba(51, 51, 51, 0.612);
+    backdrop-filter: blur(15px);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 20px;
+    box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Taskbar icons */
+.main-task-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.main-task-icon i {
+    padding: 5px;
+    font-size: 1.5rem;
+    transition: all 0.2s ease;
+}
+
+.main-task-icon i:hover {
+    transform: scale(1.2);
+    color: #5998ea;
+    /* accent color */
+    background-color: rgba(211, 211, 211, 0.056);
+    border-radius: 6px;
+}
+
+/* Weather */
+.weather {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Settings icons */
+.settings-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.settings-icon .arrow-up {
+    font-size: 1.2rem;
+}
+
+.settings-icon .lang {
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 5px;
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.settings-icon .date-time {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: 0.8rem;
+}
+
+.settings-icon .vol-bat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    gap: 10px;
+}
+
+.settings-icon .notify {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    gap: 10px;
+}
+
+.settings-icon .arrow-up:hover,
+.settings-icon .vol-bat:hover,
+.settings-icon .notify:hover,
+.settings-icon .lang:hover {
+    background-color: rgba(156, 156, 156, 0.2);
+    border-radius: 6px;
+    height: 100%;
+}
