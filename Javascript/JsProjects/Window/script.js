@@ -3,8 +3,31 @@ let contextMenu = document.querySelector(".context-menu");
 let startMenu = document.querySelector(".start-menu");
 let start = document.querySelector(".start");
 
+let images = document.querySelectorAll("img");
+
+images.forEach((img) => {
+    img.setAttribute("draggable", "true");
+    img.addEventListener("click", (e) => {
+        if (startMenu === e.target || start === e.target) return;
+        else alert("Will add functionality later");
+    });
+});
+
+let weather = document.querySelector(".weather");
+let weatherIcons = weather.querySelector(".weather img");
+
 let timeElement = document.querySelector(".time");
 let dateElement = document.querySelector(".date");
+
+let hours = new Date().getHours();
+if (hours >= 6 && hours < 18) {
+    weatherIcons.src = "https://img.icons8.com/?size=100&id=zIVmoh4T8wh7&format=png&color=000000";
+} else if (hours >= 18 && hours < 20) {
+    weatherIcons.src = "https://img.icons8.com/?size=100&id=RtDA8YDN9Mi9&format=png&color=000000";
+} else {
+    weatherIcons.src = "https://img.icons8.com/?size=100&id=VT8HlhlnhUwL&format=png&color=000000";
+}
+weatherIcons.setAttribute("alt", "Weather Icon");
 
 function updateTimeElement() {
     let now = new Date();
@@ -17,12 +40,10 @@ function updateTimeElement() {
     minutes = minutes < 10 ? '0' + minutes : minutes;
     timeElement.textContent = hours + ':' + minutes + ' ' + ampm;
 
-    // Update numeric date: day/month/year
     let day = now.getDate();
-    let month = now.getMonth() + 1; // months are 0-indexed
+    let month = now.getMonth() + 1;
     let year = now.getFullYear();
 
-    // Add leading zeros if needed
     day = day < 10 ? '0' + day : day;
     month = month < 10 ? '0' + month : month;
 
@@ -32,38 +53,16 @@ function updateTimeElement() {
 updateTimeElement();
 setInterval(updateTimeElement, 1000);
 
-
-// start.addEventListener("click", function (e) {
-//     e.stopPropagation();
-//     contextMenu.style.display = "none";
-
-//     if (startMenu.style.display === "block") {
-//         startMenu.style.display = "none";
-//     } else {
-//         startMenu.style.display = "block";
-//         // startMenu.style.opacity = "1";  
-//         // startMenu.style.transition = "all 0.3s ease";
-//         // startMenu.style.transform = `translateX(${-50}%) translateY(${0})`;
-//     }
-// });
-
-// document.addEventListener("click", function (e) {
-//     if (!startMenu.contains(e.target) && !start.contains(e.target)) {
-//         startMenu.style.display = "none";
-//     }
-// });
-
-
 start.addEventListener("click", function (e) {
     e.stopPropagation();
-    // contextMenu.style.display = "none";  // hide context menu
+    // contextMenu.style.display = "none";
     contextMenu.classList.remove("show");
-    startMenu.classList.toggle("show");  // animate start menu
+    startMenu.classList.toggle("show");
 });
 
 document.addEventListener("click", function (e) {
     if (!startMenu.contains(e.target) && !start.contains(e.target)) {
-        startMenu.classList.remove("show");  // hide start menu with animation
+        startMenu.classList.remove("show");
     }
 });
 
@@ -84,3 +83,12 @@ document.addEventListener("click", function (e) {
         contextMenu.classList.remove("show");
     }
 });
+
+
+let backgrounds = ['./assets/mountain.jpg', './assets/disc.jpg', './assets/city.png', './assets/forest.jpg'];
+let currentBackgroundIndex = 0;
+
+setInterval(() => {
+    main.style.background = `url(${backgrounds[currentBackgroundIndex]}) center/cover no-repeat`;
+    currentBackgroundIndex = (currentBackgroundIndex + 1) % backgrounds.length;
+}, 5000)
