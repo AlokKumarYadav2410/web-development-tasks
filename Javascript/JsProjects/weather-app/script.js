@@ -1,5 +1,7 @@
 let formElement = document.querySelector("form");
-let degreeElement = document.querySelector(".main-result .search-img p");
+let degreeElement = document.querySelector("#degree");
+let feelsElement = document.querySelector("#feels");
+let weatherIconElement = document.querySelector(".main-result .search-img img");
 let cityElement = document.querySelector(".main-result .data .city-data p");
 let timeElement = document.querySelectorAll(".main-result .data .time-data p");
 
@@ -8,58 +10,133 @@ let closeBtn = document.querySelector(".close-btn");
 let errorMessageElement = document.querySelector(".error-message");
 let errorMessageModal = document.querySelector(".error-message-modal");
 
+let humidityElement = document.querySelector("#humidity");
+let windElement = document.querySelector("#wind");
+let uvIndexElement = document.querySelector("#uv-index");
+let visibilityElement = document.querySelector("#visibility");
+let sunriseElement = document.querySelector("#sunrise");
+let sunsetElement = document.querySelector("#sunset");
+
+let errorMessageText = document.querySelector(".error-message p");
+
 formElement.addEventListener("submit", (e) => {
     e.preventDefault();
     let inputElement = document.querySelector("#search-box");
     let cityName = inputElement.value;
-    console.log("City Name:", cityName);
+    if (cityName.trim() === "") {
+        errorMessageText.textContent = "Please enter a city name.";
+        errorMessageElement.style.display = "flex";
+        errorMessageModal.style.display = "flex";
+        return;
+    }
     fetchWeatherData(cityName);
 
 });
-
 
 closeBtn.addEventListener("click", () => {
     errorMessageElement.style.display = "none";
     errorMessageModal.style.display = "none";
 });
+
+// 7-day Forecast
+const forecastsContainer = document.querySelector(".forecasts");
+
+// Weather icons mapping
+const weatherIcons = {
+    0: { day: "https://img.icons8.com/emoji/96/sun-emoji.png", night: "https://img.icons8.com/emoji/96/full-moon-emoji.png" },
+    1: { day: "https://img.icons8.com/emoji/96/sun-behind-cloud.png", night: "https://img.icons8.com/?size=100&id=VT8HlhlnhUwL&format=png&color=000000" },
+    2: { day: "https://img.icons8.com/?size=100&id=zIVmoh4T8wh7&format=png&color=000000", night: "https://img.icons8.com/?size=100&id=VT8HlhlnhUwL&format=png&color=000000" },
+    3: { day: "https://img.icons8.com/?size=100&id=W8fUZZSmXssu&format=png&color=000000", night: "https://img.icons8.com/?size=100&id=W8fUZZSmXssu&format=png&color=000000" },
+    45: { day: "https://img.icons8.com/?size=100&id=7tEHHH5dn7A3&format=png&color=000000", night: "https://img.icons8.com/?size=100&id=7tEHHH5dn7A3&format=png&color=000000" },
+    48: { day: "https://img.icons8.com/?size=100&id=7tEHHH5dn7A3&format=png&color=000000", night: "https://img.icons8.com/?size=100&id=7tEHHH5dn7A3&format=png&color=000000" },
+    51: { day: "https://img.icons8.com/?size=100&id=QZJFPE7TNi5Q&format=png&color=000000", night: "https://img.icons8.com/?size=100&id=QZJFPE7TNi5Q&format=png&color=000000" },
+    53: { day: "https://img.icons8.com/?size=100&id=QZJFPE7TNi5Q&format=png&color=000000", night: "https://img.icons8.com/?size=100&id=QZJFPE7TNi5Q&format=png&color=000000" },
+    55: { day: "https://img.icons8.com/?size=100&id=QZJFPE7TNi5Q&format=png&color=000000", night: "https://img.icons8.com/?size=100&id=QZJFPE7TNi5Q&format=png&color=000000" },
+    61: { day: "https://img.icons8.com/?size=100&id=kKxyuLXD4w0n&format=png&color=000000", night: "https://img.icons8.com/?size=100&id=kKxyuLXD4w0n&format=png&color=000000" },
+    63: { day: "https://img.icons8.com/?size=100&id=kKxyuLXD4w0n&format=png&color=000000", night: "https://img.icons8.com/?size=100&id=kKxyuLXD4w0n&format=png&color=000000" },
+    65: { day: "https://img.icons8.com/?size=100&id=kKxyuLXD4w0n&format=png&color=000000", night: "https://img.icons8.com/?size=100&id=kKxyuLXD4w0n&format=png&color=000000" },
+    71: { day: "https://img.icons8.com/?size=100&id=cyZConbteZk9&format=png&color=000000", night: "https://img.icons8.com/?size=100&id=cyZConbteZk9&format=png&color=000000" },
+    73: { day: "https://img.icons8.com/?size=100&id=cyZConbteZk9&format=png&color=000000", night: "https://img.icons8.com/?size=100&id=cyZConbteZk9&format=png&color=000000" },
+    75: { day: "https://img.icons8.com/?size=100&id=cyZConbteZk9&format=png&color=000000", night: "https://img.icons8.com/?size=100&id=cyZConbteZk9&format=png&color=000000" },
+    77: { day: "https://img.icons8.com/?size=100&id=cyZConbteZk9&format=png&color=000000", night: "https://img.icons8.com/?size=100&id=cyZConbteZk9&format=png&color=000000" },
+    80: { day: "https://img.icons8.com/?size=100&id=6AAyqKfBlzoB&format=png&color=000000", night: "https://img.icons8.com/?size=100&id=6AAyqKfBlzoB&format=png&color=000000" },
+    81: { day: "https://img.icons8.com/?size=100&id=6AAyqKfBlzoB&format=png&color=000000", night: "https://img.icons8.com/?size=100&id=6AAyqKfBlzoB&format=png&color=000000" },
+    95: { day: "https://img.icons8.com/?size=100&id=6AAyqKfBlzoB&format=png&color=000000", night: "https://img.icons8.com/?size=100&id=6AAyqKfBlzoB&format=png&color=000000" }
+};
+
+
 async function fetchWeatherData(city) {
-    let geoURL = `https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=1`;
+    let geoURL = `https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=5&country=IN`;
     loaderElement.style.display = "flex";
     try {
+        forecastsContainer.innerHTML = "";
         let geoResponse = await fetch(geoURL);
         let geoData = await geoResponse.json();
-           if (!geoData.results || geoData.results.length === 0) {
-            console.log("City not found");
+        if (!geoData.results || geoData.results.length === 0) {
             loaderElement.style.display = "none";
-            errorMessageElement.style.display = "flex"; // Show modal
+            errorMessageElement.style.display = "flex";
             errorMessageModal.style.display = "flex";
             return;
         }
-        console.log("Geocoding Data:", geoData);
-        let { latitude, longitude, name, country } = geoData.results[0];
+        let { latitude, longitude, name, country, timezone } = geoData.results[0];
 
-        console.log("Latitude:", latitude);
-        console.log("Longitude:", longitude);
-        console.log("City:", name);
-        console.log("Country:", country);
-
-        let weatherURL = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&hourly=temperature_2m,relativehumidity_2m,visibility&daily=weathercode,temperature_2m_max,temperature_2m_min,sunrise,sunset,uv_index_max&timezone=auto`;
+        let weatherURL = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&hourly=temperature_2m,apparent_temperature,relativehumidity_2m,visibility&daily=weathercode,temperature_2m_max,temperature_2m_min,sunrise,sunset,uv_index_max&timezone=${timezone}`;
 
         let weatherRes = await fetch(weatherURL);
         let weatherData = await weatherRes.json();
 
+        const currentTime = new Date(weatherData.current_weather.time);
+        const sunriseTime = new Date(weatherData.daily.sunrise[0]);
+        const sunsetTime = new Date(weatherData.daily.sunset[0]);
+        const isDay = currentTime >= sunriseTime && currentTime < sunsetTime;
+        const code = weatherData.current_weather.weathercode;
+        weatherIconElement.src = isDay ? weatherIcons[code].day : weatherIcons[code].night;
         degreeElement.textContent = `${weatherData.current_weather.temperature}°C`;
+        feelsElement.textContent = `Feels like ${weatherData.hourly.apparent_temperature[0]}°C`;
         cityElement.textContent = `${name}, ${country}`;
         let timeString = weatherData.current_weather.time;
         let [date, time] = timeString.split("T");
         timeElement[0].textContent = `${date}`;
         timeElement[1].textContent = `${time}`;
-        loaderElement.style.display = "none";
-        console.log("Weather Data:", weatherData);
 
+        humidityElement.textContent = `${weatherData.hourly.relativehumidity_2m[0]}%`;
+        windElement.textContent = `${weatherData.current_weather.windspeed} km/h`;
+        uvIndexElement.textContent = `${weatherData.daily.uv_index_max[0]}`;
+        visibilityElement.textContent = `${(weatherData.hourly.visibility[0] / 1000).toFixed(2)} km`;
+        sunriseElement.textContent = weatherData.daily.sunrise[0].split("T")[1];
+        sunsetElement.textContent = weatherData.daily.sunset[0].split("T")[1];
+
+        for (let i = 0; i < 7; i++) {
+            const dateStr = weatherData.daily.time[i];
+            const dateObj = new Date(dateStr);
+            const weekday = dateObj.toLocaleDateString("en-US", { weekday: "short" });
+            const dateFormatted = dateObj.toLocaleDateString("en-GB"); // DD/MM/YYYY
+
+            const maxTemp = weatherData.daily.temperature_2m_max[i];
+            const minTemp = weatherData.daily.temperature_2m_min[i];
+            const code = weatherData.daily.weathercode[i];
+
+            const forecastDate = new Date(dateStr + "T12:00");
+            const isDayForecast = forecastDate >= new Date(weatherData.daily.sunrise[i]) && forecastDate < new Date(weatherData.daily.sunset[i]);
+            const iconURL = isDayForecast ? weatherIcons[code].day : weatherIcons[code].night;
+
+            const tile = document.createElement("div");
+            tile.classList.add("weather-forecast-tile");
+            tile.innerHTML = `
+                <div class="inner-forecast-tile">
+                    <p>${weekday}</p>
+                    <img src="${iconURL}" alt="">
+                </div>
+                <p>${dateFormatted}</p>
+                <p>${maxTemp}°C / ${minTemp}°C</p>
+            `;
+            forecastsContainer.appendChild(tile);
+        }
+        localStorage.setItem("lastCity", city);
+        loaderElement.style.display = "none";
     }
     catch (error) {
-        console.error("Error fetching data:", error);
+        errorMessageText.textContent = "Please enter a valid city name.";
         errorMessageElement.style.display = "flex";
         errorMessageModal.style.display = "flex";
     }
@@ -68,4 +145,9 @@ async function fetchWeatherData(city) {
     }
 }
 
+function initWeather() {
+    const lastCity = localStorage.getItem("lastCity") || "Delhi";
+    fetchWeatherData(lastCity);
+}
 
+window.addEventListener("DOMContentLoaded", initWeather);
