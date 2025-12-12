@@ -4,10 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
+    <title>Weather App - Alok</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="responsive.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -35,7 +37,10 @@
                 <div class="search-results">
                     <div class="main-result">
                         <div class="search-img">
-                            <p>20°C</p>
+                            <div>
+                                <p id="degree"></p>
+                                <p id="feels"></p>
+                            </div>
                             <img src="https://img.icons8.com/emoji/96/sun-emoji.png" alt="">
                         </div>
                         <div class="data">
@@ -61,27 +66,27 @@
                 <div class="weather-detail">
                     <div class="details">
                         <p>Humidity</p>
-                        <p>80%</p>
+                        <p id="humidity">80%</p>
                     </div>
                     <div class="details">
                         <p>Wind</p>
-                        <p>3.1 km/h</p>
+                        <p id="wind">3.1 km/h</p>
                     </div>
                     <div class="details">
                         <p>UV Index</p>
-                        <p>3.7</p>
+                        <p id="uv-index">3.7</p>
                     </div>
                     <div class="details">
                         <p>Visibility</p>
-                        <p>24.14 km</p>
+                        <p id="visibility">24.14 km</p>
                     </div>
                     <div class="details">
                         <p>Sunrise</p>
-                        <p>07:04</p>
+                        <p id="sunrise">07:04</p>
                     </div>
                     <div class="details">
                         <p>Sunset</p>
-                        <p>17:25</p>
+                        <p id="sunset">17:25</p>
                     </div>
                 </div>
             </div>
@@ -90,62 +95,7 @@
         <div class="seven-forecast">
             <h2>7 Days Forecast</h2>
             <div class="forecasts">
-                <div class="weather-forecast-tile">
-                    <div class="inner-forecast-tile">
-                        <p>Sun</p>
-                        <img src="https://img.icons8.com/emoji/96/sun-emoji.png" alt="">
-                    </div>
-                    <p>12-12-2025, Friday</p>
-                    <p>28°C</p>
-                </div>
-                <div class="weather-forecast-tile">
-                    <div class="inner-forecast-tile">
-                        <p>Sun</p>
-                        <img src="https://img.icons8.com/emoji/96/sun-emoji.png" alt="">
-                    </div>
-                    <p>12-12-2025, Friday</p>
-                    <p>28°C</p>
-                </div>
-                <div class="weather-forecast-tile">
-                    <div class="inner-forecast-tile">
-                        <p>Sun</p>
-                        <img src="https://img.icons8.com/emoji/96/sun-emoji.png" alt="">
-                    </div>
-                    <p>12-12-2025, Friday</p>
-                    <p>28°C</p>
-                </div>
-                <div class="weather-forecast-tile">
-                    <div class="inner-forecast-tile">
-                        <p>Sun</p>
-                        <img src="https://img.icons8.com/emoji/96/sun-emoji.png" alt="">
-                    </div>
-                    <p>12-12-2025, Friday</p>
-                    <p>28°C</p>
-                </div>
-                <div class="weather-forecast-tile">
-                    <div class="inner-forecast-tile">
-                        <p>Sun</p>
-                        <img src="https://img.icons8.com/emoji/96/sun-emoji.png" alt="">
-                    </div>
-                    <p>12-12-2025, Friday</p>
-                    <p>28°C</p>
-                </div>
-                <div class="weather-forecast-tile">
-                    <div class="inner-forecast-tile">
-                        <p>Sun</p>
-                        <img src="https://img.icons8.com/emoji/96/sun-emoji.png" alt="">
-                    </div>
-                    <p>12-12-2025, Friday</p>
-                    <p>28°C</p>
-                </div>
-                <div class="weather-forecast-tile">
-                    <div class="inner-forecast-tile">
-                        <p>Sun</p>
-                        <img src="https://img.icons8.com/emoji/96/sun-emoji.png" alt="">
-                    </div>
-                    <p>12-12-2025, Friday</p>
-                    <p>28°C</p>
-                </div>
+                <!-- Forecast items will be dynamically added here -->
             </div>
         </div>
     </main>
