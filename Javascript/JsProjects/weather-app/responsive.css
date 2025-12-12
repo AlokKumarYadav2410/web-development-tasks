@@ -1,0 +1,28 @@
+@media (max-width: 768px) {
+    .weather-app {
+        flex-direction: column;
+    }
+
+    .weather-search,
+    .weather-details,
+    .seven-forecast {
+        max-width: 100%;
+    }
+
+    .weather-details h2{
+        font-size: 1.2rem;
+    }
+
+    .weather-detail {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .weather-detail .details{
+        flex-grow: 1;
+
+    }
+}
