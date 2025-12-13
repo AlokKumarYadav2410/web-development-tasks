@@ -1,185 +1,182 @@
-let main = document.querySelector("main");
-let formElement = document.querySelector("form");
-let degreeElement = document.querySelector("#degree");
-let feelsElement = document.querySelector("#feels");
-let weatherIconElement = document.querySelector(".main-result .search-img img");
-let cityElement = document.querySelector(".main-result .data .city-data p");
-let timeElement = document.querySelectorAll(".main-result .data .time-data p");
+const main = document.querySelector("main");
+const formElement = document.querySelector("form");
 
-let loaderElement = document.querySelector(".loader");
-let closeBtn = document.querySelector(".close-btn");
-let errorMessageElement = document.querySelector(".error-message");
-let errorMessageModal = document.querySelector(".error-message-modal");
-let errorMessageText = document.querySelector(".error-message p");
+const degreeElement = document.querySelector("#degree");
+const feelsElement = document.querySelector("#feels");
+const weatherIconElement = document.querySelector(".main-result .search-img img");
+const cityElement = document.querySelector(".main-result .data .city-data p");
+const timeElement = document.querySelectorAll(".main-result .data .time-data p");
 
-let weatherDetails = document.createElement("div");
-// 7-day Forecast
-let sevenForecast = document.createElement("div");
+const loaderElement = document.querySelector(".loader");
+const closeBtn = document.querySelector(".close-btn");
+const errorMessageElement = document.querySelector(".error-message");
+const errorMessageModal = document.querySelector(".error-message-modal");
+const errorMessageText = document.querySelector(".error-message p");
 
-formElement.addEventListener("submit", (e) => {
-    e.preventDefault();
-    let inputElement = document.querySelector("#search-box");
-    let cityName = inputElement.value;
-    sevenForecast.style.display = "none";
-    weatherDetails.style.display = "none";
-    if (cityName.trim() === "") {
-        errorMessageText.textContent = "Please enter a city name.";
-        errorMessageElement.style.display = "flex";
-        errorMessageModal.style.display = "flex";
-        return;
-    }
-    fetchWeatherData(cityName);
-
-});
-
-closeBtn.addEventListener("click", () => {
-    errorMessageElement.style.display = "none";
-    errorMessageModal.style.display = "none";
-});
-
-// Weather icons mapping
+// WEATHER ICONS MAP
 const weatherIcons = {
     0: { day: "https://img.icons8.com/emoji/96/sun-emoji.png", night: "https://img.icons8.com/emoji/96/full-moon-emoji.png" },
-    1: { day: "https://img.icons8.com/emoji/96/sun-behind-cloud.png", night: "https://img.icons8.com/?size=100&id=VT8HlhlnhUwL&format=png&color=000000" },
-    2: { day: "https://img.icons8.com/?size=100&id=zIVmoh4T8wh7&format=png&color=000000", night: "https://img.icons8.com/?size=100&id=VT8HlhlnhUwL&format=png&color=000000" },
-    3: { day: "https://img.icons8.com/?size=100&id=W8fUZZSmXssu&format=png&color=000000", night: "https://img.icons8.com/?size=100&id=W8fUZZSmXssu&format=png&color=000000" },
-    45: { day: "https://img.icons8.com/?size=100&id=7tEHHH5dn7A3&format=png&color=000000", night: "https://img.icons8.com/?size=100&id=7tEHHH5dn7A3&format=png&color=000000" },
-    48: { day: "https://img.icons8.com/?size=100&id=7tEHHH5dn7A3&format=png&color=000000", night: "https://img.icons8.com/?size=100&id=7tEHHH5dn7A3&format=png&color=000000" },
-    51: { day: "https://img.icons8.com/?size=100&id=QZJFPE7TNi5Q&format=png&color=000000", night: "https://img.icons8.com/?size=100&id=QZJFPE7TNi5Q&format=png&color=000000" },
-    53: { day: "https://img.icons8.com/?size=100&id=QZJFPE7TNi5Q&format=png&color=000000", night: "https://img.icons8.com/?size=100&id=QZJFPE7TNi5Q&format=png&color=000000" },
-    55: { day: "https://img.icons8.com/?size=100&id=QZJFPE7TNi5Q&format=png&color=000000", night: "https://img.icons8.com/?size=100&id=QZJFPE7TNi5Q&format=png&color=000000" },
-    61: { day: "https://img.icons8.com/?size=100&id=kKxyuLXD4w0n&format=png&color=000000", night: "https://img.icons8.com/?size=100&id=kKxyuLXD4w0n&format=png&color=000000" },
-    63: { day: "https://img.icons8.com/?size=100&id=kKxyuLXD4w0n&format=png&color=000000", night: "https://img.icons8.com/?size=100&id=kKxyuLXD4w0n&format=png&color=000000" },
-    65: { day: "https://img.icons8.com/?size=100&id=kKxyuLXD4w0n&format=png&color=000000", night: "https://img.icons8.com/?size=100&id=kKxyuLXD4w0n&format=png&color=000000" },
-    71: { day: "https://img.icons8.com/?size=100&id=cyZConbteZk9&format=png&color=000000", night: "https://img.icons8.com/?size=100&id=cyZConbteZk9&format=png&color=000000" },
-    73: { day: "https://img.icons8.com/?size=100&id=cyZConbteZk9&format=png&color=000000", night: "https://img.icons8.com/?size=100&id=cyZConbteZk9&format=png&color=000000" },
-    75: { day: "https://img.icons8.com/?size=100&id=cyZConbteZk9&format=png&color=000000", night: "https://img.icons8.com/?size=100&id=cyZConbteZk9&format=png&color=000000" },
-    77: { day: "https://img.icons8.com/?size=100&id=cyZConbteZk9&format=png&color=000000", night: "https://img.icons8.com/?size=100&id=cyZConbteZk9&format=png&color=000000" },
-    80: { day: "https://img.icons8.com/?size=100&id=6AAyqKfBlzoB&format=png&color=000000", night: "https://img.icons8.com/?size=100&id=6AAyqKfBlzoB&format=png&color=000000" },
-    81: { day: "https://img.icons8.com/?size=100&id=6AAyqKfBlzoB&format=png&color=000000", night: "https://img.icons8.com/?size=100&id=6AAyqKfBlzoB&format=png&color=000000" },
-    95: { day: "https://img.icons8.com/?size=100&id=6AAyqKfBlzoB&format=png&color=000000", night: "https://img.icons8.com/?size=100&id=6AAyqKfBlzoB&format=png&color=000000" }
+    1: { day: "https://img.icons8.com/emoji/96/sun-behind-cloud.png", night: "https://img.icons8.com/?size=100&id=VT8HlhlnhUwL&format=png" },
+    2: { day: "https://img.icons8.com/?size=100&id=zIVmoh4T8wh7&format=png", night: "https://img.icons8.com/?size=100&id=VT8HlhlnhUwL&format=png" },
+    3: { day: "https://img.icons8.com/?size=100&id=W8fUZZSmXssu&format=png", night: "https://img.icons8.com/?size=100&id=W8fUZZSmXssu&format=png" },
+    45: { day: "https://img.icons8.com/?size=100&id=7tEHHH5dn7A3&format=png", night: "https://img.icons8.com/?size=100&id=7tEHHH5dn7A3&format=png" },
+    48: { day: "https://img.icons8.com/?size=100&id=7tEHHH5dn7A3&format=png", night: "https://img.icons8.com/?size=100&id=7tEHHH5dn7A3&format=png" },
+    51: { day: "https://img.icons8.com/?size=100&id=QZJFPE7TNi5Q&format=png", night: "https://img.icons8.com/?size=100&id=QZJFPE7TNi5Q&format=png" },
+    61: { day: "https://img.icons8.com/?size=100&id=kKxyuLXD4w0n&format=png", night: "https://img.icons8.com/?size=100&id=kKxyuLXD4w0n&format=png" },
+    71: { day: "https://img.icons8.com/?size=100&id=cyZConbteZk9&format=png", night: "https://img.icons8.com/?size=100&id=cyZConbteZk9&format=png" },
+    80: { day: "https://img.icons8.com/?size=100&id=6AAyqKfBlzoB&format=png", night: "https://img.icons8.com/?size=100&id=6AAyqKfBlzoB&format=png" },
+    95: { day: "https://img.icons8.com/?size=100&id=6AAyqKfBlzoB&format=png", night: "https://img.icons8.com/?size=100&id=6AAyqKfBlzoB&format=png" }
 };
 
+formElement.addEventListener("submit", e => {
+    e.preventDefault();
+    const city = document.querySelector("#search-box").value.trim();
+
+    if (!city) {
+        showError("Please enter a city name.");
+        return;
+    }
+
+    fetchWeatherData(city);
+});
+
+closeBtn.addEventListener("click", hideError);
 
 async function fetchWeatherData(city) {
-    let geoURL = `https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=5&country=IN`;
-    loaderElement.style.display = "flex";
+    showLoader();
+
     try {
-        sevenForecast.innerHTML = "";
-        let geoResponse = await fetch(geoURL);
-        let geoData = await geoResponse.json();
-        if (!geoData.results || geoData.results.length === 0) {
-            loaderElement.style.display = "none";
-            errorMessageElement.style.display = "flex";
-            errorMessageModal.style.display = "flex";
-            return;
-        }
-        let { latitude, longitude, name, country, timezone } = geoData.results[0];
+        const geoData = await fetchGeoData(city);
+        const weatherData = await fetchWeather(geoData);
 
-        let weatherURL = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&hourly=temperature_2m,apparent_temperature,relativehumidity_2m,visibility&daily=weathercode,temperature_2m_max,temperature_2m_min,sunrise,sunset,uv_index_max&timezone=${timezone}`;
+        renderCurrentWeather(geoData, weatherData);
+        renderHighlights(weatherData);
+        renderForecast(weatherData);
 
-        let weatherRes = await fetch(weatherURL);
-        let weatherData = await weatherRes.json();
-
-        const currentTime = new Date(weatherData.current_weather.time);
-        const sunriseTime = new Date(weatherData.daily.sunrise[0]);
-        const sunsetTime = new Date(weatherData.daily.sunset[0]);
-        const isDay = currentTime >= sunriseTime && currentTime < sunsetTime;
-        const code = weatherData.current_weather.weathercode;
-        weatherIconElement.src = isDay ? weatherIcons[code].day : weatherIcons[code].night;
-        degreeElement.textContent = `${weatherData.current_weather.temperature}°C`;
-        feelsElement.textContent = `Feels like ${weatherData.hourly.apparent_temperature[0]}°C`;
-        cityElement.textContent = `${name}, ${country}`;
-        let timeString = weatherData.current_weather.time;
-        let [date, time] = timeString.split("T");
-        timeElement[0].textContent = `${date.split("-").reverse().join("/")}`;
-        timeElement[1].textContent = `${(time.split(":")[0]>12)?(time.split(":")[0]-12).toString().padStart(2,'0'):time.split(":")[0]}:${time.split(":")[1]} ${time.split(":")[0]>=12?'PM':'AM'}`;
-
-        weatherDetails.style.display = "grid";
-        weatherDetails.classList.add("weather-details")
-        weatherDetails.innerHTML = `<h2>Today's Highlights</h2>
-            <div class="weather-detail">
-                <div class="details">
-                    <p>Humidity</p>
-                    <p id="humidity">${weatherData.hourly.relativehumidity_2m[0]}%</p>
-                </div>
-                <div class="details">
-                    <p>Wind</p>
-                    <p id="wind">${weatherData.current_weather.windspeed} km/h</p>
-                </div>
-                    <div class="details">
-                        <p>UV Index</p>
-                        <p id="uv-index">${weatherData.daily.uv_index_max[0]}</p>
-                    </div>
-                    <div class="details">
-                        <p>Visibility</p>
-                        <p id="visibility">${(weatherData.hourly.visibility[0] / 1000).toFixed(2)} km</p>
-                    </div>
-                    <div class="details">
-                        <p>Sunrise</p>
-                        <p id="sunrise">${weatherData.daily.sunrise[0].split("T")[1]}</p>
-                    </div>
-                    <div class="details">
-                        <p>Sunset</p>
-                        <p id="sunset">${weatherData.daily.sunset[0].split("T")[1]}</p>
-                </div>
-            </div>`;
-
-        document.querySelector(".weather-app").appendChild(weatherDetails);
-
-        sevenForecast.style.display = "flex";
-        sevenForecast.classList.add("seven-forecast")
-        let h2 = document.createElement("h2");
-        h2.textContent = "7 Days Forecast";
-        sevenForecast.appendChild(h2);
-        
-        let forecasts = document.createElement("div");
-        forecasts.classList.add("forecasts");
-
-        for (let i = 0; i < 7; i++) {
-            const dateStr = weatherData.daily.time[i];
-            const dateObj = new Date(dateStr);
-            const weekday = dateObj.toLocaleDateString("en-US", { weekday: "short" });
-            const dateFormatted = dateObj.toLocaleDateString("en-GB");
-
-            const maxTemp = weatherData.daily.temperature_2m_max[i];
-            const minTemp = weatherData.daily.temperature_2m_min[i];
-            const code = weatherData.daily.weathercode[i];
-
-            const forecastDate = new Date(dateStr + "T12:00");
-            const isDayForecast = forecastDate >= new Date(weatherData.daily.sunrise[i]) && forecastDate < new Date(weatherData.daily.sunset[i]);
-            const iconURL = isDayForecast ? weatherIcons[code].day : weatherIcons[code].night;
-
-            const tile = document.createElement("div");
-            tile.classList.add("weather-forecast-tile");
-            tile.innerHTML = `
-                <div class="inner-forecast-tile">
-                    <p>${weekday}</p>
-                    <img src="${iconURL}" alt="">
-                </div>
-                <p>${dateFormatted}</p>
-                <p>${maxTemp}°C / ${minTemp}°C</p>
-            `;
-            forecasts.appendChild(tile);
-        }
-        sevenForecast.appendChild(forecasts);
-        main.appendChild(sevenForecast)
         localStorage.setItem("lastCity", city);
-        loaderElement.style.display = "none";
-    }
-    catch (error) {
-        errorMessageText.textContent = "Please enter a valid city name.";
-        errorMessageElement.style.display = "flex";
-        errorMessageModal.style.display = "flex";
-    }
-    finally {
-        loaderElement.style.display = "none";
+    } catch (error) {
+        showError(error.message || "Something went wrong. Please try again.");
+    } finally {
+        hideLoader();
     }
 }
 
-function initWeather() {
-    const lastCity = localStorage.getItem("lastCity") || "Delhi";
-    fetchWeatherData(lastCity);
+async function fetchGeoData(city) {
+    const url = `https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=1`;
+
+    const res = await fetch(url);
+    const data = await res.json();
+
+    if (!data.results || !data.results.length) {
+        throw new Error("City not found.");
+    }
+
+    return data.results[0];
 }
 
-window.addEventListener("DOMContentLoaded", initWeather);
+async function fetchWeather({ latitude, longitude, timezone }) {
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&hourly=temperature_2m,apparent_temperature,relativehumidity_2m,visibility&daily=weathercode,temperature_2m_max,temperature_2m_min,sunrise,sunset,uv_index_max&timezone=${timezone}`;
+
+    const res = await fetch(url);
+    return await res.json();
+}
+
+function renderCurrentWeather(geo, weather) {
+    const currentTime = new Date(weather.current_weather.time);
+    // const hourlyIndex = weather.hourly.time.indexOf(weather.current_weather.time);
+
+    const sunrise = new Date(weather.daily.sunrise[0]);
+    const sunset = new Date(weather.daily.sunset[0]);
+    const isDay = currentTime >= sunrise && currentTime < sunset;
+
+    const code = weather.current_weather.weathercode;
+    const icon = weatherIcons[code] || weatherIcons[0];
+
+    weatherIconElement.src = isDay ? icon.day : icon.night;
+    degreeElement.textContent = `${weather.current_weather.temperature}°C`;
+    feelsElement.textContent = `Feels like ${weather.hourly.apparent_temperature[0]}°C`;
+    cityElement.textContent = `${geo.name}, ${geo.country}`;
+
+    timeElement[0].textContent = currentTime.toLocaleDateString("en-GB");
+    timeElement[1].textContent = currentTime.toLocaleTimeString("en-US", {
+        hour: "2-digit",
+        minute: "2-digit"
+    });
+}
+
+function renderHighlights(weather) {
+    document.querySelector(".weather-details")?.remove();
+
+    const index = weather.hourly.time.indexOf(weather.current_weather.time);
+
+    const details = document.createElement("div");
+    details.className = "weather-details";
+    details.innerHTML = `
+        <h2>Today's Highlights</h2>
+        <div class="weather-detail">
+            <div class="details"><p>Humidity</p><p>${weather.hourly.relativehumidity_2m[0]}%</p></div>
+            <div class="details"><p>Wind</p><p>${weather.current_weather.windspeed} km/h</p></div>
+            <div class="details"><p>UV Index</p><p>${weather.daily.uv_index_max[0]}</p></div>
+            <div class="details"><p>Visibility</p><p>${(weather.hourly.visibility[0] / 1000).toFixed(1)} km</p></div>
+            <div class="details"><p>Sunrise</p><p>${weather.daily.sunrise[0].split("T")[1]}</p></div>
+            <div class="details"><p>Sunset</p><p>${weather.daily.sunset[0].split("T")[1]}</p></div>
+        </div>
+    `;
+    document.querySelector(".weather-app").appendChild(details);
+}
+
+function renderForecast(weather) {
+    document.querySelector(".seven-forecast")?.remove();
+
+    const container = document.createElement("div");
+    container.className = "seven-forecast";
+
+    const title = document.createElement("h2");
+    title.textContent = "7 Days Forecast";
+    container.appendChild(title);
+
+    const forecasts = document.createElement("div");
+    forecasts.className = "forecasts";
+
+    for (let i = 0; i < 7; i++) {
+        const date = new Date(weather.daily.time[i]);
+        const code = weather.daily.weathercode[i];
+        const icon = weatherIcons[code] || weatherIcons[0];
+
+        const tile = document.createElement("div");
+        tile.className = "weather-forecast-tile";
+        tile.innerHTML = `
+            <p>${date.toLocaleDateString("en-US", { weekday: "long" })}</p>
+            <img src="${icon.day}">
+            <p>${date.toLocaleDateString("en-GB")}</p>
+            <p>${weather.daily.temperature_2m_max[i]}°C / ${weather.daily.temperature_2m_min[i]}°C</p>
+        `;
+        forecasts.appendChild(tile);
+    }
+
+    container.appendChild(forecasts);
+    main.appendChild(container);
+}
+
+function showLoader() {
+    loaderElement.style.display = "flex";
+}
+
+function hideLoader() {
+    loaderElement.style.display = "none";
+}
+
+function showError(message) {
+    errorMessageText.textContent = message;
+    errorMessageElement.style.display = "flex";
+    errorMessageModal.style.display = "flex";
+}
+
+function hideError() {
+    errorMessageElement.style.display = "none";
+    errorMessageModal.style.display = "none";
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+    fetchWeatherData(localStorage.getItem("lastCity") || "Delhi");
+});

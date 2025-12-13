@@ -240,20 +240,14 @@ main {
     min-width: 100px;
 }
 
-.inner-forecast-tile {
-    display: flex;
-    align-items: flex-end;
-    gap: 10px;
-}
-
-.inner-forecast-tile img {
+.weather-forecast-tile img {
     width: 45px;
     height: 45px;
 }
 
-.inner-forecast-tile p {
-    font-size: 1.2rem;
-    font-weight: 600;
+.weather-forecast-tile p:nth-child(1) {
+    font-size: 1.1rem;
+    font-weight: 700;
 }
 
 /* Loader overlay */
