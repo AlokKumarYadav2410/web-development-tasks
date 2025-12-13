@@ -1,3 +1,4 @@
+let main = document.querySelector("main");
 let formElement = document.querySelector("form");
 let degreeElement = document.querySelector("#degree");
 let feelsElement = document.querySelector("#feels");
@@ -9,20 +10,18 @@ let loaderElement = document.querySelector(".loader");
 let closeBtn = document.querySelector(".close-btn");
 let errorMessageElement = document.querySelector(".error-message");
 let errorMessageModal = document.querySelector(".error-message-modal");
-
-let humidityElement = document.querySelector("#humidity");
-let windElement = document.querySelector("#wind");
-let uvIndexElement = document.querySelector("#uv-index");
-let visibilityElement = document.querySelector("#visibility");
-let sunriseElement = document.querySelector("#sunrise");
-let sunsetElement = document.querySelector("#sunset");
-
 let errorMessageText = document.querySelector(".error-message p");
+
+let weatherDetails = document.createElement("div");
+// 7-day Forecast
+let sevenForecast = document.createElement("div");
 
 formElement.addEventListener("submit", (e) => {
     e.preventDefault();
     let inputElement = document.querySelector("#search-box");
     let cityName = inputElement.value;
+    sevenForecast.style.display = "none";
+    weatherDetails.style.display = "none";
     if (cityName.trim() === "") {
         errorMessageText.textContent = "Please enter a city name.";
         errorMessageElement.style.display = "flex";
@@ -37,9 +36,6 @@ closeBtn.addEventListener("click", () => {
     errorMessageElement.style.display = "none";
     errorMessageModal.style.display = "none";
 });
-
-// 7-day Forecast
-const forecastsContainer = document.querySelector(".forecasts");
 
 // Weather icons mapping
 const weatherIcons = {
@@ -69,7 +65,7 @@ async function fetchWeatherData(city) {
     let geoURL = `https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=5&country=IN`;
     loaderElement.style.display = "flex";
     try {
-        forecastsContainer.innerHTML = "";
+        sevenForecast.innerHTML = "";
         let geoResponse = await fetch(geoURL);
         let geoData = await geoResponse.json();
         if (!geoData.results || geoData.results.length === 0) {
@@ -96,21 +92,55 @@ async function fetchWeatherData(city) {
         cityElement.textContent = `${name}, ${country}`;
         let timeString = weatherData.current_weather.time;
         let [date, time] = timeString.split("T");
-        timeElement[0].textContent = `${date}`;
-        timeElement[1].textContent = `${time}`;
+        timeElement[0].textContent = `${date.split("-").reverse().join("/")}`;
+        timeElement[1].textContent = `${(time.split(":")[0]>12)?(time.split(":")[0]-12).toString().padStart(2,'0'):time.split(":")[0]}:${time.split(":")[1]} ${time.split(":")[0]>=12?'PM':'AM'}`;
 
-        humidityElement.textContent = `${weatherData.hourly.relativehumidity_2m[0]}%`;
-        windElement.textContent = `${weatherData.current_weather.windspeed} km/h`;
-        uvIndexElement.textContent = `${weatherData.daily.uv_index_max[0]}`;
-        visibilityElement.textContent = `${(weatherData.hourly.visibility[0] / 1000).toFixed(2)} km`;
-        sunriseElement.textContent = weatherData.daily.sunrise[0].split("T")[1];
-        sunsetElement.textContent = weatherData.daily.sunset[0].split("T")[1];
+        weatherDetails.style.display = "grid";
+        weatherDetails.classList.add("weather-details")
+        weatherDetails.innerHTML = `<h2>Today's Highlights</h2>
+            <div class="weather-detail">
+                <div class="details">
+                    <p>Humidity</p>
+                    <p id="humidity">${weatherData.hourly.relativehumidity_2m[0]}%</p>
+                </div>
+                <div class="details">
+                    <p>Wind</p>
+                    <p id="wind">${weatherData.current_weather.windspeed} km/h</p>
+                </div>
+                    <div class="details">
+                        <p>UV Index</p>
+                        <p id="uv-index">${weatherData.daily.uv_index_max[0]}</p>
+                    </div>
+                    <div class="details">
+                        <p>Visibility</p>
+                        <p id="visibility">${(weatherData.hourly.visibility[0] / 1000).toFixed(2)} km</p>
+                    </div>
+                    <div class="details">
+                        <p>Sunrise</p>
+                        <p id="sunrise">${weatherData.daily.sunrise[0].split("T")[1]}</p>
+                    </div>
+                    <div class="details">
+                        <p>Sunset</p>
+                        <p id="sunset">${weatherData.daily.sunset[0].split("T")[1]}</p>
+                </div>
+            </div>`;
+
+        document.querySelector(".weather-app").appendChild(weatherDetails);
+
+        sevenForecast.style.display = "flex";
+        sevenForecast.classList.add("seven-forecast")
+        let h2 = document.createElement("h2");
+        h2.textContent = "7 Days Forecast";
+        sevenForecast.appendChild(h2);
+        
+        let forecasts = document.createElement("div");
+        forecasts.classList.add("forecasts");
 
         for (let i = 0; i < 7; i++) {
             const dateStr = weatherData.daily.time[i];
             const dateObj = new Date(dateStr);
             const weekday = dateObj.toLocaleDateString("en-US", { weekday: "short" });
-            const dateFormatted = dateObj.toLocaleDateString("en-GB"); // DD/MM/YYYY
+            const dateFormatted = dateObj.toLocaleDateString("en-GB");
 
             const maxTemp = weatherData.daily.temperature_2m_max[i];
             const minTemp = weatherData.daily.temperature_2m_min[i];
@@ -130,8 +160,10 @@ async function fetchWeatherData(city) {
                 <p>${dateFormatted}</p>
                 <p>${maxTemp}°C / ${minTemp}°C</p>
             `;
-            forecastsContainer.appendChild(tile);
+            forecasts.appendChild(tile);
         }
+        sevenForecast.appendChild(forecasts);
+        main.appendChild(sevenForecast)
         localStorage.setItem("lastCity", city);
         loaderElement.style.display = "none";
     }
