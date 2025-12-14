@@ -84,7 +84,12 @@ web-development-tasks/
 **Description:** A classic snake game implemented using JavaScript, HTML, and CSS. 
 
 **🔗 [Live Preview](https://web-development-project-page.vercel.app/Javascript/JsProjects/Snake-Game/index.html) • [📂 Code](./Javascript/JsProjects/Snake-Game/)**
+---
+### 🐍 JS Project 02: Window UI
+**Status:** ✅ Completed <br />
+**Description:** A window UI project implemented using JavaScript, HTML, and CSS. 
 
+**🔗 [Live Preview](https://web-development-project-page.vercel.app/Javascript/JsProjects/Window/index.html) • [📂 Code](./Javascript/JsProjects/Window/)**
 ---
 
 ## 🏗️ Completed Challenges
@@ -167,6 +172,13 @@ web-development-tasks/
 **Description:** Displays random motivational quotes; great for practicing arrays and DOM updates.
 
 **🔗 [Live Preview](https://web-development-project-page.vercel.app/Javascript/JsPractice/PS-03/QuoteGenerator/index.html) • [📂 Code](./Javascript/JsPractice/PS-03/QuoteGenerator/)**
+
+---
+### 📝 Practice 08: Spotlight
+**Status:** ✅ Completed  
+**Description:** A spotlight effect that follows the cursor, highlighting specific areas of the webpage.
+
+**🔗 [Live Preview](https://web-development-project-page.vercel.app/Javascript/JsPractice/PS-04/Spotlight/index.html) • [📂 Code](./Javascript/JsPractice/PS-04/Spotlight/)**
 
 
 ---
@@ -361,11 +373,11 @@ Modified and enhanced by: [Your Name]
 
 ---
 
-*Last Updated: November 23, 2025*  
+*Last Updated: December 14, 2025*  
 <!-- *Total Challenges Completed: 3/∞*  
 *Total Tasks Completed: 6/∞*  
 *Total Practice Projects Completed: 3/∞*  
 *Total JavaScript Practice Projects (PS-03) Completed: 4/∞*   -->
-*Total Projects Completed: 16/∞*
+*Total Projects Completed: 18/∞*
 
 </div>
