@@ -25,11 +25,11 @@
 
 | Project | Description | Technologies | Live Demo |
 |---------|-------------|--------------|-----------|
+|**🪟 Window UI** | A window UI project implemented using JavaScript, HTML, and CSS. | JavaScript, HTML5, CSS3 | [🔗 View Live](https://web-development-project-page.vercel.app/Javascript/JsProjects/Window/index.html) |
 |**🐍 Snake Game** | A classic snake game implemented using JavaScript, HTML, and CSS. | JavaScript, HTML5, CSS3 | [🔗 View Live](https://web-development-project-page.vercel.app/Javascript/JsProjects/Snake-Game/index.html) |
 | **🔥 Freakish Mind - NFT Landing** | Advanced NFT-themed landing page with full responsiveness, hover effects, and clip-path animations | HTML5, CSS3, Responsive, Clip-path, Hover Effects | [🔗 View Live](https://web-development-project-page.vercel.app/Challenges/Challenge03/index.html) |
 | **🪔 Diwali Celebration Project** | Diwali Themed landing page with vibrant colors and festive elements with toggle diya feature (Light Up) | HTML5, SCSS,JS, Responsive, Animations, Interactive | [🔗 View Live](https://web-development-project-page.vercel.app/Festival/Diwali/index.html) |
 | **🍎 Apple Website Clone** | Pixel-perfect recreation of Apple's website with modern layout and navigation | HTML5, CSS3, Responsive Design, Brand Recreation | [🔗 View Live](https://web-development-tasks.vercel.app/) |
-| **🎨 Nothing Landing Page** | Minimalist landing page inspired by Nothing brand with modern UI/UX design | HTML5, CSS3, Responsive Design, Modern UI/UX | [🔗 View Live](https://web-development-tasks-qpze.vercel.app/) |
 | **🥋 Kung Fu Panda Interactive** | Fun and interactive landing page with SCSS, animations, and responsive design | HTML5, SCSS, Responsive, Animations, Interactive | [🔗 View Live](https://web-development-project-page.vercel.app/Practice/P1-SASS/index.html) |
 
 *This section gets updated with each new milestone project! 🚀*
@@ -84,12 +84,14 @@ web-development-tasks/
 **Description:** A classic snake game implemented using JavaScript, HTML, and CSS. 
 
 **🔗 [Live Preview](https://web-development-project-page.vercel.app/Javascript/JsProjects/Snake-Game/index.html) • [📂 Code](./Javascript/JsProjects/Snake-Game/)**
+
 ---
-### 🐍 JS Project 02: Window UI
+### 🪟 JS Project 02: Window UI
 **Status:** ✅ Completed <br />
 **Description:** A window UI project implemented using JavaScript, HTML, and CSS. 
 
 **🔗 [Live Preview](https://web-development-project-page.vercel.app/Javascript/JsProjects/Window/index.html) • [📂 Code](./Javascript/JsProjects/Window/)**
+
 ---
 
 ## 🏗️ Completed Challenges
