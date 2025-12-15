@@ -73,24 +73,31 @@ web-development-tasks/
 **Status:** ✅ Completed  
 **Description:** Diwali Themed landing page with vibrant colors and festive elements with toggle diya feature (Light Up).
 
-**🔗 [Live Preview](https://web-development-project-page.vercel.app/Festival/Diwali/index.html) • [📂 Challenge Details & Code](./Festival/Diwali/)**
+**🔗 [Live Preview](https://web-development-project-page.vercel.app/Festival/Diwali/index.html) • [📂Code](./Festival/Diwali/)**
 
 ---
 
 ## 🟨 JavaScript Projects
 
-### 🐍 JS Project 01: Snake Game
+### 🪟 JS Project 01: Window UI
+**Status:** ✅ Completed <br />
+**Description:** A window UI project implemented using JavaScript, HTML, and CSS. 
+
+**🔗 [Live Preview](https://web-development-project-page.vercel.app/Javascript/JsProjects/Window/index.html) • [📂 Code](./Javascript/JsProjects/Window/)**
+
+---
+### 🐍 JS Project 02: Snake Game
 **Status:** ✅ Completed <br />
 **Description:** A classic snake game implemented using JavaScript, HTML, and CSS. 
 
 **🔗 [Live Preview](https://web-development-project-page.vercel.app/Javascript/JsProjects/Snake-Game/index.html) • [📂 Code](./Javascript/JsProjects/Snake-Game/)**
 
 ---
-### 🪟 JS Project 02: Window UI
+### 🙆‍♂️ JS Project 03: Hangman Game
 **Status:** ✅ Completed <br />
-**Description:** A window UI project implemented using JavaScript, HTML, and CSS. 
+**Description:** A classic hangman game implemented using JavaScript, HTML, and CSS. 
 
-**🔗 [Live Preview](https://web-development-project-page.vercel.app/Javascript/JsProjects/Window/index.html) • [📂 Code](./Javascript/JsProjects/Window/)**
+**🔗 [Live Preview](https://web-development-project-page.vercel.app/Javascript/JsProjects/HangmanGame/index.html) • [📂 Code](./Javascript/JsProjects/HangmanGame/)**
 
 ---
 
@@ -386,6 +393,6 @@ Modified and enhanced by: [Your Name]
 *Total Tasks Completed: 6/∞*  
 *Total Practice Projects Completed: 3/∞*  
 *Total JavaScript Practice Projects (PS-03) Completed: 4/∞*   -->
-*Total Projects Completed: 19/∞*
+*Total Projects Completed: 20/∞*
 
 </div>
