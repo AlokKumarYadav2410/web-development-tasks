@@ -182,6 +182,12 @@ web-development-tasks/
 
 **🔗 [Live Preview](https://web-development-project-page.vercel.app/Javascript/JsPractice/PS-04/Spotlight/index.html) • [📂 Code](./Javascript/JsPractice/PS-04/Spotlight/)**
 
+---
+### 📝 Practice 09: Glow Box 
+**Status:** ✅ Completed  
+**Description:** A glowing box effect that responds to mouse movements, creating an interactive visual experience.
+
+**🔗 [Live Preview](https://web-development-project-page.vercel.app/Javascript/JsPractice/PS-04/GlowBox/index.html) • [📂 Code](./Javascript/JsPractice/PS-04/GlowBox/)**
 
 ---
 ## 🏗️ Completed Tasks
@@ -375,11 +381,11 @@ Modified and enhanced by: [Your Name]
 
 ---
 
-*Last Updated: December 14, 2025*  
+*Last Updated: December 15, 2025*  
 <!-- *Total Challenges Completed: 3/∞*  
 *Total Tasks Completed: 6/∞*  
 *Total Practice Projects Completed: 3/∞*  
 *Total JavaScript Practice Projects (PS-03) Completed: 4/∞*   -->
-*Total Projects Completed: 18/∞*
+*Total Projects Completed: 19/∞*
 
 </div>
