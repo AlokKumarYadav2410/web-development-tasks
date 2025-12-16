@@ -115,6 +115,13 @@ web-development-tasks/
 **🔗 [Live Preview](https://web-development-project-page.vercel.app/Javascript/JsPractice/Piano/index.html) • [📂 Code](./Javascript/JsPractice/Piano/)**
 
 ---
+### 📋 JS Project 06: Kanban Board
+**Status:** ✅ Completed <br />
+**Description:** A task management Kanban board implemented using JavaScript, HTML, and CSS.
+
+**🔗 [Live Preview](https://web-development-project-page.vercel.app/Javascript/JsProjects/KanbanBoard/index.html) • [📂 Code](./Javascript/JsProjects/KanbanBoard/)**
+
+---
 
 ## 🏗️ Completed Challenges
 
@@ -410,11 +417,11 @@ Modified and enhanced by: [Your Name]
 
 ---
 
-*Last Updated: December 15, 2025*  
+*Last Updated: December 16, 2025*  
 <!-- *Total Challenges Completed: 3/∞*  
 *Total Tasks Completed: 6/∞*  
 *Total Practice Projects Completed: 3/∞*  
 *Total JavaScript Practice Projects (PS-03) Completed: 4/∞*   -->
-*Total Projects Completed: 25/∞*
+*Total Projects Completed: 26/∞*
 
 </div>
