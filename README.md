@@ -101,6 +101,20 @@ web-development-tasks/
 **🔗 [Live Preview](https://web-development-project-page.vercel.app/Javascript/JsProjects/HangmanGame/index.html) • [📂 Code](./Javascript/JsProjects/HangmanGame/)**
 
 ---
+### 📺 JS Project 04: ReelVerse
+**Status:** ✅ Completed <br />
+**Description:** A copy of youtube shorts page implemented using JavaScript, HTML, and CSS. 
+
+**🔗 [Live Preview](https://web-development-project-page.vercel.app/Javascript/JsProjects/ReelVerse/index.html) • [📂 Code](./Javascript/JsProjects/ReelVerse/)**
+
+---
+### 🎹 JS Project 05: Piano
+**Status:** ✅ Completed <br />
+**Description:** A virtual piano implemented using JavaScript, HTML, and CSS.
+
+**🔗 [Live Preview](https://web-development-project-page.vercel.app/Javascript/JsPractice/Piano/index.html) • [📂 Code](./Javascript/JsPractice/Piano/)**
+
+---
 
 ## 🏗️ Completed Challenges
 
@@ -401,6 +415,6 @@ Modified and enhanced by: [Your Name]
 *Total Tasks Completed: 6/∞*  
 *Total Practice Projects Completed: 3/∞*  
 *Total JavaScript Practice Projects (PS-03) Completed: 4/∞*   -->
-*Total Projects Completed: 23/∞*
+*Total Projects Completed: 25/∞*
 
 </div>
