@@ -57,8 +57,9 @@ This repository serves as a comprehensive portfolio of my web development tasks 
 ```
 web-development-tasks/
 ├── Challenges/          # Additional coding challenges
-├── Practice/            # Practice exercises and experiments
 ├── Festival/            # Festive projects
+├── Javascript/          # JavaScript projects
+├── Practice/            # Practice exercises and experiments
 ├── Task01/              # Personal Resume Website
 ├── Task02/              # Aesthetic Journeys - Visual Storytelling  
 ├── Task03/              # Fit Life - Fitness Website
@@ -183,14 +184,21 @@ web-development-tasks/
 **🔗 [Live Preview](https://web-development-project-page.vercel.app/Javascript/JsPractice/PS-03/QuoteGenerator/index.html) • [📂 Code](./Javascript/JsPractice/PS-03/QuoteGenerator/)**
 
 ---
-### 📝 Practice 08: Spotlight
+### 📝 Practice 08: Progress Bar 
+**Status:** ✅ Completed  
+**Description:** A progress bar that visually indicates the completion status of a task or process.
+
+**🔗 [Live Preview](https://web-development-project-page.vercel.app/Javascript/JsPractice/PS-03/ProgressBar/index.html) • [📂 Code](./Javascript/JsPractice/PS-03/ProgressBar/)**
+
+---
+### 📝 Practice 09: Spotlight
 **Status:** ✅ Completed  
 **Description:** A spotlight effect that follows the cursor, highlighting specific areas of the webpage.
 
 **🔗 [Live Preview](https://web-development-project-page.vercel.app/Javascript/JsPractice/PS-04/Spotlight/index.html) • [📂 Code](./Javascript/JsPractice/PS-04/Spotlight/)**
 
 ---
-### 📝 Practice 09: Glow Box 
+### 📝 Practice 10: Glow Box 
 **Status:** ✅ Completed  
 **Description:** A glowing box effect that responds to mouse movements, creating an interactive visual experience.
 
@@ -393,6 +401,6 @@ Modified and enhanced by: [Your Name]
 *Total Tasks Completed: 6/∞*  
 *Total Practice Projects Completed: 3/∞*  
 *Total JavaScript Practice Projects (PS-03) Completed: 4/∞*   -->
-*Total Projects Completed: 20/∞*
+*Total Projects Completed: 23/∞*
 
 </div>
