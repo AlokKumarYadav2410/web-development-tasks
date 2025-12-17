@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background-color: lightblue;
+}
+
+.innerDiv {
+    background-color: white;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.innerDiv:hover {
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    transform: translateY(-5px) translateX(5px) rotate(-15deg);
+}
+
+#parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: lightgray;
+    border: 2px solid black;
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+#parent:hover {
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    transform: translateY(-5px) translateX(5px) rotate(15deg);
+}
+
+#box {
+    height: 100px;
+    width: 100px;
+    background-color: lightgreen;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    transition: all 0.3s ease;
+}
+
+#box:hover {
+    background-color: #2c2c2c;
+    color: greenyellow;
+    font-weight: bold;
+    transform: scale(1.1) rotate(-15deg);
+}
+
+#circle {
+    height: 100px;
+    width: 100px;
+    background-color: lightcoral;
+    border: 2px solid black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: rotation 2s infinite linear;
+    margin: 20px;
+    transition: all 0.3s ease;
+}
+
+#circle:hover {
+    background-color: #2c2c2c;
+    color: coral;
+    font-weight: bold;
+    transform: scale(1.1) rotate(-15deg);
+    animation: none;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
