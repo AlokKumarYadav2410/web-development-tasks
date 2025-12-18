@@ -158,3 +158,170 @@ main {
         }
     }
 }
+
+
+@media (max-width: 768px) {
+    #wrapper {
+        padding: 20px 40px;
+
+        img#user-profile {
+            height: 30%;
+            bottom: 60%;
+            width: auto;
+        }
+    }
+
+    main {
+        .left-line-container {
+            top: 380px;
+            left: 1%;
+
+            .line {
+                width: 200px;
+                height: 2px;
+                background-color: rgb(80, 80, 80);
+            }
+        }
+
+        .content {
+            padding-left: 60px;
+            height: 600px;
+
+            .achievements {
+                display: flex;
+                gap: 20px;
+
+                .ach1,
+                .ach2 {
+                    .ach-number {
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                        font-size: 30px;
+                        font-weight: 100;
+                    }
+
+                    .ach-text {
+                        font-size: 0.8rem;
+                        padding-left: 20px;
+                        color: rgb(80, 80, 80);
+                    }
+                }
+            }
+
+            .hero-intro {
+                h1 {
+                    margin-top: 50px;
+                    font-size: 100px;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    font-weight: 100;
+                    line-height: 1;
+                }
+
+                p {
+                    font-size: 12px;
+                    padding-left: 50px;
+                }
+
+                margin-bottom: 130px;
+            }
+
+            .scroll {
+                font-size: 12px;
+                padding-left: 10px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+        }
+    }
+}
+
+@media (max-width: 468px) {
+    #wrapper {
+        padding: 20px 20px;
+
+        img#user-profile {
+            height: auto;
+            bottom: 40%;
+            width: 60%;
+        }
+    }
+
+    .navbar {
+        @include flexCenter(space-between);
+        // padding: 20px 40px;
+
+        .nav-left {
+            .nav-links {
+                display: none;
+            }
+        }
+
+        .nav-right {
+            font-size: 12px;
+        }
+    }
+
+    main {
+        .left-line-container {
+            top: 300px;
+            left: 2%;
+
+            .line {
+                width: 160px;
+                height: 2px;
+                background-color: rgb(80, 80, 80);
+            }
+
+            .year,
+            .role {
+                font-size: 12px;
+            }
+        }
+
+        .content {
+            padding-left: 40px;
+            height: 600px;
+
+            .achievements {
+                display: flex;
+                gap: 20px;
+
+                .ach1,
+                .ach2 {
+                    .ach-number {
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                        font-size: 16px;
+                        font-weight: 100;
+                    }
+
+                    .ach-text {
+                        font-size: 0.7rem;
+                        padding-left: 10px;
+                        color: rgb(80, 80, 80);
+                    }
+                }
+            }
+
+            .hero-intro {
+                h1 {
+                    margin-top: 50px;
+                    font-size: 50px;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    font-weight: 100;
+                    line-height: 1;
+                }
+
+                p {
+                    font-size: 8px;
+                    padding-left: 5px;
+                }
+
+                margin-bottom: 140px;
+            }
+
+            .scroll {
+                font-size: 8px;
+                padding-left: 5px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+        }
+    }
+}
