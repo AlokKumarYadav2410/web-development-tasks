@@ -7,8 +7,9 @@
     --secondary-color: #B4846C;
     --pri-background-color: #55372f;
     --sec-background-color: #A55B4B;
-    --pri-text-color: #FFF;
+    --pri-text-color: #edecec;
     --sec-text-color: #FCDEC0;
+    --red: red;
     --font-family: 'Roboto Slab', sans-serif;
 }
 
@@ -127,7 +128,7 @@ section.allElems {
     border-radius: 10px;
     font-size: 1.2rem;
     cursor: pointer;
-    background-color: red;
+    background-color: var(--red);
     padding: 10px 20px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
     transition: all 0.2s ease;
@@ -136,10 +137,6 @@ section.allElems {
 .back:active {
     transform: scale(0.95);
     box-shadow: none;
-}
-
-.todo-list-fullpage {
-    display: block;
 }
 
 .fullElem .title h2 {
@@ -173,7 +170,7 @@ section.allElems {
     padding: 20px;
 }
 
-.todo-container .add-task form input, 
+.todo-container .add-task form input,
 .todo-container .add-task form textarea,
 .todo-container .add-task form button {
     width: 100%;
@@ -182,7 +179,7 @@ section.allElems {
     border: none;
     border-radius: 5px;
     outline: none;
-    background: var(--sec-background-color);
+    background: var(--pri-background-color);
     transition: all 0.2s ease;
 }
 
@@ -194,7 +191,7 @@ section.allElems {
 .todo-container .add-task form button {
     /* background: var(--secondary-color); */
     color: var(--pri-text-color);
-    cursor: pointer;    
+    cursor: pointer;
 }
 
 .todo-container .add-task form button:active {
@@ -212,19 +209,95 @@ section.allElems {
     gap: 15px;
     background: var(--primary-color);
     border-radius: 20px;
+    overflow: auto;
 }
 
-.task{
+.task {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    background: var(--sec-background-color);
+    background: var(--pri-text-color);
     padding: 20px 40px;
     border-radius: 10px;
+    gap: 10px;
 }
 
-.task h5{
+.task .task-details {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.task h5 {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.2rem;
     font-size: 1.5rem;
-    color: var(--sec-text-color);
+    color: var(--pri-background-color);
+}
+
+.task h5 span{
+    color: var(--pri-text-color);
+    background: var(--red);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.6rem;
+}
+
+.task h5 span.true{
+    opacity: 1;
+}
+.task h5 span.false{
+    opacity: 0;
+}
+
+.task p {
+    font-size: 0.9rem;
+    color: var(--pri-background-color);
+    word-break: break-all;
+}
+
+.task button {
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: var(--pri-background-color);
+    color: var(--pri-text-color);
+}
+
+.task button :active {
+    transform: scale(0.95);
+}
+
+.mark-imp {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 0 2px;
+}
+
+.mark-imp #imp-task {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.mark-imp label {
+    font-size: 1rem;
+    color: var(--pri-background-color);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.mark-imp label:hover {
+    text-decoration: underline;
+}
+
+.mark-imp label::selection {
+    color: var(--pri-text-color);
 }
