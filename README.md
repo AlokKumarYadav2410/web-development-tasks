@@ -25,12 +25,12 @@
 
 | Project | Description | Technologies | Live Demo |
 |---------|-------------|--------------|-----------|
+|**⛅ Weather App** | A weather app implemented using JavaScript, HTML, and CSS. | JavaScript, HTML5, CSS3 | [🔗 View Live](https://web-development-project-page.vercel.app/Javascript/JsProjects/weather-app/index.html) |
 |**🪟 Window UI** | A window UI project implemented using JavaScript, HTML, and CSS. | JavaScript, HTML5, CSS3 | [🔗 View Live](https://web-development-project-page.vercel.app/Javascript/JsProjects/Window/index.html) |
 |**🐍 Snake Game** | A classic snake game implemented using JavaScript, HTML, and CSS. | JavaScript, HTML5, CSS3 | [🔗 View Live](https://web-development-project-page.vercel.app/Javascript/JsProjects/Snake-Game/index.html) |
 | **🔥 Freakish Mind - NFT Landing** | Advanced NFT-themed landing page with full responsiveness, hover effects, and clip-path animations | HTML5, CSS3, Responsive, Clip-path, Hover Effects | [🔗 View Live](https://web-development-project-page.vercel.app/Challenges/Challenge03/index.html) |
 | **🪔 Diwali Celebration Project** | Diwali Themed landing page with vibrant colors and festive elements with toggle diya feature (Light Up) | HTML5, SCSS,JS, Responsive, Animations, Interactive | [🔗 View Live](https://web-development-project-page.vercel.app/Festival/Diwali/index.html) |
 | **🌟 Glow Box** | Glow Box project with interactive lighting effects and smooth animations | HTML5, CSS,JS, Responsive, Animations, Interactive | [🔗 View Live](https://web-development-project-page.vercel.app/Javascript/JsPractice/PS-04/GlowBox/index.html) |
-| **🥋 Kung Fu Panda Interactive** | Fun and interactive landing page with SCSS, animations, and responsive design | HTML5, SCSS, Responsive, Animations, Interactive | [🔗 View Live](https://web-development-project-page.vercel.app/Practice/P1-SASS/index.html) |
 
 *This section gets updated with each new milestone project! 🚀*
 
@@ -120,6 +120,13 @@ web-development-tasks/
 **Description:** A task management Kanban board implemented using JavaScript, HTML, and CSS.
 
 **🔗 [Live Preview](https://web-development-project-page.vercel.app/Javascript/JsProjects/KanbanBoard/index.html) • [📂 Code](./Javascript/JsProjects/KanbanBoard/)**
+
+---
+### 📋 JS Project 07: Weather App
+**Status:** ✅ Completed <br />
+**Description:** Made weather app that shows current weather information using JavaScript, HTML, and CSS.
+
+**🔗 [Live Preview](https://web-development-project-page.vercel.app/Javascript/JsProjects/weather-app/index.html) • [📂 Code](./Javascript/JsProjects/weather-app/)**
 
 ---
 
@@ -422,6 +429,6 @@ Modified and enhanced by: [Your Name]
 *Total Tasks Completed: 6/∞*  
 *Total Practice Projects Completed: 3/∞*  
 *Total JavaScript Practice Projects (PS-03) Completed: 4/∞*   -->
-*Total Projects Completed: 26/∞*
+*Total Projects Completed: 27/∞*
 
 </div>
