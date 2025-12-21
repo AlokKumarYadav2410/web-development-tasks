@@ -43,7 +43,7 @@ function todoList() {
         });
 
         allTasksContainer.innerHTML = task;
-        
+
         document.querySelectorAll(".task button").forEach((btn, index) => {
             btn.addEventListener("click", () => {
                 currentTask.splice(btn.id, 1);
@@ -67,3 +67,33 @@ function todoList() {
     });
 }
 todoList();
+
+function dailyPlanner() {
+    let dayPlanner = document.querySelector(".day-planner");
+    let dayPlannerData = JSON.parse(localStorage.getItem("dayPlannerData")) || {};
+    let p = document.querySelector(".day-planner-time p");
+    let hours = Array.from({ length: 18 }, (_, idx) => `${idx + 6}:00 - ${idx + 7}:00`); // Hours from 6 AM to 11 PM
+
+    let wholeDaySum = "";
+    hours.forEach((hour, idx) => {
+        let existingData = dayPlannerData[idx] ? dayPlannerData[idx] : "";
+        wholeDaySum += `<div class="day-planner-time">
+                        <p>${hour}</p>
+                        <input id = ${idx} type="text" placeholder="Plan ${hour}" value="${existingData}">
+                    </div>`
+    });
+
+    dayPlanner.innerHTML = wholeDaySum;
+
+    let dayPlannerInput = document.querySelectorAll(".day-planner-time input");
+
+    dayPlannerInput.forEach((input, idx) => {
+        input.addEventListener("input", (event) => {
+            dayPlannerData[idx] = event.target.value;
+            localStorage.setItem("dayPlannerData", JSON.stringify(dayPlannerData));
+            console.log(dayPlannerData)
+        })
+    });
+}
+
+dailyPlanner();
