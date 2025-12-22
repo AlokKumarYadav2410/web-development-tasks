@@ -349,23 +349,19 @@ section.allElems {
     position: relative;
 }
 
-.motivational-quotes-fullpage .motivation-container {
-    /* margin-top: 40px; */
-    width: 650px;
-    height: 450px;
-    /* background: var(--primary-color); */
-    border-radius: 10px;
-    /* padding: 20px; */
-    /* box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.7); */
-    /* display: flex;
+.motivation-full-data {
+    width: 100%;
+    height: 80%;
+    display: flex;
     align-items: center;
-    justify-content: center; */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    /* font-size: 1.5rem;
-    text-align: center; */
+    justify-content: center;
+}
+
+.motivational-quotes-fullpage .motivation-container {
+    position: relative;
+    width: 70%;
+    height: 70%;
+    border-radius: 10px;
 }
 
 .motivational-quotes-fullpage .motivation-container::after {
@@ -412,7 +408,7 @@ section.allElems {
     transition: all 0.7s ease;
 }
 
-.motivation-container .motivation-wrapper:hover::before{
+.motivation-container .motivation-wrapper:hover::before {
     transform: translateX(-50%) scale(1);
 }
 
@@ -423,7 +419,8 @@ section.allElems {
     justify-content: space-between;
 }
 
-.motivation-wrapper h2, .motivation-wrapper .motivation-author p {
+.motivation-wrapper h2,
+.motivation-wrapper .motivation-author p {
     font-size: 1.7rem;
     font-weight: 400;
     text-align: center;
@@ -457,6 +454,6 @@ section.allElems {
     justify-content: flex-end;
 }
 
-.motivation-wrapper .motivation-author p{
+.motivation-wrapper .motivation-author p {
     font-size: 1rem;
 }
