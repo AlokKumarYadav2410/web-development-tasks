@@ -5,6 +5,9 @@ function openFeatures() {
 
     allElems.forEach((elem) => {
         elem.addEventListener("click", () => {
+            if(elem.id == 2) {
+                motivationalQuotes();
+            }
             fullElemPage[elem.id].style.display = "block";
         });
     })
@@ -98,18 +101,25 @@ function dailyPlanner() {
 
 dailyPlanner();
 
-async function fetchQuotes() {
-    let apiUrl = "https://dummyjson.com/quotes/random";
-    try{
-        let quote = document.querySelector(".motivation-body p");
-        let author = document.querySelector(".motivation-author p")
-        let rawData = await fetch(apiUrl);
-        let data = await rawData.json();
-        quote.innerHTML = data.quote;
-        author.innerHTML = data.author;
+function motivationalQuotes() {
+    let quote = document.querySelector(".motivation-body p");
+    let author = document.querySelector(".motivation-author p");
+    async function fetchQuotes() {
+        let apiUrl = "https://dummyjson.com/quotes/random";
+        try {
+            let rawData = await fetch(apiUrl);
+            if (rawData.status !== 200) {
+                throw new Error("API URL is not defined");
+            }
+            let data = await rawData.json();
+            quote.innerHTML = data.quote;
+            author.innerHTML = `- ${data.author}`;
+        }
+        catch (e) {
+            quote.innerHTML = "Failed to load quote.";
+            author.innerHTML = "Failed to load author.";
+        }
     }
-    catch(e){
-        console.log(e)
-    }
+    fetchQuotes();
 }
-fetchQuotes();
+motivationalQuotes();
