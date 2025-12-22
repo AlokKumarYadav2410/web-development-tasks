@@ -97,3 +97,19 @@ function dailyPlanner() {
 }
 
 dailyPlanner();
+
+async function fetchQuotes() {
+    let apiUrl = "https://dummyjson.com/quotes/random";
+    try{
+        let quote = document.querySelector(".motivation-body p");
+        let author = document.querySelector(".motivation-author p")
+        let rawData = await fetch(apiUrl);
+        let data = await rawData.json();
+        quote.innerHTML = data.quote;
+        author.innerHTML = data.author;
+    }
+    catch(e){
+        console.log(e)
+    }
+}
+fetchQuotes();
