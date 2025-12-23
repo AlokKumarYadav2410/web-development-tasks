@@ -5,7 +5,7 @@ function openFeatures() {
 
     allElems.forEach((elem) => {
         elem.addEventListener("click", () => {
-            if(elem.id == 2) {
+            if (elem.id == 2) {
                 motivationalQuotes();
             }
             fullElemPage[elem.id].style.display = "block";
@@ -123,3 +123,78 @@ function motivationalQuotes() {
     fetchQuotes();
 }
 motivationalQuotes();
+
+// ------------------------ Pomodoro Timer ------------------------
+
+let timer = document.querySelector(".pomo-timer h1");
+let startBtn = document.querySelector(".start-timer");
+let pauseBtn = document.querySelector(".pause-timer");
+let resetBtn = document.querySelector(".reset-timer");
+let sessionLabel = document.querySelector(".pomodoro-timer-fullpage .session");
+
+let totalSeconds = 25 * 60;
+let timerInterval = null;
+let isWorkSession = true;
+
+function updateTimer() {
+    let minutes = Math.floor(totalSeconds / 60);
+    let seconds = totalSeconds % 60;
+    timer.innerHTML = `${String(minutes).padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+}
+updateTimer();
+
+function startTimer() {
+    clearInterval(timerInterval);
+    // timerInterval = setInterval(() => {
+    //     totalSeconds--;
+    //     if (totalSeconds < 0) {
+    //         clearInterval(timerInterval);
+    //         // alert("Time's up! Take a break.");
+    //         totalSeconds = 25 * 60;
+    //     }
+    //     updateTimer();
+    // }, 1000);
+    if(isWorkSession){
+        totalSeconds = 25 * 60;
+        timerInterval = setInterval(() => {
+            if(totalSeconds > 0){
+                totalSeconds--;
+                updateTimer();
+            }
+            else{
+                isWorkSession = false;
+                clearInterval(timerInterval);
+                timer.innerHTML = "05:00";
+                sessionLabel.innerHTML = "Take a Break Session";
+                sessionLabel.style.background = "var(--blue)";
+                totalSeconds = 5 * 60;
+            }
+        },1000)
+    } else{
+        totalSeconds = 5 * 60;
+        timerInterval = setInterval(() =>{
+            if(totalSeconds > 0){
+                totalSeconds--;
+                updateTimer();
+            } else{
+                isWorkSession = true;
+                clearInterval(timerInterval);
+                // updateTimer();
+                timer.innerHTML = "25:00";
+                sessionLabel.innerHTML = "Work Session";
+                sessionLabel.style.background = "var(--green)";
+                totalSeconds = 25 * 60;
+            }
+        },1000)
+    }
+}
+function pauseTimer() { clearInterval(timerInterval); }
+function resetTimer() {
+    clearInterval(timerInterval);
+    totalSeconds = 25 * 60;
+    updateTimer();
+}
+
+startBtn.addEventListener("click", startTimer);
+pauseBtn.addEventListener("click", pauseTimer);
+resetBtn.addEventListener("click", resetTimer);
