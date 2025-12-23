@@ -10,6 +10,8 @@
     --pri-text-color: #edecec;
     --sec-text-color: #FCDEC0;
     --red: red;
+    --green: rgb(8, 198, 8);
+    --blue: rgb(8, 112, 198);
     --font-family: 'Roboto Slab', sans-serif;
 }
 
@@ -456,4 +458,46 @@ section.allElems {
 
 .motivation-wrapper .motivation-author p {
     font-size: 1rem;
+}
+
+.pomodoro-timer-fullpage .pomo-timer {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.pomo-timer h1{
+    font-size: 10rem;
+    font-weight: 900;
+}
+.pomo-timer button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: var(--secondary-color);
+    color: var(--pri-text-color);
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.7);
+    transition: all 0.2s ease;
+}
+
+.pomo-timer button:active {
+    transform: scale(0.95);
+    box-shadow: none;
+}
+
+.pomodoro-timer-fullpage .session {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--pri-text-color);
+    background: var(--green);
+    padding: 10px 20px;
+    border-radius: 5px;
 }
