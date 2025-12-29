@@ -241,9 +241,9 @@ function timeDate() {
         header.style.backgroundImage = "url('./assets/images/afternoon.avif')";
     }
 
-    // if (hours == 0 && minutes == 0 && date.getSeconds() == 0) {
-    //     fetchWeather();
-    // }
+    if (hours == 0 && minutes == 0 && date.getSeconds() == 0) {
+        fetchWeather();
+    }
 }
 
 timeDate();
@@ -251,7 +251,6 @@ timeDate();
 async function fetchWeather() {
     let response = await fetch(`/api/weather?city=${city}`);
     data = await response.json();
-    console.log(data.current)
 
     header2Temp.innerHTML = `${data.current.temp_c}°C`;
     header2Condition.innerHTML = `${data.current.condition.text}`;
