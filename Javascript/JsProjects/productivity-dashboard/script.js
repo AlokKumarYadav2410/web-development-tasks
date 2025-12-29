@@ -29,7 +29,7 @@ function todoList() {
 
     let allTasksContainer = document.querySelector(".all-task");
 
-    let currentTask = JSON.parse(localStorage.getItem("tasks")) || [];
+    let currentTask = JSON.parse(localStorage.getItem("tasks")) ? JSON.parse(localStorage.getItem("tasks")) : [];
 
     function renderTasks() {
         localStorage.setItem("tasks", JSON.stringify(currentTask));
@@ -213,6 +213,41 @@ let header2Humidity = document.querySelector(".header-2 .humidity");
 let header2Wind = document.querySelector(".header-2 .wind");
 let header2Precipitation = document.querySelector(".header-2 .precipitation");
 
+let date = null;
+
+let header1Date = document.querySelector(".header-1 h1");
+let header1Time = document.querySelector(".header-1 h2");
+const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+const monthsOfYear = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+setInterval(timeDate, 1000);
+function timeDate() {
+    date = new Date();
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
+    header1Date.innerHTML = `${String(date.getDate()).padStart(2, '0') + '-' + monthsOfYear[date.getMonth()] + '-' + date.getFullYear()}`;
+
+    if (hours >= 12) {
+        header1Time.innerHTML = `${daysOfWeek[date.getDay()]}, ${hours - 12}:${String(minutes).padStart(2, '0')}:${String(date.getSeconds()).padStart(2, '0')} pm`;
+    } else {
+        header1Time.innerHTML = `${daysOfWeek[date.getDay()]}, ${hours}:${String(minutes).padStart(2, '0')}:${String(date.getSeconds()).padStart(2, '0')} am`;
+    }
+
+    if (hours > 18 || hours < 6) {
+        header.style.backgroundImage = "url('./assets/images/night.avif')";
+    } else if (hours >= 6 && hours < 12) {
+        header.style.backgroundImage = "url('./assets/images/morning.avif')";
+    } else {
+        header.style.backgroundImage = "url('./assets/images/afternoon.avif')";
+    }
+
+    // if (hours == 0 && minutes == 0 && date.getSeconds() == 0) {
+    //     fetchWeather();
+    // }
+}
+
+timeDate();
+
 async function fetchWeather() {
     let response = await fetch(`/api/weather?city=${city}`);
     data = await response.json();
@@ -226,39 +261,3 @@ async function fetchWeather() {
 }
 
 fetchWeather();
-
-let date = null;
-
-let header1Date = document.querySelector(".header-1 h1");
-let header1Time = document.querySelector(".header-1 h2");
-const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-const monthsOfYear = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
-setInterval(timeDate, 1000);
-function timeDate(){
-    date = new Date();
-    let hours = date.getHours();
-    let minutes = date.getMinutes();
-    header1Date.innerHTML = `${String(date.getDate()).padStart(2, '0')+ '-' + monthsOfYear[date.getMonth()] + '-' + date.getFullYear()}`;
-
-    if(hours >= 12){
-        header1Time.innerHTML = `${daysOfWeek[date.getDay()]}, ${hours - 12}:${String(minutes).padStart(2, '0')}:${String(date.getSeconds()).padStart(2, '0')} pm`;
-    } else {
-        header1Time.innerHTML = `${daysOfWeek[date.getDay()]}, ${hours}:${String(minutes).padStart(2, '0')}:${String(date.getSeconds()).padStart(2, '0')} am`;
-    }
-
-    if(hours == 0 && minutes == 0 && date.getSeconds() == 0){
-        fetchWeather();
-    }
-
-    if(hours > 18 || hours < 6){
-        header.style.backgroundImage = "url('https://images.unsplash.com/photo-1484950763426-56b5bf172dbb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')";
-    } else if(hours >= 6 && hours < 12){
-        header.style.backgroundImage = "url('https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')";
-    } else {
-        header.style.backgroundImage = "url('https://images.unsplash.com/photo-1614525597986-0d43dfd53d29?q=80&w=2016&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')";
-    }
-}
-
-timeDate();
-
