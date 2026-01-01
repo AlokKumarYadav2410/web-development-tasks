@@ -13,6 +13,7 @@ const App = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [images, setImages] = useState([]);
   const [visibleCount, setVisibleCount] = useState(3);
+  const [toggle, setToggle] = useState(false);
 
   function getBgColor() {
     const clr1 = Math.floor(Math.random() * 256);
@@ -25,12 +26,10 @@ const App = () => {
   const getData = async () => {
     let response = await axios("https://jsonplaceholder.typicode.com/users");
 
-    console.log(response.status)
-
     if (response.status !== 200) {
       throw new Error("Failed to fetch data");
     } else {
-      console.log("Data fetched successfully");
+      console.info("Data fetched successfully");
     }
     setUsers(response.data);
   }
@@ -46,17 +45,17 @@ const App = () => {
 
   const filteredUsers = users.filter((user) => user.name.toLowerCase().includes(search.toLowerCase()));
 
-  const visibleImages = images.slice(currentIndex, currentIndex+visibleCount);
+  const visibleImages = images.slice(currentIndex, currentIndex + visibleCount);
 
-  function handleNext(){
-    if(currentIndex+visibleCount < images.length){
-      setCurrentIndex(currentIndex+1);
+  function handleNext() {
+    if (currentIndex + visibleCount < images.length) {
+      setCurrentIndex(currentIndex + 1);
     }
   }
 
-  function handlePrev(){
-    if(currentIndex > 0){
-      setCurrentIndex(currentIndex-1);
+  function handlePrev() {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
     }
   }
 
@@ -68,12 +67,18 @@ const App = () => {
   return (
     <div className='bg-gray-900 min-h-screen w-full flex flex-col gap-4 p-4'>
 
-      {/* Prop Drilling */}
-      <SearchBar handleSearch={handleSearch} search={search} getData={getData}  />
-      
-      <Card filteredUsers={filteredUsers} getBgColor={getBgColor}/>
+      <button onClick={() => setToggle(toggle ? false : true)} className='px-4 py-2 bg-amber-700 rounded-lg'>See Data</button>
 
-      <ImageSlider handlePrev={handlePrev} currentIndex={currentIndex} visibleImages={visibleImages} handleNext={handleNext}/>
+      {
+        toggle && <div className='flex flex-col gap-4'>
+          {/* Prop Drilling */}
+          <SearchBar handleSearch={handleSearch} search={search} getData={getData} />
+
+          <Card filteredUsers={filteredUsers} getBgColor={getBgColor} />
+
+          <ImageSlider handlePrev={handlePrev} currentIndex={currentIndex} visibleImages={visibleImages} handleNext={handleNext} />
+        </div>
+      }
 
     </div>
   )
