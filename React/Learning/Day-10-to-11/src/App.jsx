@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 import About from './Pages/About'
 import Product from './Pages/Product'
 import ProductDetails from './components/ProductDetails'
+import NotFound from './Pages/NotFound'
 
 const App = () => {
   return (
@@ -14,8 +15,8 @@ const App = () => {
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
         <Route path='/product' element={<Product />} />
-        <Route path='/product/product-details/:kuchBhi' element={<ProductDetails />} />
-        <Route path='*' element={<h1 className='p-8 text-white text-center text-2xl'>404: Page Not Found</h1>} />
+        <Route path='/product/product-details/:id' element={<ProductDetails />} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </div>
   )
