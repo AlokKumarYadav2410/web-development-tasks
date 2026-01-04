@@ -78,6 +78,16 @@ web-development-tasks/
 
 ---
 
+## 🟨 React Projects
+
+### 🏸 React Project 01: Horizon Courts
+**Status:** ✅ Completed <br />
+**Description:** A tennis court booking website implemented using React and CSS. 
+
+**🔗 [Live Preview](https://horizon-courts-rho.vercel.app/) • [📂 Code](https://github.com/AlokKumarYadav2410/horizon-courts)**
+
+---
+
 ## 🟨 JavaScript Projects
 
 ### 🪟 JS Project 01: Window UI
@@ -424,11 +434,11 @@ Modified and enhanced by: [Your Name]
 
 ---
 
-*Last Updated: December 16, 2025*  
+*Last Updated: Jan 04, 2026*  
 <!-- *Total Challenges Completed: 3/∞*  
 *Total Tasks Completed: 6/∞*  
 *Total Practice Projects Completed: 3/∞*  
 *Total JavaScript Practice Projects (PS-03) Completed: 4/∞*   -->
-*Total Projects Completed: 27/∞*
+*Total Projects Completed: 28/∞*
 
 </div>
