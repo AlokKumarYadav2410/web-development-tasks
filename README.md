@@ -80,11 +80,27 @@ web-development-tasks/
 
 ## 🟨 React Projects
 
-### 🏸 React Project 01: Horizon Courts
+### 🗂️ React Project 01: CardVerse
+**Status:** ✅ Completed <br />
+**Description:** A card UI project implemented using React and TailwindCSS. 
+
+**🔗 [Live Preview](https://card-verse-lac.vercel.app/) • [📂 Code](https://github.com/AlokKumarYadav2410/card-verse)**
+
+---
+
+### 🏸 React Project 02: Horizon Courts
 **Status:** ✅ Completed <br />
 **Description:** A tennis court booking website implemented using React and CSS. 
 
 **🔗 [Live Preview](https://horizon-courts-rho.vercel.app/) • [📂 Code](https://github.com/AlokKumarYadav2410/horizon-courts)**
+
+---
+
+### 😎 React Project 03: Stylish Portfolio
+**Status:** ✅ Completed <br />
+**Description:** A stylish portfolio website implemented using React and CSS. 
+
+**🔗 [Live Preview](https://web-development-project-page.vercel.app/React/Practice/StylishPortfolio/index.html) • [📂 Code](./React/Practice/StylishPortfolio/)**
 
 ---
 
@@ -439,6 +455,6 @@ Modified and enhanced by: [Your Name]
 *Total Tasks Completed: 6/∞*  
 *Total Practice Projects Completed: 3/∞*  
 *Total JavaScript Practice Projects (PS-03) Completed: 4/∞*   -->
-*Total Projects Completed: 28/∞*
+*Total Projects Completed: 30/∞*
 
 </div>
