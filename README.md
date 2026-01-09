@@ -80,14 +80,22 @@ web-development-tasks/
 
 ## 🟨 React Projects
 
-### 🗂️ React Project 01: DVSY Fashion
+### ☎️ React Project 01: Buddy Book
+**Status:** ✅ Completed <br />
+**Description:** A contact management app implemented using React and TailwindCSS. 
+
+**🔗 [Live Preview](https://buddy-book-ten.vercel.app/) • [📂 Code](https://github.com/AlokKumarYadav2410/buddy-book)**
+
+---
+
+### 👔 React Project 02: DVSY Fashion
 **Status:** ✅ Completed <br />
 **Description:** A clothing e-commerce project implemented using React and TailwindCSS. 
 
 **🔗 [Live Preview](https://dvsy-fashion-ui.vercel.app/) • [📂 Code](https://github.com/AlokKumarYadav2410/dvsy-fashion-ui)**
 
 ---
-### 🗂️ React Project 02: CardVerse
+### 🗂️ React Project 03: CardVerse
 **Status:** ✅ Completed <br />
 **Description:** A card UI project implemented using React and TailwindCSS. 
 
@@ -95,7 +103,7 @@ web-development-tasks/
 
 ---
 
-### 🏸 React Project 03: Horizon Courts
+### 🏸 React Project 04: Horizon Courts
 **Status:** ✅ Completed <br />
 **Description:** A tennis court booking website implemented using React and CSS. 
 
@@ -103,7 +111,7 @@ web-development-tasks/
 
 ---
 
-### 😎 React Project 04: Stylish Portfolio
+### 😎 React Project 05: Stylish Portfolio
 **Status:** ✅ Completed <br />
 **Description:** A stylish portfolio website implemented using React and CSS. 
 
@@ -457,11 +465,11 @@ Modified and enhanced by: [Your Name]
 
 ---
 
-*Last Updated: Jan 08, 2026*  
+*Last Updated: Jan 09, 2026*  
 <!-- *Total Challenges Completed: 3/∞*  
 *Total Tasks Completed: 6/∞*  
 *Total Practice Projects Completed: 3/∞*  
 *Total JavaScript Practice Projects (PS-03) Completed: 4/∞*   -->
-*Total Projects Completed: 31/∞*
+*Total Projects Completed: 32/∞*
 
 </div>
