@@ -150,6 +150,7 @@ i:hover {
 
 .live-link {
     padding: 10px 20px;
+    margin-top: auto;
     border: none;
     background-color: #FBBF24;
     color: #111827;
