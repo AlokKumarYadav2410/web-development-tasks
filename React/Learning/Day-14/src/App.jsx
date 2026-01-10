@@ -15,7 +15,7 @@ const App = () => {
     },
     {
       path: '/sections',
-      element: <Sections />
+      element: <div><Navbar title="This is Navbar Title"><h2>This is Navbar Children</h2></Navbar><Sections /></div>
     }
   ]);
   return (
