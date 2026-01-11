@@ -3,8 +3,8 @@ import landing from '../assets/landing.jpg'
 
 const Home = () => {
   return (
-    <div>
-      <div className="relative w-full h-screen overflow-hidden">
+    <div className='mt-10'>
+      <div className="relative w-full lg:h-screen overflow-hidden">
         <img
           src={landing}
           alt="Landing"
