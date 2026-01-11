@@ -13,7 +13,7 @@ const Navbar = ({ menuToggle, handleMenuToggle }) => {
       <div className="hidden lg:flex gap-4 items-center">
         <Link to="/">Home</Link>
         <Link to="/sections">Sections</Link>
-        <Link to="/contact">Contact</Link>
+        <Link to="/products">Products</Link>
         <button>
           {value.theme === 'dark' ? 'Light' : 'Dark'}
         </button>
@@ -45,7 +45,7 @@ const Navbar = ({ menuToggle, handleMenuToggle }) => {
 
         <Link onClick={handleMenuToggle} to="/">Home</Link>
         <Link onClick={handleMenuToggle} to="/sections">Sections</Link>
-        <Link onClick={handleMenuToggle} to="/contact">Contact</Link>
+        <Link onClick={handleMenuToggle} to="/products">Products</Link>
         <button>
           {value.theme === 'dark' ? 'Light' : 'Dark'}
         </button>
