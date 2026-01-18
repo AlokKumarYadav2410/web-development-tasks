@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* gap: 30px; */
+    background-color: #222;
+    anchor-name: --some-anchor; /* Targeting this anchor in other classes */
+ 
+}
+
+.box{
+    height: 200px;
+    width: 200px;
+    transition: all 0.3s linear;
+}
+.box:hover{
+anchor-name: --some-anchor; /* Targeting this anchor in other classes */
+}
+
+/* Target element is red */
+.red{
+    background-color: red;
+    
+}
+
+.blue{
+    background-color: blue;
+}   
+
+.green{
+    background-color: green;
+}
+
+/* Target ke according position wala element ko kahi bhi rakh sakte hai */
+
+.anchor{
+    background: whitesmoke;
+    border-radius: 10px;
+    position: absolute;
+    position-anchor: --some-anchor;
+    top: anchor(top);
+    left: anchor(left);
+    bottom: anchor(bottom);
+    right: anchor(right);
+    pointer-events: none;
+    transition: all 0.3s linear;
+    mix-blend-mode: difference;
+}
+
+body:has(.box:hover) .box{
+    transform: scale(0.8);
+}
+
+body .box:hover{
+    transform: scale(1.2) !important;
+}
