@@ -25,8 +25,8 @@
 
 | Project | Description | Technologies | Live Demo |
 |---------|-------------|--------------|-----------|
+|**⛅ Drameoo OTT Platform** | An OTT platform project implemented using React and TailwindCSS. | React, TailwindCSS | [🔗 View Live](https://drameeo-ott-platform.vercel.app/) |
 |**⛅ Weather App** | A weather app implemented using JavaScript, HTML, and CSS. | JavaScript, HTML5, CSS3 | [🔗 View Live](https://web-development-project-page.vercel.app/Javascript/JsProjects/weather-app/index.html) |
-|**🪟 Window UI** | A window UI project implemented using JavaScript, HTML, and CSS. | JavaScript, HTML5, CSS3 | [🔗 View Live](https://web-development-project-page.vercel.app/Javascript/JsProjects/Window/index.html) |
 |**🐍 Snake Game** | A classic snake game implemented using JavaScript, HTML, and CSS. | JavaScript, HTML5, CSS3 | [🔗 View Live](https://web-development-project-page.vercel.app/Javascript/JsProjects/Snake-Game/index.html) |
 | **🔥 Freakish Mind - NFT Landing** | Advanced NFT-themed landing page with full responsiveness, hover effects, and clip-path animations | HTML5, CSS3, Responsive, Clip-path, Hover Effects | [🔗 View Live](https://web-development-project-page.vercel.app/Challenges/Challenge03/index.html) |
 | **🪔 Diwali Celebration Project** | Diwali Themed landing page with vibrant colors and festive elements with toggle diya feature (Light Up) | HTML5, SCSS,JS, Responsive, Animations, Interactive | [🔗 View Live](https://web-development-project-page.vercel.app/Festival/Diwali/index.html) |
@@ -80,7 +80,15 @@ web-development-tasks/
 
 ## 🟨 React Projects
 
-### 👔 React Project 01: Storeo
+### 📺 React Project 01: Drameoo Ott Platform
+**Status:** ✅ Completed <br />
+**Description:** An OTT platform project implemented using React and TailwindCSS.
+
+**🔗 [Live Preview](https://drameeo-ott-platform.vercel.app/) • [📂 Code](https://github.com/AlokKumarYadav2410/drameeo-ott-platform)**
+
+---
+
+### 👔 React Project 02: Storeo
 **Status:** ✅ Completed <br />
 **Description:** A store management app implemented using React and TailwindCSS. 
 
@@ -88,7 +96,7 @@ web-development-tasks/
 
 ---
 
-### ☎️ React Project 02: Buddy Book
+### ☎️ React Project 03: Buddy Book
 **Status:** ✅ Completed <br />
 **Description:** A contact management app implemented using React and TailwindCSS. 
 
@@ -96,14 +104,14 @@ web-development-tasks/
 
 ---
 
-### 👗 React Project 03: DVSY Fashion
+### 👗 React Project 04: DVSY Fashion
 **Status:** ✅ Completed <br />
 **Description:** A clothing e-commerce project implemented using React and TailwindCSS. 
 
 **🔗 [Live Preview](https://dvsy-fashion-ui.vercel.app/) • [📂 Code](https://github.com/AlokKumarYadav2410/dvsy-fashion-ui)**
 
 ---
-### 🗂️ React Project 04: CardVerse
+### 🗂️ React Project 05: CardVerse
 **Status:** ✅ Completed <br />
 **Description:** A card UI project implemented using React and TailwindCSS. 
 
@@ -111,7 +119,7 @@ web-development-tasks/
 
 ---
 
-### 🏸 React Project 05: Horizon Courts
+### 🏸 React Project 06: Horizon Courts
 **Status:** ✅ Completed <br />
 **Description:** A tennis court booking website implemented using React and CSS. 
 
@@ -119,7 +127,7 @@ web-development-tasks/
 
 ---
 
-### 😎 React Project 06: Stylish Portfolio
+### 😎 React Project 07: Stylish Portfolio
 **Status:** ✅ Completed <br />
 **Description:** A stylish portfolio website implemented using React and CSS. 
 
@@ -473,11 +481,11 @@ Modified and enhanced by: [Your Name]
 
 ---
 
-*Last Updated: Jan 15, 2026*  
+*Last Updated: Jan 18, 2026*  
 <!-- *Total Challenges Completed: 3/∞*  
 *Total Tasks Completed: 6/∞*  
 *Total Practice Projects Completed: 3/∞*  
 *Total JavaScript Practice Projects (PS-03) Completed: 4/∞*   -->
-*Total Projects Completed: 33/∞*
+*Total Projects Completed: 34/∞*
 
 </div>
