@@ -25,7 +25,8 @@
 
 | Project | Description | Technologies | Live Demo |
 |---------|-------------|--------------|-----------|
-|**⛅ Drameoo OTT Platform** | An OTT platform project implemented using React and TailwindCSS. | React, TailwindCSS | [🔗 View Live](https://drameeo-ott-platform.vercel.app/) |
+|**📸 Image Editor** | An image editing application implemented using HTML, CSS, and JavaScript | HTML5, CSS3, JavaScript| [🔗 View Live](https://image-editor-web-six.vercel.app/) |
+|**📺 Drameoo OTT Platform** | An OTT platform project implemented using React and TailwindCSS. | React, TailwindCSS | [🔗 View Live](https://drameeo-ott-platform.vercel.app/) |
 |**⛅ Weather App** | A weather app implemented using JavaScript, HTML, and CSS. | JavaScript, HTML5, CSS3 | [🔗 View Live](https://web-development-project-page.vercel.app/Javascript/JsProjects/weather-app/index.html) |
 |**🐍 Snake Game** | A classic snake game implemented using JavaScript, HTML, and CSS. | JavaScript, HTML5, CSS3 | [🔗 View Live](https://web-development-project-page.vercel.app/Javascript/JsProjects/Snake-Game/index.html) |
 | **🔥 Freakish Mind - NFT Landing** | Advanced NFT-themed landing page with full responsiveness, hover effects, and clip-path animations | HTML5, CSS3, Responsive, Clip-path, Hover Effects | [🔗 View Live](https://web-development-project-page.vercel.app/Challenges/Challenge03/index.html) |
@@ -184,6 +185,14 @@ web-development-tasks/
 **Description:** Made weather app that shows current weather information using JavaScript, HTML, and CSS.
 
 **🔗 [Live Preview](https://web-development-project-page.vercel.app/Javascript/JsProjects/weather-app/index.html) • [📂 Code](./Javascript/JsProjects/weather-app/)**
+
+---
+
+### 📸 React Project 08: Image Editor
+**Status:** ✅ Completed <br />
+**Description:** An Image editing application implemented using HTML, CSS, and JavaScript.
+
+**🔗 [Live Preview](https://image-editor-web-six.vercel.app/) • [📂 Code](https://github.com/AlokKumarYadav2410/image-editor-web)**
 
 ---
 
@@ -349,7 +358,8 @@ web-development-tasks/
 |----------|---------|-------|-----------------|
 | ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white) | ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white) | ![VS Code](https://img.shields.io/badge/VS%20Code-007ACC?style=flat&logo=visualstudiocode&logoColor=white) | ![Git](https://img.shields.io/badge/Git-F05032?style=flat&logo=git&logoColor=white) |
 | ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black) | ![SCSS](https://img.shields.io/badge/SCSS-CC6699?style=flat&logo=sass&logoColor=white) | ![Chrome DevTools](https://img.shields.io/badge/Chrome%20DevTools-4285F4?style=flat&logo=googlechrome&logoColor=white) | ![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white) |
-| | ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=flat&logo=tailwindcss&logoColor=white) | ![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat&logo=vercel&logoColor=white) | |
+| ![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black) | ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=flat&logo=tailwindcss&logoColor=white) | ![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat&logo=vercel&logoColor=white) | |
+| | | ![Render](https://img.shields.io/badge/Render-46E3B7?style=flat&logo=render&logoColor=white) | |
 
 </div>
 
@@ -481,11 +491,11 @@ Modified and enhanced by: [Your Name]
 
 ---
 
-*Last Updated: Jan 18, 2026*  
+*Last Updated: Jan 28, 2026*  
 <!-- *Total Challenges Completed: 3/∞*  
 *Total Tasks Completed: 6/∞*  
 *Total Practice Projects Completed: 3/∞*  
 *Total JavaScript Practice Projects (PS-03) Completed: 4/∞*   -->
-*Total Projects Completed: 34/∞*
+*Total Projects Completed: 35/∞*
 
 </div>
